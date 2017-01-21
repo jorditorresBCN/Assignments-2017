@@ -1,6 +1,6 @@
 # Assignments
 
-## Tips 
+## Reminder of basic steps to handle git repositories
 #### How I created this remote repository from my local repository on my labtop
 ```
 echo "# assignments" >> README.md
@@ -20,6 +20,7 @@ git pull origin master
 #### How I updated my remote repository from my local repository on my labtop 
 
 ```
+git add README.md
 git commit -m "second commit"
 git push -u origin master
 ```
