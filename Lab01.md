@@ -6,6 +6,12 @@ In this Lab session you will be asked to put in practice the basic knowledge acq
 * Hands-on 2: Python Quick Start (afegir part de NKTK) 
 * Hands-on 3: Create a AWS or OCEAN .... maquina
 
+#  ull! treure d'aquí el tema de wordcount i posar només el petit exemple de GuestNumber 
+# tot ho de word count, i seguir el .pynd que tinc fer-ho ja en el seguent Lab2, que 
+# que faria minims de Twitter API i tambe de ANACONDA (i aixo suficient per 2 hores)
+
+# I el tres es generar el fitxer de tweets JSON (donar un fet) com a programa .py i a partir d'aqui fer el sentiment analysi d'aquest senyor? haig de resoldre tema de codificacio
+
 
 # Tasks to do:
 ### Task 1.1: 
