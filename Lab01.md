@@ -1,5 +1,5 @@
-# Lab 01: Basic Toolbox Knowledges to getting started in the Cloud
-In this Lab session you will be asked to demonstrate the basic knowledge acquired with homeworks based on these following hands-on:
+# Lab 1: Basic "Knowledge Toolbox" to getting started in the Cloud
+In this Lab session you will be asked to put in practice the basic knowledge acquired with homeworks based on these following hands-on:
 
 * Hands-on 0: Run a Linux OS in a Virtual Machine (Only for Windows users)
 * Hands-on 1: Git and GitHub Quick Start
@@ -7,7 +7,7 @@ In this Lab session you will be asked to demonstrate the basic knowledge acquire
 * Hands-on 3: Create a AWS or OCEAN .... maquina
 
 
-# Tasks
+# Tasks to do:
 ### Task 1.1: 
 Install Python in your local labtop.
 ### Task 1.2: 
