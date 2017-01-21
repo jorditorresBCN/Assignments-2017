@@ -1,6 +1,7 @@
 # Assignments
 
-## How I created this remote repository from my local repository on my labtop
+## Tips 
+#### How I created this remote repository from my local repository on my labtop
 ```
 echo "# assignments" >> README.md
 git init
@@ -10,13 +11,13 @@ git remote add origin https://github.com/jorditorresBCN/assignments.git
 git push -u origin master
 ```
 
-## How I updated my local repository on my labtop from the remote repository (code updated directly at remote repository) 
+#### How I updated my local repository on my labtop from the remote repository (code updated directly at remote repository) 
 
 ```
 git pull origin master
 ```
 
-## How I updated my remote repository from my local repository on my labtop 
+#### How I updated my remote repository from my local repository on my labtop 
 
 ```
 git commit -m "second commit"
