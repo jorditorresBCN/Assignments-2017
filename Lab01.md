@@ -8,19 +8,29 @@ In this Lab session you will be asked to demonstrate the basic knowledge acquire
 
 
 # Tasks
-4. Install Python in your local labtop.
-5. Create a python code that do a word counts of the file `https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt` (or any book your prefer).
-1. Create a private repository CLOUD-COMPUTING-COURSE-2017 in your github account (use you student email (".upc.edu") for creating your account in order to have private repositories or benefits as student pack).
-2. Invite `JordiTorresBCN` as a collaborator using `settings` button.
-3. Include a `README.md` file that contain all the information of your group (member's name and emails).
+1. Install Python in your local labtop.
+2. Create a python code that do a word counts of the file `https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt` (or any book your prefer). The suggested program name is `Lab1.WordCount.py`.
+3. Create a private repository CLOUD-COMPUTING-COURSE-2017 in your github account (use you student email (".upc.edu") for creating your github account in order to have private repositories or benefits as student pack).
+4. Update your remote repository from your local repository on your labtop:
+```
+echo "# CLOUD-COMPUTING-COURSE-2017" >> README.md
+git init
+git add README.md
+git add Lab1.WordCount.py
+git commit -m "first commit"
+git remote add origin https://github.com/jorditorresBCN/CLOUD-COMPUTING-COURSE-2017.git
+git push -u origin master
+```
+> change `jorditorresBCN` with your github account
 
-5. Add in your repository this program as `lab1/WordCount.py`. 
-6. Create a 
-6. Add in your repository the `lab1/WordCount.pynb` file that contains your code that includes explanatory of your steps (using `markdown` cells). 
-
-
-(settings button create a github account (if necessary). If you prefer can be a private repositori amb un fitxer .pynb que agafa un llibre i compta paraules i tal. En el Readme ha de posar els autors del treball, data. etc.
-
-
-# How to submit:
-All groups should submit to the RACO the github url before the deadline. 
+5. Update the `README.md` file including all the information of your group (member's name and emails).
+5. Invite `JordiTorresBCN` to your remote private repository as a collaborator using `settings` button (for evaluation purpouse).
+6. Create a AWS instance EC2. Pull down all the contents of your github repositori making an exact clone using `git clone` command. Execute the program `Lab1.WordCount.py` in your AWS instance. Finally take an screenshot of the xterm that you are using as a proof. 
+7. Include this screenshot in your local repository on your labtop with the name `Lab1.AWSterminal.png`.
+7. Download and installing Anaconda in your labtop. Start an iPython notebook on your terminal and create an create a note book that contains your previous word count code including some explanation of your steps using `markdown` cells. 
+7. Include this file in your local repository on your labtop with the name `Lab1.WordCount.pynb`.
+8. Update your remote github repository with the updated `README.md`and the two new files `Lab1.AWSterminal.png` and `Lab1.WordCount.pynb` using the `git`commands `add`, `commit` and `push`. 
+9. Submit to the RACO a short txt file including **before the deadline**: 
+- Group number
+- name and email of the members of this group
+- github url. 
