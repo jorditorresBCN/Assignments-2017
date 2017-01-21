@@ -11,7 +11,7 @@ In this Lab session you will be asked to put in practice the basic knowledge acq
 ### Task 1.1: 
 Install Python in your local labtop.
 ### Task 1.2: 
-Create a python code that do a word counts of the file `https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt` (or any book your prefer). The suggested program name is `Lab1.WordCount.py`.
+Create a python code that do a word counts of the book First Contact with Tensorflow (posar link) downloaded in the file `FirstContactWithTensorflow.txt` (or any book your prefer). The suggested program name is `Lab1.WordCount.py`.
 ### Task 1.3:  
 Create a private repository CLOUD-COMPUTING-COURSE-2017 in your github account (use you student email (".upc.edu") for creating your github account in order to have private repositories or benefits as student pack).
 ### Task 1.4:  
