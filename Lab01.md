@@ -47,7 +47,9 @@ Include this file in your local repository on your labtop with the name `Lab1.Wo
 Update your remote github repository with the updated `README.md`and the two new files `Lab1.AWSterminal.png` and `Lab1.WordCount.pynb` using the `git`commands `add`, `commit` and `push`. 
 ### Task 1.14:  
 Submit to the RACO a short txt file including **before the deadline**: 
+
 1. Group number
 2. name and email of the members of this group
 3. github url.
 4. add any comment that you consider necessary.
+
