@@ -45,11 +45,15 @@ Start an iPython notebook on your terminal and create an create a note book that
 Include this file in your local repository on your labtop with the name `Lab1.WordCount.pynb`.
 ### Task 1.13:  
 Update your remote github repository with the updated `README.md`and the two new files `Lab1.AWSterminal.png` and `Lab1.WordCount.pynb` using the `git`commands `add`, `commit` and `push`. 
-### Task 1.14:  
-Submit to the RACO a short txt file including **before the deadline**: 
+### Task 1.14: (optional)
+What are Stop Words? When working with text mining applications, we often hear of the term “Stop Word Removal". Create a new version of your program that remove the stop words in our example file with the name `Lab1.WordCountStopWordsRemoved.pynb` and update your remote github repository with this new file
+
+### Task 1.15:  
+Submit **before the deadline** to the RACO a short ".txt" file including: 
 
 1. Group number
 2. name and email of the members of this group
-3. github url.
-4. add any comment that you consider necessary.
+3. github url that contains your lab answers
+4. indicate if you did or not the optional task and why 
+5. add any comment that you consider necessary.
 
