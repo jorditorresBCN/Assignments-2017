@@ -1,26 +1,14 @@
 # Assignments
 
-## Reminder of basic steps to handle git repositories
-#### How I created this remote repository from my local repository on my labtop
-```
-echo "# assignments" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/jorditorresBCN/assignments.git
-git push -u origin master
-```
+## Labs
+- Lab 1: [Basic "Knowledge Toolbox" to getting started in the Cloud][Lab1]
+- Lab 2: [Doors in the Cloud][Lab2]
+- Lab 3: Analyzing the Cloud
+- Lab 4: Advanced Analytics as Cloud Services
+- Lab 5: Under the hood of Cloud Advanced Analytics Services
 
-#### How I updated my local repository on my labtop from the remote repository (code updated directly at remote repository) 
+[Lab1]: https://github.com/jorditorresBCN/Assignments/blob/master/Lab01.md
+[Lab2]: https://github.com/jorditorresBCN/Assignments/blob/master/Lab02.md
 
-```
-git pull origin master
-```
-
-#### How I updated my remote repository from my local repository on my labtop 
-
-```
-git add README.md
-git commit -m "second commit"
-git push -u origin master
-```
+## Course Project
+(To Be Decided)
