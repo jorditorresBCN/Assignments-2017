@@ -2,7 +2,14 @@
 
 afegir aqui tota la part de ANACONDA, per tant treure de l'anterior tot ho de
 
+# tot ho de word count, i seguir el .pynd que tinc fer-ho ja en el seguent Lab2, que 
+# que faria minims de Twitter API i tambe de ANACONDA (i aixo suficient per 2 hores)
+
 # Tasks to do:
+
+
+### Task 1.2: 
+Create a python code that do a word counts of the book First Contact with Tensorflow (posar link) downloaded in the file `FirstContactWithTensorflow.txt` (or any book your prefer). The suggested program name is `Lab1.WordCount.py`.
 
 ### Task 1.10:  
  Download and installing Anaconda in your labtop. 
