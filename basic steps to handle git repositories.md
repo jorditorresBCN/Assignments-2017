@@ -1,5 +1,3 @@
-# Assignments
-
 ## Reminder of basic steps to handle git repositories
 #### How I created this remote repository from my local repository on my labtop
 ```
