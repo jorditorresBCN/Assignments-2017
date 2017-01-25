@@ -178,8 +178,3 @@ with open(fname, 'r') as f:
 ```
 The above code print the first 5 most frequent words.
 
-
- 
-### API  streaming --> generar fitxer aquell 
-
-## I el tres es generar el fitxer de tweets JSON (donar un fet) com a programa .py i a partir d'aqui fer el sentiment analysi d'aquest senyor? haig de resoldre tema de codificacio
