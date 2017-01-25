@@ -162,9 +162,9 @@ Use the previous API presented for obtaining information about your tweets.  Kee
 ## Task 2.4:  Tweet pre-processing
 In this taks we’ll enter in more detail to the overhall structure of a tweet and discuss how to pre-process the text of it before we can get into some more interesting analysis in next Lab. In particular, we will seen how tokenisation, despite being a well-understood problem, can get tricky with Twitter data. After that we’ll discuss the analysis of term frequencies to extract meaningful terms from our tweets. 
 
-The code used in this Lab is using part of the work done by [Marco Bonzanini](https://marcobonzanini.com/2015/03/02/mining-twitter-data-with-python-part-1/)). Thank you. As Marco indicates, it is far from perfect but it’s a good starting point to become aware of the complexity of the problem, and fairly easy to extend.
+The code used in this Lab is using part of the work done by [Marco Bonzanini](https://marcobonzanini.com/2015/03/02/mining-twitter-data-with-python-part-1/)). As Marco indicates, it is far from perfect but it’s a good starting point to become aware of the complexity of the problem, and fairly easy to extend.
 
-### Task 2.4.1:  The Anatomy of a Tweet
+### Task 2.4.1:  Tokenize a tweet text
 Let’s have a look at the structure of the previous tweet that you printed
 The key attributes are the following:
 
@@ -182,7 +182,61 @@ The key attributes are the following:
 
 As you can see there’s a lot of information we can play with. All the \*_id fields also have a \*_id_str counterpart, where the same information is stored as a string rather than a big int (to avoid overflow problems). 
 
-We will focus our task looking for the content of a tweet, is anyway embedded in the text, and that’s where we’re starting our analysis.
+We will focus our task looking for the text of a tweet, breaking it down into words. While tokenisation is a well understood problem with several out-of-the-box solutions from popular libraries, Twitter data pose some challenges because of the nature of the language.
+Let’s see the example using the NLTK package previously used to tokenise a fictitious tweet:
+
+
+```
+from nltk.tokenize import word_tokenize
+
+tweet = 'RT @JordiTorresBCN: just an example! :D http://JordiTorres.Barcelona #masterMEI'
+
+print(word_tokenize(tweet))
+```
+You will notice some peculiarities of twitter that are not captured by a general-purpose English tokeniser like the one from NLTK: @-mentions, emoticons, URLs and #hash-tags are not recognised as single tokens. Right?
+
+Using some code borrowed from [Marco Bonzanini](https://marcobonzanini.com/2015/03/02/mining-twitter-data-with-python-part-1/)) work) we could consider these aspects of the language.
+
+```python
+import re
+ 
+emoticons_str = r"""
+    (?:
+        [:=;] # Eyes
+        [oO\-]? # Nose (optional)
+        [D\)\]\(\]/\\OpP] # Mouth
+    )"""
+ 
+regex_str = [
+    emoticons_str,
+    r'<[^>]+>', # HTML tags
+    r'(?:@[\w_]+)', # @-mentions
+    r"(?:\#+[\w_]+[\w\'_\-]*[\w_]+)", # hash-tags
+    r'http[s]?://(?:[a-z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-f][0-9a-f]))+', # URLs
+ 
+    r'(?:(?:\d+,?)+(?:\.?\d+)?)', # numbers
+    r"(?:[a-z][a-z'\-_]+[a-z])", # words with - and '
+    r'(?:[\w_]+)', # other words
+    r'(?:\S)' # anything else
+]
+    
+tokens_re = re.compile(r'('+'|'.join(regex_str)+')', re.VERBOSE | re.IGNORECASE)
+emoticon_re = re.compile(r'^'+emoticons_str+'$', re.VERBOSE | re.IGNORECASE)
+ 
+def tokenize(s):
+    return tokens_re.findall(s)
+ 
+def preprocess(s, lowercase=False):
+    tokens = tokenize(s)
+    if lowercase:
+        tokens = [token if emoticon_re.search(token) else token.lower() for token in tokens]
+    return tokens
+ 
+tweet = 'RT @JordiTorresBCN: just an example! :D http://JordiTorres.Barcelona #masterMEI'
+print(preprocess(tweet))
+```
+
+
 
 
 
