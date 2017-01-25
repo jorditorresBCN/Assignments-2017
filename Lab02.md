@@ -1,7 +1,12 @@
 # Lab 2: Doors in the Cloud
 
-afegir aqui tota la part de ANACONDA, per tant treure de l'anterior tot ho de
 
+
+### Task 1.1:  
+ Download and installing Anaconda in your labtop following hands-on 4([Python Development Environment Quick Start](Phyton-Development-Environment-Quick-Start.md)) guidelines.
+
+### Task 1.2:
+Open the notebook 
 # tot ho de word count, i seguir el .pynd que tinc fer-ho ja en el seguent Lab2, que 
 # que faria minims de Twitter API i tambe de ANACONDA (i aixo suficient per 2 hores)
 
