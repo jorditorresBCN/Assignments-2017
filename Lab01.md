@@ -1,10 +1,11 @@
 # Lab 1: Basic "Knowledge Toolbox" to getting started in the Cloud
 In this Lab session you will be asked to put in practice the basic knowledge acquired with homeworks based on these following hands-on:
 
-* Hands-on 0: Run a Linux OS in a Virtual Machine (Only for Windows users)
-* Hands-on 1: Git and GitHub Quick Start
-* Hands-on 2: Python Quick Start (afegir part de NKTK) 
-* Hands-on 3: Create a AWS or OCEAN instance and use it
+* Hands-on 0: [Run a Linux OS in a Virtual Machine](https://github.com/jorditorresBCN/Quick-Start/blob/master/LinuxOS-VirtualMachine.md) (Only for Windows users)
+* Hands-on 1: [Git and GitHub Quick Start](https://github.com/jorditorresBCN/Quick-Start/blob/master/Git-Github-Quick-Start.md)
+* Hands-on 2: [Markdown syntax](https://github.com/jorditorresBCN/Quick-Start/blob/master/Quick-Start-Markdown.md)
+* Hands-on 3: [Python Quick Start](https://github.com/jorditorresBCN/Quick-Start/blob/master/Python-Quick-Start.md) 
+* Hands-on 5: [Getting Started in the Cloud with AWS](https://github.com/jorditorresBCN/Quick-Start/blob/master/Quick-Start-AWS.md)
 
 # Tasks to do:
 ### Task 1.1: 
