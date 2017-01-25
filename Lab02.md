@@ -236,9 +236,13 @@ tweet = 'RT @JordiTorresBCN: just an example! :D http://JordiTorres.Barcelona #m
 print(preprocess(tweet))
 ```
 
+As you can see, @-mentions, URLs and #hash-tags are now preserved as individual tokens. This tokeniser gives you the general idea of how you can do it for twitter text based on regular expressions (regexp), which is a common choice for this type of problem. 
 
+With the previous basic tokenizer code, some particular types of tokens will not be captured, and will be probably broken into several tokens. To overcome this problem you can improve the regular expressions, or employ more sophisticated techniques like [*Named Entity Recognition*](https://en.wikipedia.org/wiki/Named-entity_recognition).
 
+In this example, the regular expressions are compiled with the flags re.VERBOSE, to allow spaces in the regexp to be ignored (see the multi-line emoticons regexp), and re.IGNORECASE to catch both upper and lowercases. The tokenize() function simply catches all the tokens in a string and returns them as a list. This function is used within preprocess(), which is used as a pre-processing chain: in this case we simply add a lowercasing feature for all the tokens that are not emoticons (e.g. :D doesn’t become :d).
 
+Keep track of your executions with different fictitious tweets and comments in the `Lab2.TokenizeTweetText.ipynb` notebook.
 
 Now, we are ready for next Lab, where we will mining streaming twitter data.
 
