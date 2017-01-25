@@ -1,13 +1,13 @@
 # Lab 2: Doors in the Cloud
-
+In this Lab we’ll discuss the overhall structure of a tweet and we will discuss how to pre-process the text before we can get into some more interesting analysis in next Lab. In particular, we will seen how tokenisation, despite being a well-understood problem, can get tricky with Twitter data. Previously we will start installing A a Python Development Environment that will be very helpful.
 
 # Tasks to do:
 
 
-### Task 2.1:  Installing Anaconda
+## Task 2.1:  Installing Anaconda
  Download and installing Anaconda in your labtop following hands-on 4 ([Python Development Environment Quick Start](Phyton-Development-Environment-Quick-Start.md)) guidelines. Start a Jupyter notebook on your terminal and create a note book that contains your previous [`Lab1.guessnumber.py`](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab01.md) code including some explanation of your steps using `markdown` cells. Save your notebook as `Lab2.guessnumber.pynb` and add it to your remote github repository.
 
-### Task 2.2: Get Started with NLTK
+## Task 2.2: Get Started with NLTK
 Tokenisation is one of the most basic, yet most important, steps in text analysis required in the following task. The purpose of tokenisation is to split a stream of text into smaller units called tokens, usually words or phrases. For this purpouse we will use the [NLTK](http://www.nltk.org) Python Natural Language Processing Toolkit:
 ```
 import nltk
@@ -62,7 +62,7 @@ count = Counter(filtered)
 ```
 Add a new code cell to the same notebook with the code (and the comments with markdown cells if you consider interesting)  that computes and prints the 10 most common word after removing the stop words.  Now it make more sense, right? "TensorFlow" is the most common word!!!
 
-### Task 2.3: Getting Started with `tweepy`  
+## Task 2.3: Getting Started with `tweepy`  
 [These libraries](https://dev.twitter.com/resources/twitter-libraries), while not necessarily built or tested by Twitter, should support the current Twitter API.
 In this task we will use `tweepy` package as a tool to access Twitter data in a fairly easy way with Python. There are different types of data we can collect, however we will focus on the “tweet” object.
 
@@ -159,12 +159,36 @@ As a conclusion, you can notice that with `tweepy` we can easily collect all the
 
 Use the previous API presented for obtaining information about your tweets.  Keep track of your executions and comments in the   `Lab2.TweepyAPI.ipynb` notebook.
 
-### Task 2.4:  Tweet pre-processing
-AQUI VA LA PART DE TEXT-PROCESSING PERO NO DE STREAMING QUE VA AL SEGÜENT LAB:
+## Task 2.4:  Tweet pre-processing
+In this taks we’ll enter in more detail to the overhall structure of a tweet and discuss how to pre-process the text of it before we can get into some more interesting analysis in next Lab. In particular, we will seen how tokenisation, despite being a well-understood problem, can get tricky with Twitter data. After that we’ll discuss the analysis of term frequencies to extract meaningful terms from our tweets. 
+
+The code used in this Lab is using part of the work done by [Marco Bonzanini](https://marcobonzanini.com/2015/03/02/mining-twitter-data-with-python-part-1/)). Thank you. As Marco indicates, it is far from perfect but it’s a good starting point to become aware of the complexity of the problem, and fairly easy to extend.
+
+### Task 2.4.1:  The Anatomy of a Tweet
+Let’s have a look at the structure of the previous tweet that you printed
+The key attributes are the following:
+
+* text: the text of the tweet itself
+* created_at: the date of creation
+* favorite_count, retweet_count: the number of favourites and retweets
+* favorited, retweeted: boolean stating whether the authenticated user (you) have favourited or retweeted this tweet
+* lang: acronym for the language (e.g. “en” for english)
+* id: the tweet identifier
+* place, coordinates, geo: geo-location information if available
+* user: the author’s full profile
+* entities: list of entities like URLs, @-mentions, hashtags and symbols
+* in_reply_to_user_id: user identifier if the tweet is a reply to a specific user
+* in_reply_to_status_id: status identifier id the tweet is a reply to a specific status
+
+As you can see there’s a lot of information we can play with. All the \*_id fields also have a \*_id_str counterpart, where the same information is stored as a string rather than a big int (to avoid overflow problems). 
+
+We will focus our task looking for the content of a tweet, is anyway embedded in the text, and that’s where we’re starting our analysis.
+
+
 
 Now, we are ready for next Lab, where we will mining streaming twitter data.
 
-### Task 2.5:  
+## Task 2.5:  
 Be sure that you have updated your remote github repository (using the `git`commands `add`, `commit` and `push`) with all the Lab `.ipynb` files generated along this Lab. Submit **before the deadline** to the RACO a "Lab2.txt" file including: 
 
 1. Group number
