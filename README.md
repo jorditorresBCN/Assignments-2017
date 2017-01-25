@@ -1,5 +1,7 @@
 # Assignments
 
+The students will begin creating a basic toolbox to get started in the Cloud. This will prepare them to practice with APIs, the doors in the Cloud. All these things together will allow the students to mine the deluge of data coming from the Cloud, or use new advanced analytics services provided nowadays by the Cloud. Finally, we will look under the hood of these advanced analytics services in the Cloud, either in terms of software or hardware, in order to understand how their high performance requirements can be provided. 
+
 ## Labs
 - Lab 1: [Basic "Knowledge Toolbox" to getting started in the Cloud][Lab1]
 - Lab 2: [Doors in the Cloud][Lab2]
