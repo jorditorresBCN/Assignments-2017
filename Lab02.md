@@ -35,7 +35,7 @@ print count.most_common(10)
 Create a notebook with the name `WordCountWithNLTK.ipynb`, that computes and prints the 10 most common word in the book.
 
 ### Task 2.3.2: Word Count
-Add to the same notebook the code (and the comments with markdown cells)  that computes and prints the total number of word of this book.   
+Add a new code cell into the same notebook with the code that computes and prints the total number of word of this book.   
 
 ULL! que em dona error encara!
 
@@ -48,14 +48,20 @@ We can see that punctiation are many of the most common words. We can remove the
     no_punctuation = lowers.translate(None, string.punctuation)
     tokens = nltk.word_tokenize(no_punctuation)
 ```
-Add to the same notebook the code (and the comments with markdown cells)  that computes and prints the 10 most common word without punctuation characters?
-
+Add a new code cell to the same notebook with the code (and the comments with markdown cells if you consider interesting)  that computes and prints the 10 most common word without punctuation characters. 
     
 ### Task 2.3.3: Stop Words
-What are Stop Words? When working with text mining applications, we often hear of the term “Stop Word Removal". Create a new version of your program that remove the stop words 
+Is not "Tensorflow" the most commond word? Why? What are Stop Words? Include your answer in a markdown cells in the same notebook.
 
+When we are working with text mining applications, we often hear of the term “Stop Word Removal". We can do it using the same `nltk` package: 
+```
+from nltk.corpus import stopwords
+tokens = get_tokens()
+filtered = [w for w in tokens if not w in stopwords.words('english')]
+count = Counter(filtered)
+```
+Add a new code cell to the same notebook with the code (and the comments with markdown cells if you consider interesting)  that computes and prints the 10 most common word after removing the stop words.  Now it make more sense, right? "TensorFlow" is the most common word!!!
 
-in our example file with the name `Lab1.WordCountStopWordsRemoved.pynb` and update your remote github repository with this new file
 
 
 ### Task 1.10:  
