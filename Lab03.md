@@ -54,7 +54,7 @@ twitter_stream.filter(track=['ArtificialIntelligence'])
 
 The above script will save each tweet on a new line, so you can use the command `wc -l python.json` from a Unix shell to know how many tweets you’ve gathered. Warning, depending on the search term, we can gather tons of tweets within a few minutes.
 
-## Task 3.1:  Counting terms
+## Task 3.2:  Counting terms
 The first exploratory analysis that we can perform is a simple word count. In this way, we can observe what are the terms most commonly used in the data set.
 
 Let's go to read the file with all tweets in order to be sure that everything is fine:
@@ -141,10 +141,9 @@ with open(fname, 'r') as f:
         terms_all = [term for term in preprocess(tweet['text'])]
         # Update the counter
         count_all.update(terms_all)
-    # Print the first 5 most frequent words
     print(count_all.most_common(5))
     
-    ```
+```
 As you can see, the above code produces words (or tokens) that are stop words. Given the nature of our data and our tokenisation, we should also be careful with all the punctuation marks and with terms like `RT` (used for re-tweets) and `via` (used to mention the original author), which are not in the default stop-word list.
 
 ```
@@ -176,5 +175,3 @@ with open(fname, 'r') as f:
     for word, index in count_all.most_common(5):
         print '%s : %s' % (word, index)
 ```
-The above code print the first 5 most frequent words.
-
