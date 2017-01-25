@@ -10,8 +10,9 @@
 ### Task 2.3: Getting Started with NLTK
 Tokenisation is one of the most basic, yet most important, steps in text analysis required in the following task. The purpose of tokenisation is to split a stream of text into smaller units called tokens, usually words or phrases. For this purpouse we will use the [NLTK](http://www.nltk.org) Python Natural Language Processing Toolkit. 
 
-The notebook `WordCountWithNLTK.ipynb` contains the steps required for a word count of the book [First Contact with TensorFlow](http://www.jorditorres.org/Tensorflow). You will find both, code and text elements, that describe the main steps. Run the notebook document step-by-step (one cell a time) by pressing `shift` + `enter` that will help to you understand the [NLTK](http://www.nltk.org) package. As a last step, write the code that computes the total number of word of this book.
-
+The notebook `WordCountWithNLTK.ipynb` contains some steps required for a word count of the book [First Contact with TensorFlow](http://www.jorditorres.org/Tensorflow). You will find both, code and text elements, that describe the main steps. Run the notebook document step-by-step (one cell a time) by pressing `shift` + `enter` that will help to you understand the [NLTK](http://www.nltk.org) package. 
+### Task 2.3.1: Word Count
+Write the code that computes the total number of word of this book.
 ```
 TotalWords=0
 for paraula, counter in count.most_common(100):
@@ -19,7 +20,22 @@ for paraula, counter in count.most_common(100):
     TotalWords=TotalWords+counter
 print 'Total number of word in the book = %s' % (TotalWords)
 ```
+### Task 2.3.2: Word Count
+We can see that punctiation are many of the most common words. We can remove the punctuation using the character deletion step of translate:
 
+```
+    lowers = text.lower()
+    no_punctuation = lowers.translate(None, string.punctuation)
+    tokens = nltk.word_tokenize(no_punctuation)
+```
+Which are the 10 most common word (without punctuation characters)?
+
+    lowers = text.lower()
+    no_punctuation = lowers.translate(None, string.punctuation)
+    tokens = nltk.word_tokenize(no_punctuation)
+    
+    
+We can see that punctiation are many of the most common words. We can remove the punctuation using the character deletion step of translate
 
 ### Task 1.14: (optional)
 What are Stop Words? When working with text mining applications, we often hear of the term “Stop Word Removal". Create a new version of your program that remove the stop words in our example file with the name `Lab1.WordCountStopWordsRemoved.pynb` and update your remote github repository with this new file
