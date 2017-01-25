@@ -39,7 +39,7 @@ Include this screenshot in your local repository on your labtop with the name `L
 ### Task 1.9:    
 Update your remote github repository with the updated `README.md`and the new file `Lab1.AWSterminal.png` using the `git`commands `add`, `commit` and `push`. 
 ### Task 1.10:  
-Submit **before the deadline** to the RACO a short ".txt" file including: 
+Submit **before the deadline** to the RACO a "Lab1.txt" file including: 
 
 1. Group number
 2. name and email of the members of this group
