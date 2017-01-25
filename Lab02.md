@@ -50,7 +50,7 @@ We can see that punctiation are many of the most common words. We can remove the
 ```
 Add a new code cell to the same notebook with the code (and the comments with markdown cells if you consider interesting)  that computes and prints the 10 most common word without punctuation characters. 
     
-### Task 2.3.3: Stop Words
+### Task 2.3.4: Stop Words
 Is not "Tensorflow" the most commond word? Why? What are Stop Words? Include your answer in a markdown cells in the same notebook.
 
 When we are working with text mining applications, we often hear of the term “Stop Word Removal". We can do it using the same `nltk` package: 
