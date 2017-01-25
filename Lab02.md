@@ -159,13 +159,17 @@ As a conclusion, you can notice that with `tweepy` we can easily collect all the
 
 Use the previous API presented for obtaining information about your tweets.  Keep track of your executions and comments in the   `Lab2.TweepyAPI.ipynb` notebook.
 
-### Task 2.X:  
+### Task 2.4:  Tweet pre-processing
+AQUI VA LA PART DE TEXT-PROCESSING PERO NO DE STREAMING QUE VA AL SEGÜENT LAB:
+
+Now, we are ready for next Lab, where we will mining streaming twitter data.
+
+### Task 2.5:  
 Be sure that you have updated your remote github repository (using the `git`commands `add`, `commit` and `push`) with all the Lab `.ipynb` files generated along this Lab. Submit **before the deadline** to the RACO a "Lab2.txt" file including: 
 
 1. Group number
 2. name and email of the members of this group
 3. github url that contains your lab answers (the same as Lab1)
-4. Include the answer to the previous tasks.
 5. add any comment that you consider necessary.
 
 
