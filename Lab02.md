@@ -6,7 +6,11 @@
  Download and installing Anaconda in your labtop following hands-on 4([Python Development Environment Quick Start](Phyton-Development-Environment-Quick-Start.md)) guidelines.
 
 ### Task 1.2:
-Open the notebook 
+Tokenisation is one of the most basic, yet most important, steps in text analysis required in the following task. The purpose of tokenisation is to split a stream of text into smaller units called tokens, usually words or phrases. For this purpouse we will use the [NLTK](http://www.nltk.org) Python Natural Language Processing Toolkit. 
+
+This task consist of understand different steps required for a word count of the book [First Contact with TensorFlow](http://www.jorditorres.org/Tensorflow). The notebook `WordCountWithNLTK.ipynb`  contains both code and text elements that describe the main steps. Run the notebook document step-by-step (one cell a time) by pressing shift + enter and try to understand everything.
+
+
 # tot ho de word count, i seguir el .pynd que tinc fer-ho ja en el seguent Lab2, que 
 # que faria minims de Twitter API i tambe de ANACONDA (i aixo suficient per 2 hores)
 
