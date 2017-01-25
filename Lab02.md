@@ -32,7 +32,7 @@ count = Counter(tokens)
 print count.most_common(10)
 ```
 ### Task 2.2.1: Word Count
-Create a notebook with the name `WordCountWithNLTK.ipynb`, that computes and prints the 10 most common word in the book.
+Create a notebook with the name `Lab2.WordCountWithNLTK.ipynb`, that computes and prints the 10 most common word in the book.
 
 ### Task 2.2.2: Word Count
 Add a new code cell into the same notebook with the code that computes and prints the total number of word of this book.   
@@ -77,7 +77,7 @@ You will receive a **Consumer Key** and a **Consumer secret**.   From the config
 
 Note that you will need a Twitter account in order to login, create an app, and get these credentials.
 
-### Task 2.3.2: Accessing Tweets  
+### Task 2.3.2: Accessing your twitter account information  
 Twitter provides [REST APIs](https://dev.twitter.com/rest/public) we can use to interact with their service. There is also a bunch of Python-based clients out there as [Tweepy](http://tweepy.readthedocs.io/en/v3.5.0/).
 The easiest way to install the latest version is by using pip/easy_install to pull it from [PyPI](https://pypi.python.org/pypi) from your local directory:
 
@@ -92,6 +92,8 @@ torres@vm:~$  git clone https://github.com/tweepy/tweepy.git
 torres@vm:~$  cd tweepy
 torres@vm:~$  python setup.py install
 ```
+Create a notebook with the name `Lab2.TweepyAPI.ipynb` to keep track of all your work.
+
 In order to authorise our app to access Twitter on our behalf, we need to use the OAuth interface:
 
 ```
@@ -114,7 +116,7 @@ Tweepy provides access to the well documented Twitter API. With tweepy, it's pos
 
 Main Model classes in the Twitter API are: `Tweets`, `Users`, `Entities` and `Places`. 
 
-For instance after create the user object, the `me()` method returns the user whose authentication keys were used:
+in order to be sure that everything is correctly installed print the main information of your Twitter account. After create the user object, the `me()` method returns the user whose authentication keys were used:
 ```
 user = api.me()
  
@@ -126,9 +128,39 @@ print('Description: ' + str(user.description))
 ```
 Are the data printed correct? Are it yours? 
 
+### Task 2.3.2: Accessing Tweets  
+Tweepy provides the convenient Cursor interface to iterate through different types of objects. For example, we can read our own Twitter homepage with (we are using 1 to limit the number of tweets we are reading and only reading the `text` of the tweet):
+
+```
+for status in tweepy.Cursor(api.home_timeline).items(1):
+    print(status.text) 
+```
+The `status` variable is an instance of the `Status()` class, a nice wrapper to access the data. The JSON response from the Twitter API is available in the attribute _json (with a leading underscore), which is not the raw JSON string, but a dictionary.
+```
+import json
+
+for status in tweepy.Cursor(api.home_timeline).items(1):
+    print(json.dumps(status._json, indent=2))
+    
+```
+What if we want to have a list of 10 of our friends? 
+```
+for friend in tweepy.Cursor(api.friends).items(1):
+    print(json.dumps(friend._json, indent=2))
+
+```
+And how about a list of some of our tweets?
+
+```
+for tweet in tweepy.Cursor(api.user_timeline).items(1):
+    print(json.dumps(tweet._json, indent=2))
+```    
+As a conclusion, you can notice that with `tweepy` we can easily collect all the information and store them in the original JSON format, fairly easy to convert into different data models (many storage systems provide import feature).
+
+Use the previous API presented for obtaining information about your tweets.  Keep track of your executions and comments in the   `Lab2.TweepyAPI.ipynb` notebook.
 
 ### Task 2.X:  
-Be sure that you have updated your remote github repository (using the `git`commands `add`, `commit` and `push`) with all the Lab files generated along this Lab (e.g. `WordCountWithNLTK.ipynb`). Submit **before the deadline** to the RACO a "Lab2.txt" file including: 
+Be sure that you have updated your remote github repository (using the `git`commands `add`, `commit` and `push`) with all the Lab `.ipynb` files generated along this Lab. Submit **before the deadline** to the RACO a "Lab2.txt" file including: 
 
 1. Group number
 2. name and email of the members of this group
