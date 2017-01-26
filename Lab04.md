@@ -90,7 +90,105 @@ If you are interested in building a real server, there are many good Python fram
 
 
 ## Task 4.2: How to provide our service combined with third-party services?
-Posar aqui l exemple de API de google maps i pintar-ho
+
+Twitter allows its users to provide their location when they publish a tweet, in the form of latitude and longitude coordinates. With this information, we are ready to create some nice visualisation for our data, in the form of interactive maps.
+
+For this purpouse we will use [GeoJSON](http://geojson.org), a format for encoding a variety of geographic data structures and [Leaflet.js](http://leafletjs.com), a Javascript library for interactive maps.
+
+GeoJSON supports a variety of geometric types of format that can be used to visualise the desired shapes onto a map. For our examples, we just need the simplest structure, a Point. A point is identified by its coordinates (latitude and longitude). In GeoJSON, we can also represent objects such as a Feature or aFeatureCollection. The first one is basically a geometry with additional properties, while the second one is a list of features. Our Twitter data set can be represented in GeoJSON as `aFeatureCollection`. In order to generate this GeoJSON data structure we simply need to iterate all the tweets looking for the coordinates field. A very important warning is that this field may not be present. Today many tweets are not includes their geographic location (many users prefer not indicate this information on their tweets).
+
+This code will create the GeoJSON data structure (for tweets where the coordinates are explicitely given) and then the data are dumped into a file called geo_data.json:
+```
+fname = 'Lab3.CaseStudy.json'
+with open(fname, 'r') as f:
+    geo_data = {
+        "type": "FeatureCollection",
+        "features": []
+    }
+    for line in f:
+        tweet = json.loads(line)
+        if tweet['coordinates']:
+            geo_json_feature = {
+                "type": "Feature",
+                "geometry": tweet['coordinates'],
+                "properties": {
+                    "text": tweet['text'],
+                    "created_at": tweet['created_at']
+                }
+            }
+            geo_data['features'].append(geo_json_feature)
+ 
+with open('geo_data.json', 'w') as fout:
+    fout.write(json.dumps(geo_data, indent=4))
+```
+
+Now, with the Leaflet.js Javascript library for interactive maps, we can create our `.html` file that will host the map.
+Visit the [Leaflet Quick Start Guide](http://leafletjs.com/examples/quick-start/) for more details of how Leaflet.js can be used. The following `.html`page provides the maps with our geolocated tweets:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Quick Start - Leaflet</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+	<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+
+	<style>
+		#map {
+    	height: 600px;
+		}
+</style> 
+
+</head>
+<body>
+
+
+<!-- this goes in the <body> -->
+<div id="map"></div>
+<script>
+// Load the tile images from OpenStreetMap
+var mytiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+});
+
+// Initialise an empty map
+	var map = L.map('map');
+// Read the GeoJSON data with jQuery, and create a circleMarker element for each tweet
+$.getJSON("./geo_data.json", function(data) {
+    var myStyle = {
+        radius: 2,
+        fillColor: "red",
+        color: "red",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 1
+    };
+ 
+    var geojson = L.geoJson(data, {
+        pointToLayer: function (feature, latlng) {
+            return L.circleMarker(latlng, myStyle);
+        }
+    });
+    geojson.addTo(map)
+});
+map.addLayer(mytiles).setView([40.5, 5.0], 5);
+</script>
+</body>
+</html>
+
+
+```
+
+
 
 ## Task 4.3:  How to provide our services through the an API?
 Com hem dit, en general pero, els serveis usen APIs, no sempre son persones les uqe consumeixen els nostres serveis.
