@@ -191,36 +191,66 @@ terms_only = [term for term in preprocess(tweet['text'])
 ```
 > Mind the double brackets (( )) `startswith()` takes a tuple (not a list) if  we pass a list of inputs. 
 
-As example, if we want to count and sort the most commonly used hastags, we  can:
+Although we do not consider it in this Lab, there are other functions from NLTK very useful. For instance, to put things in context, some analysis considers sequences of two terms. In this case we can use `bigrams()` function that will take a list of tokens and produce a list of tuples using adjacent tokens.
+
+## Task 3.3:  Case study
+
+At "Racó (course intranet)" you can find a very small dataset example with 1060 tweets (downloaded from around 18:05 to 18:15, on January 13) that uses "Barcelona" as a `track` parameter at `twitter_stream.filter` function. 
+
+From this dataset we want to count and sort the most commonly used hastags:
 ```
 import operator 
 import json
 from collections import Counter
  
-fname = 'ArtificialIntelligenceTweets.json'
+fname = 'Lab3.CaseStudy.json'
 with open(fname, 'r') as f:
     count_all = Counter()
     for line in f:
         tweet = json.loads(line)
+        # Create a list with all the terms
         terms_hash = [term for term in preprocess(tweet['text']) if term.startswith('#') and term not in stop]        
         count_all.update(terms_hash)
-    print(count_all.most_common(5))
-    
-```
-Although we do not consider it in this Lab, there are other functions from NLTK very useful. For instance, to put things in context, some analysis considers sequences of two terms. In this case we can use `bigrams()` function that will take a list of tokens and produce a list of tuples using adjacent tokens.
+# Print the first 10 most frequent words
+print(count_all.most_common(15))
 
-## Task 3.3:  Case study
+```
+The output is:
+
+```
+
+[(u'#Barcelona', 68), (u'#Messi', 30), (u'#FCBLive', 17), (u'#UDLasPalmas', 13), (u'#VamosUD', 13), (u'#barcelona', 10), (u'#CopaDelRey', 8), (u'#empleo', 6), (u'#BCN', 6), (u'#riesgoimpago', 6), (u'#news', 5), (u'#LaLiga', 5), (u'#SportsCenter', 4), (u'#LionelMessi', 4), (u'#Informe', 4)]
+```
+In order to see a more visual description we can plot it. There are different options to create plots in Python using libraries like matplotlib, ggplot, etc. With the following code 
+
+```
+%matplotlib inline
+import matplotlib as mpl
+mpl.rcParams['figure.figsize'] = (15,10)
+import matplotlib.pyplot as plt
+
+sorted_x, sorted_y = zip(*count_all.most_common(15))
+#print(sorted_x, sorted_y)
+
+plt.bar(range(len(sorted_x)), sorted_y, width=0.75, align='center');
+plt.xticks(range(len(sorted_x)), sorted_x, rotation=80);
+plt.axis('tight'); 
+
+```
+that uses matplotlib (inline) and function `zip()`, we obtain the following plot:
+
+
+
+
+
+
+
+
+## Task 3.3:  Student proposal
 
 We are asking to the student to create a toy example to find some interesting insight from Twitter, using some realistic data taken by the student. Using what we have learnt in the previous Labs and sections, you can download some data using the streaming API, pre-proces the data in JSON format and extract some interesting terms and hashtags from the tweets. 
 
-At "Racó (course intranet)" you can find a very small example of tweets that uses "Barcelona" for `track` parameter at `twitter_stream.filter` function, downloaded from around 18:05 to 18:15, on January 13.
-
-In your `.pynb` file describe with markdown cells the dataset created (e.g. the time frame for the download, etc.).
-Thu Jan 26 09:37:20 - Thu Jan 26 11:32:27
-Fri Jan 13 18:05:51
-
-
-
+Create a `.pynb` file with markdown cells describing the program steps and the characteristics of the dataset created (e.g. the time frame for the download, etc.).
 
 
 ========== 
@@ -233,5 +263,5 @@ Be sure that you have updated your remote github repository with  the Lab `.ipyn
 1. Group number
 2. name and email of the members of this group
 3. github url that contains your lab answers (the same as Lab1 and Lab2)
-4. link to your dataset created in task 3.3.
+4. link to your dataset created in task 3.4.
 5. add any comment that you consider necessary.
