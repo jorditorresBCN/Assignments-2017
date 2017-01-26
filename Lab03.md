@@ -194,7 +194,7 @@ terms_only = [term for term in preprocess(tweet['text'])
               if term not in stop and
               not term.startswith(('#', '@'))] 
 ```
-> Mind the double brackets (( )) tartswith() takes a tuple (not a list) if  we pass a list of inputs. 
+> Mind the double brackets (( )) `startswith()` takes a tuple (not a list) if  we pass a list of inputs. 
 
 As example, if we want to count and sort the most commonly used hastags, we  can:
 ```
@@ -218,9 +218,9 @@ with open(fname, 'r') as f:
 Now, we are ready for next Lab, where we will use Advanced Analytics as a Cloud Services like Google XXXX.
 
 ## Task 2.5:  
-Be sure that you have updated your remote github repository (using the `git`commands `add`, `commit` and `push`) with all the Lab `.ipynb` files generated along this Lab. Submit **before the deadline** to the RACO a "Lab2.txt" file including: 
+Be sure that you have updated your remote github repository with  the Lab `.ipynb` file generated along this Lab. Submit **before the deadline** to the RACO a "Lab3.txt" file including: 
 
 1. Group number
 2. name and email of the members of this group
-3. github url that contains your lab answers (the same as Lab1)
+3. github url that contains your lab answers (the same as Lab1 and Lab2)
 5. add any comment that you consider necessary.
