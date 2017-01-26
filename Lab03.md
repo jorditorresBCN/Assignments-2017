@@ -246,7 +246,7 @@ We are asking to the student to create an example that will allow us to find som
 Create a `.pynb` file with markdown cells describing the program steps and the characteristics of the dataset created (e.g. the time frame for the download, etc.).
 
 
-## How to Submit this Assignment:  
+# How to Submit this Assignment:  
 Be sure that you have updated your remote github repository with  the Lab `.ipynb` file generated along this Lab. Submit **before the deadline** to the *RACO Practicals section* a "Lab3.txt" file including: 
 
 1. Group number
