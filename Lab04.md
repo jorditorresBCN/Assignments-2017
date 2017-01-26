@@ -187,6 +187,10 @@ map.addLayer(mytiles).setView([40.5, 5.0], 5);
 
 
 ```
+A screenshot of the results:
+
+![Lab4map2](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab4map1.png "Lab4map2")
+![Lab4map1](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab4map1.png "Lab4map1")
 
 
 
