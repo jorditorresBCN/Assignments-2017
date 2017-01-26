@@ -1,4 +1,4 @@
-#Lab4: Interacting with users and services in the Cloud
+#Lab 4: Interacting with users and services in the Cloud
 
 
 ## Task 4.1:  Data Visualization basics
