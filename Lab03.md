@@ -238,7 +238,7 @@ that uses the function `zip()`. We obtain the following plot:
 
 ![Lab3Plot](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab3Plot.png "lab3Plot")
 
-We can see that people were talking about football, more than other things! And it seems that they were mostly talking about the football league game that was played the next day.
+We can see that people were talking about football, more than other things! And it seems that they were mostly talking about the football [league match that was played the next day](http://www.fcbarcelonanoticias.com/Calendario-y-resultados-liga.php?IDR=184).
 
 
 ## Task 3.3:  Student proposal
@@ -247,10 +247,6 @@ We are asking to the student to create an example that will allow us to find som
 
 Create a `.pynb` file with markdown cells describing the program steps and the characteristics of the dataset created (e.g. the time frame for the download, etc.).
 
-
-========== 
-
-Now, we are ready for next Lab, where we will use Advanced Analytics as a Cloud Services like Google XXXX.
 
 ## Task 3.X:  
 Be sure that you have updated your remote github repository with  the Lab `.ipynb` file generated along this Lab. Submit **before the deadline** to the RACO a "Lab3.txt" file including: 
