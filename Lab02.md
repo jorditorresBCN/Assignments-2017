@@ -1,9 +1,6 @@
 # Lab 2: Doors in the Cloud
 In this Lab we’ll discuss the overhall structure of a tweet and we will discuss how to pre-process the text before we can get into some more interesting analysis in next Lab. In particular, we will seen how tokenisation, despite being a well-understood problem, can get tricky with Twitter data. Previously we will start installing A a Python Development Environment that will be very helpful.
 
-# Tasks to do:
-
-
 ## Task 2.1:  Installing Anaconda
  Download and installing Anaconda in your labtop following hands-on 4 ([Python Development Environment Quick Start](Phyton-Development-Environment-Quick-Start.md)) guidelines. Start a Jupyter notebook on your terminal and create a note book that contains your previous [`Lab1.guessnumber.py`](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab01.md) code including some explanation of your steps using `markdown` cells. Save your notebook as `Lab2.guessnumber.pynb` and add it to your remote github repository.
 
@@ -164,7 +161,6 @@ In this taks we’ll enter in more detail to the overhall structure of a tweet a
 
 The code used in this Lab is using part of the work done by [Marco Bonzanini](https://marcobonzanini.com/2015/03/02/mining-twitter-data-with-python-part-1/)). As Marco indicates, it is far from perfect but it’s a good starting point to become aware of the complexity of the problem, and fairly easy to extend.
 
-### Task 2.4.1:  Tokenize a tweet text
 Let’s have a look at the structure of the previous tweet that you printed
 The key attributes are the following:
 
