@@ -123,7 +123,7 @@ with open('geo_data.json', 'w') as fout:
 ```
 
 Now, with the Leaflet.js Javascript library for interactive maps, we can create our `.html` file that will host the map.
-Visit the [Leaflet Quick Start Guide](http://leafletjs.com/examples/quick-start/) for more details of how Leaflet.js can be used. The following `.html`page provides the maps with our geolocated tweets:
+The following `.html`page provides the maps with our geolocated tweets:
 
 ```html
 <!DOCTYPE html>
@@ -192,36 +192,19 @@ A screenshot of the results:
 ![Lab4map2](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab4map2.png "Lab4map2")
 ![Lab4map1](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab4map1.png "Lab4map1")
 
+As you can look, in our example we have few geolocated tweets. However, the code is the same for any other example. 
 
+## Task 4.3: Student proposal
 
-## Task 4.3:  How to provide our services through the an API?
-Com hem dit, en general pero, els serveis usen APIs, no sempre son persones les uqe consumeixen els nostres serveis.
-AIXO M HO HAIG DE MIRAR BE.
-d aqui agafar les diferents opcions que hi ha
-https://www.quora.com/What-is-a-good-Python-framework-for-building-a-RESTful-API
+We are asking to the student to reproduce the steps descrived in the previous tasks in their dataset generated in Lab 3. Visit the [Leaflet Quick Start Guide](http://leafletjs.com/examples/quick-start/) for more details about the `html`file and  how Leaflet.js can be used. 
 
-----
-If you want to use python to build a small server or just want to provide
-web-base api with minimal efforts, you can just use python SimpleHTTPServer package as below:
+Create a .pynb file with markdown cells describing the program steps and the characteristics of the dataset created (e.g. the time frame for the download, etc.).
 
-import SimpleHTTPServer
-SimpleHTTPServer.test()
-
-With only two lines, that's really awesome. Right? 
-
-Or you can do as follows: 
-python -m SimpleHTTPServer
-the default port is 8000. 
-
-TREURE-HO D AQUI
-A simple website with python using SimpleHTTPServer and SocketServer, how to only display the html file and not the whole directory?
-
-
-## Task 4.4:  Advanced Analytics as a Service in the Cloud
+## Task 4.4:  Using Advanced Analytics as a Service in the Cloud
 usar l'API de Google per treure etiquetes addicionals de les fotos de tweeter per saber més coses
-http://stackoverflow.com/questions/10607621/a-simple-website-with-python-using-simplehttpserver-and-socketserver-how-to-onl
 
-ho tinc a python serverChart.py
+Making Text Within Images Searchable (https://cloud.google.com/vision/docs/samples)
+https://github.com/GoogleCloudPlatform/cloud-vision/tree/master/python/text
 
 
 # How to Submit this Assignment:  
@@ -229,6 +212,6 @@ Be sure that you have updated your remote github repository with  the Lab `.ipyn
 
 1. Group number
 2. name and email of the members of this group
-3. github url that contains your lab answers (the same as Lab1 and Lab2)
+3. your `.py` and `.html` files created.
 4. link to your dataset created in task 3.4.
 5. add any comment that you consider necessary.
