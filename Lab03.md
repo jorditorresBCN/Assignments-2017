@@ -1,6 +1,6 @@
 # Lab 3: Analytics in the Cloud
 
-In this Lab we’ll discuss 
+This Lab has built on top of the previous ones to discuss some basis for extracting interesting terms from a data set of tweets while we “keep the connection open” and gather all the upcoming tweets about a particular event. 
 
 # Tasks to do:
 
@@ -212,12 +212,14 @@ with open(fname, 'r') as f:
     print(count_all.most_common(5))
     
 ```
+Although we do not consider it in this Lab, there are other functions from NLTK very useful. For instance, to put things in context, some analysis considers sequences of two terms. In this case we can use `bigrams()` function that will take a list of tokens and produce a list of tuples using adjacent tokens.
+
 
 ========== 
 
 Now, we are ready for next Lab, where we will use Advanced Analytics as a Cloud Services like Google XXXX.
 
-## Task 2.5:  
+## Task 3.X:  
 Be sure that you have updated your remote github repository with  the Lab `.ipynb` file generated along this Lab. Submit **before the deadline** to the RACO a "Lab3.txt" file including: 
 
 1. Group number
