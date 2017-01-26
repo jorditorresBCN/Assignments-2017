@@ -214,6 +214,18 @@ with open(fname, 'r') as f:
 ```
 Although we do not consider it in this Lab, there are other functions from NLTK very useful. For instance, to put things in context, some analysis considers sequences of two terms. In this case we can use `bigrams()` function that will take a list of tokens and produce a list of tuples using adjacent tokens.
 
+## Task 3.3:  Case study
+
+This article has discussed a toy example of Text Mining on Twitter, using some realistic data taken during a sport event. Using what we have learnt in the previous episodes, we have downloaded some data using the streaming API, pre-processed the data in JSON format and extracted some interesting terms and hashtags from the tweets. The article has also introduced the concept of term co-occurrence, shown how to build a co-occurrence matrix and discussed how to use it to find some interesting insight.
+
+
+In order perform some exploratory text analysis on something more interesting than the previous Labs, I will consider tu use the data collected from Twitter by [Marco Bonzanini](https://twitter.com/marcobonzanini) related with the [Six Nations Championship](https://en.wikipedia.org/wiki/Six_Nations_Championship), an annual international rugby union competition involving six European sides: England, Ireland, Wales, Scotland, France and Italy. This means that we can expect the event to be tweeted in multiple languages (English, French, Italian, Welsh, Gaelic, possibly other languages as well), with English being the major language. According [Marco Bonzanini](https://twitter.com/marcobonzanini), I'm not a rugby expert, the team names will be mentioned frequently, we could decide to look also for their nicknames, e.g. *Les Bleus* for France or *Azzurri* for Italy. During the last day of the competition, three matches are played sequentially. Three teams in particular had a shot for the title: England, Ireland and Wales. At the end, Ireland won the competition but everything was open until the very last minute (see this [link](http://www.kdnuggets.com/2016/06/mining-twitter-data-python-part-4.html) for more detail).
+The dataset is build using the streaming API to download all the tweets containing the string `#rbs6nations` during the day. As mention [Marco Bonzanini](http://www.kdnuggets.com/2016/06/mining-twitter-data-python-part-4.html) *"obviously not all the tweets about the event contained the hashtag, but this is a good baseline. The time frame for the download was from around 12:15PM to 7:15PM GMT, that is from about 15 minutes before the first match, to about 15 minutes after the last match was over. At the end, more than 18,000 tweets have been downloaded in JSON format, making for about 75Mb of data. This should be small enough to quickly do some processing in memory, and at the same time big enough to observe something possibly interesting.*
+
+The textual content of the tweets in the dataset has been pre-processed with tokenisation and lowercasing using the `preprocess()` function introduced previosly.
+
+
+
 
 ========== 
 
