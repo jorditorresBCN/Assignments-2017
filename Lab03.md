@@ -1,4 +1,5 @@
-# Lab 3: Analytics in the Cloud
+# Lab 3: Extracting data from the Cloud
+
 
 This Lab has built on top of the previous ones to discuss some basis for extracting interesting terms from a data set of tweets while we “keep the connection open” and gather all the upcoming tweets about a particular event. 
 
