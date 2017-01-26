@@ -195,9 +195,9 @@ Although we do not consider it in this Lab, there are other functions from NLTK 
 
 ## Task 3.3:  Case study
 
-At "Racó (course intranet)" you can find a very small dataset example with 1060 tweets (downloaded from around 18:05 to 18:15, on January 13) that uses "Barcelona" as a `track` parameter at `twitter_stream.filter` function. 
+At "Racó (course intranet)" you can find a very small dataset as a example. This dataset contains 1060 tweets downloaded from around 18:05 to 18:15  on January 13. We used "Barcelona" as a `track` parameter at `twitter_stream.filter` function. 
 
-From this dataset we want to count and sort the most commonly used hastags:
+We would like to get a rough idea of what was telling people about Barcelona. For example, we can count and sort the most commonly used hastags:
 ```
 import operator 
 import json
@@ -216,12 +216,9 @@ print(count_all.most_common(15))
 
 ```
 The output is:
+`[(u'#Barcelona', 68), (u'#Messi', 30), (u'#FCBLive', 17), (u'#UDLasPalmas', 13), (u'#VamosUD', 13), (u'#barcelona', 10), (u'#CopaDelRey', 8), (u'#empleo', 6), (u'#BCN', 6), (u'#riesgoimpago', 6), (u'#news', 5), (u'#LaLiga', 5), (u'#SportsCenter', 4), (u'#LionelMessi', 4), (u'#Informe', 4)]`
 
-```
-
-[(u'#Barcelona', 68), (u'#Messi', 30), (u'#FCBLive', 17), (u'#UDLasPalmas', 13), (u'#VamosUD', 13), (u'#barcelona', 10), (u'#CopaDelRey', 8), (u'#empleo', 6), (u'#BCN', 6), (u'#riesgoimpago', 6), (u'#news', 5), (u'#LaLiga', 5), (u'#SportsCenter', 4), (u'#LionelMessi', 4), (u'#Informe', 4)]
-```
-In order to see a more visual description we can plot it. There are different options to create plots in Python using libraries like matplotlib, ggplot, etc. With the following code 
+In order to see a more visual description we can plot it. There are different options to create plots in Python using libraries like matplotlib, ggplot, etc. We decided to use matplotlib With the following code 
 
 ```
 %matplotlib inline
@@ -237,19 +234,16 @@ plt.xticks(range(len(sorted_x)), sorted_x, rotation=80);
 plt.axis('tight'); 
 
 ```
-that uses matplotlib (inline) and function `zip()`, we obtain the following plot:
+that uses the function `zip()`. We obtain the following plot:
 
 ![Lab3Plot](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab3Plot.png "lab3Plot")
 
-
-
-
-
+We can see that people were talking about football, more than other things! And it seems that they were mostly talking about the football league game that was played the next day.
 
 
 ## Task 3.3:  Student proposal
 
-We are asking to the student to create a toy example to find some interesting insight from Twitter, using some realistic data taken by the student. Using what we have learnt in the previous Labs and sections, you can download some data using the streaming API, pre-proces the data in JSON format and extract some interesting terms and hashtags from the tweets. 
+We are asking to the student to create an example that will allow us to find some interesting insight from Twitter, using some realistic data taken by the student. Using what we have learnt in the previous Labs and sections, you can download some data using the streaming API, pre-proces the data in JSON format and extract some interesting terms and hashtags from the tweets. 
 
 Create a `.pynb` file with markdown cells describing the program steps and the characteristics of the dataset created (e.g. the time frame for the download, etc.).
 
