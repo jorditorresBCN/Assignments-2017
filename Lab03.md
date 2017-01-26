@@ -195,7 +195,7 @@ Although we do not consider it in this Lab, there are other functions from NLTK 
 
 ## Task 3.3:  Case study
 
-At "Racó (course intranet)" you can find a very small dataset as a example. This dataset contains 1060 tweets downloaded from around 18:05 to 18:15  on January 13. We used "Barcelona" as a `track` parameter at `twitter_stream.filter` function. 
+At "[Racó (course intranet)](https://raco.fib.upc.edu/home/portada/jordi.torres)" you can find a very small dataset as a example. This dataset contains 1060 tweets downloaded from around 18:05 to 18:15  on January 13. We used "Barcelona" as a `track` parameter at `twitter_stream.filter` function. 
 
 We would like to get a rough idea of what was telling people about Barcelona. For example, we can count and sort the most commonly used hastags:
 ```
