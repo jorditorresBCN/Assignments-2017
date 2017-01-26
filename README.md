@@ -8,7 +8,7 @@ The students will begin creating a basic toolbox to get started in the Cloud. Th
 - Lab 1: [Basic "Knowledge Toolbox" to getting started in the Cloud][Lab1]
 - Lab 2: [Doors in the Cloud][Lab2]
 - Lab 3: [Extracting and Analyzing data from the Cloud][Lab3]
-- Lab 4: [Advanced Analytics as Cloud Services][Lab4]
+- Lab 4: [Interacting with users and services in the Cloud][Lab4]
 - Lab 5: [Under the hood of Cloud Advanced Analytics Services][Lab5]
 
 [Lab1]: https://github.com/jorditorresBCN/Assignments/blob/master/Lab01.md
