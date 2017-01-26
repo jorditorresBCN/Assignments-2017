@@ -246,8 +246,9 @@ Keep track of your executions with different fictitious tweets and comments in t
 
 Now, we are ready for next Lab, where we will mining streaming twitter data.
 
-## Task 2.5:  
-Be sure that you have updated your remote github repository (using the `git`commands `add`, `commit` and `push`) with all the Lab `.ipynb` files generated along this Lab. Submit **before the deadline** to the RACO a "Lab2.txt" file including: 
+
+## How to Submit this Assignment:  
+Be sure that you have updated your remote github repository (using the `git`commands `add`, `commit` and `push`) with all the Lab `.ipynb` files generated along this Lab. Submit **before the deadline** to the *RACO Practicals section* a "Lab2.txt" file including: 
 
 1. Group number
 2. name and email of the members of this group
