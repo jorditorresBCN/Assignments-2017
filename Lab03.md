@@ -87,7 +87,7 @@ with open('ArtificialIntelligenceTweets.json', 'r') as f:
         tokens = preprocess(tweet['text'])
         print(tokens)
 ```
-Remmeber that `preprocess` have been defined in the previous Lab in order to capture Twitter-specific aspects of the text, such as #hashtags, @-mentions and URLs.:
+Remember that `preprocess` have been defined in the previous Lab in order to capture Twitter-specific aspects of the text, such as #hashtags, @-mentions and URLs.:
 
 ```
 import re
@@ -127,7 +127,7 @@ def preprocess(s, lowercase=False):
 In order to keep track of the frequencies while we are processing the tweets, we can use `collections.Counter()` which internally is a dictionary (term: count) with some useful methods like `most_common()`:
  
  ```
- import operator 
+import operator 
 import json
 from collections import Counter
  
@@ -146,7 +146,7 @@ with open(fname, 'r') as f:
 As you can see, the above code produces words (or tokens) that are stop words. Given the nature of our data and our tokenisation, we should also be careful with all the punctuation marks and with terms like `RT` (used for re-tweets) and `via` (used to mention the original author), which are not in the default stop-word list.
 
 ```
-
+import nltk
 from nltk.corpus import stopwords
 nltk.download("stopwords") # download the stopword corpus on our computer
 import string
