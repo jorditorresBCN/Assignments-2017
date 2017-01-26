@@ -157,7 +157,7 @@ stop = stopwords.words('english') + punctuation + ['rt', 'via', 'RT']
 
 ```
 
-We can now substitute the variable terms_all in the first example with something like:
+We can now substitute the variable `terms_all` in the first example with something like:
 
 ```
 import operator 
@@ -176,8 +176,42 @@ with open(fname, 'r') as f:
         print '%s : %s' % (word, index)
 ```
 
+Besides stop-word removal, we can further customise the list of terms/tokens we are interested in. Here you have some examples that you can embed in the first fragment of code. 
 
+For instance, if you want to count terms only once, we can use the `sets` module that provides classes for constructing and manipulating unordered collections of unique elements. A set is an unordered collection of items. Every element is unique (no duplicates). In this case a set will be created by using the built-in function `set()`:
 
+```
+terms_single = set(terms_all)
+```
+Or if we want to conut hastags only:
+```
+terms_hash = [term for term in preprocess(tweet['text']) 
+              if term.startswith('#')]
+```
+In the case we are interested to count terms only, no hashtags and no mentions:
+```
+terms_only = [term for term in preprocess(tweet['text']) 
+              if term not in stop and
+              not term.startswith(('#', '@'))] 
+```
+> Mind the double brackets (( )) tartswith() takes a tuple (not a list) if  we pass a list of inputs. 
+
+As example, if we want to count and sort the most commonly used hastags, we  can:
+```
+import operator 
+import json
+from collections import Counter
+ 
+fname = 'data/stream_barcelona.json'
+with open(fname, 'r') as f:
+    count_all = Counter()
+    for line in f:
+        tweet = json.loads(line)
+        terms_hash = [term for term in preprocess(tweet['text']) if term.startswith('#')]        
+        count_all.update(terms_hash)
+    print(count_all.most_common(5))
+    
+```
 
 ========== 
 
