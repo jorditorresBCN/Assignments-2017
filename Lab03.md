@@ -239,6 +239,7 @@ plt.axis('tight');
 ```
 that uses matplotlib (inline) and function `zip()`, we obtain the following plot:
 
+![Lab3Plot](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab3Plot.png "lab3Plot")
 
 
 
