@@ -171,20 +171,14 @@ with open(fname, 'r') as f:
     for line in f:
         tweet = json.loads(line)
         # Create a list with all the terms
-        terms_stop = [term for term in preprocess(tweet['text']) if term not in stop] # Update the counter
+        terms_stop = [term for term in preprocess(tweet['text']) if term not in stop]
         count_all.update(terms_stop)
     for word, index in count_all.most_common(5):
         print '%s : %s' % (word, index)
 ```
 
-Besides stop-word removal, we can further customise the list of terms/tokens we are interested in. Here you have some examples that you can embed in the first fragment of code. 
-
-For instance, if you want to count terms only once, we can use the `sets` module that provides classes for constructing and manipulating unordered collections of unique elements. A set is an unordered collection of items. Every element is unique (no duplicates). In this case a set will be created by using the built-in function `set()`:
-
-```
-terms_single = set(terms_all)
-```
-Or if we want to conut hastags only:
+Besides stop-word removal, we can further customise the list of terms/tokens we are interested in. 
+For instance, if we want to count *hastags* only:
 ```
 terms_hash = [term for term in preprocess(tweet['text']) 
               if term.startswith('#')]
@@ -203,12 +197,12 @@ import operator
 import json
 from collections import Counter
  
-fname = 'data/stream_barcelona.json'
+fname = 'ArtificialIntelligenceTweets.json'
 with open(fname, 'r') as f:
     count_all = Counter()
     for line in f:
         tweet = json.loads(line)
-        terms_hash = [term for term in preprocess(tweet['text']) if term.startswith('#')]        
+        terms_hash = [term for term in preprocess(tweet['text']) if term.startswith('#') and term not in stop]        
         count_all.update(terms_hash)
     print(count_all.most_common(5))
     
@@ -217,25 +211,16 @@ Although we do not consider it in this Lab, there are other functions from NLTK 
 
 ## Task 3.3:  Case study
 
-We are asking to the student to create a toy example to find some interesting insight from Twitter, using some realistic data taken by the student. Using what we have learnt in the previous Labs and sections, you can download some data using the streaming API, pre-proces the data in JSON format and extract some interesting terms and hashtags from the tweets. You can collect data during a match in a sport league system and select a word or hastag for `track` parameter at `twitter_stream.filter` function. Or check twitter for a trending topic during the session lab in order to select a good term as a filter.
+We are asking to the student to create a toy example to find some interesting insight from Twitter, using some realistic data taken by the student. Using what we have learnt in the previous Labs and sections, you can download some data using the streaming API, pre-proces the data in JSON format and extract some interesting terms and hashtags from the tweets. 
+
+At "Racó (course intranet)" you can find a very small example of tweets that uses "Barcelona" for `track` parameter at `twitter_stream.filter` function, downloaded from around 18:05 to 18:15, on January 13.
+
 In your `.pynb` file describe with markdown cells the dataset created (e.g. the time frame for the download, etc.).
-
-## Task 3.4:  Data Visualization basics
-There are different options to create plots in Python using libraries like matplotlib, ggplot, D3.js, etc.  Because D3 plays well with web standards like CSS and SVG, and allows to create some wonderful interactive visualisations in the web, many of my data science colleagues think that it is one of the coolest libraries for data visualisation. 
-
-This task will guide the student to get started in  to understand [D3.js](https://d3js.org) which is, as the name suggests, based on Javascript. We will present a simple option to support data D3 visualisation with Python using the Python library [Vincent](https://github.com/wrobstory/vincent), that bridges the gap between a Python back-end and a front-end that supports D3.js visualisation. Vincent takes our data in Python format and translates them into [Vega](https://github.com/trifacta/vega), a JSON-based visualisation grammar that will be used on top of D3.
-Firstly, we need to install Vincent:
-
-```
-torres@vm:~$  sudo pip install vincent
-```
-
-Using the list of most frequent terms(without hashtags) from our case study data set, we want to plot their frequencies:
+Thu Jan 26 09:37:20 - Thu Jan 26 11:32:27
+Fri Jan 13 18:05:51
 
 
-```
-torres@vm:~$  sudo pip install vincent
-```
+
 
 
 ========== 
