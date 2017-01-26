@@ -1,10 +1,12 @@
-#Lab 4: Interacting with users and services in the Cloud
+# Lab 4: Interacting with users and services in the Cloud
 
 
-## Task 4.1:  Data Visualization basics
-There are different options to create plots in Python using libraries like matplotlib, ggplot, D3.js, etc.  Because D3 plays well with web standards like CSS and SVG, and allows to create some wonderful interactive visualisations in the web, many of my data science colleagues think that it is one of the coolest libraries for data visualisation. 
+## Task 4.1:  How to provide our services through the web?
+As we show, we can plots in Python using libraries like matplotlib.  However, how to present our results through the web?  
+Because D3 plays well with web standards like CSS and SVG, and allows to create some wonderful interactive visualisations in the web, many of my data science colleagues think that it is one of the coolest libraries for data visualisation.
 
-This task will guide the student to get started in  to understand [D3.js](https://d3js.org) which is, as the name suggests, based on Javascript. We will present a simple option to support data D3 visualisation with Python using the Python library [Vincent](https://github.com/wrobstory/vincent), that bridges the gap between a Python back-end and a front-end that supports D3.js visualisation. Vincent takes our data in Python format and translates them into [Vega](https://github.com/trifacta/vega), a JSON-based visualisation grammar that will be used on top of D3.
+This task will guide the student to get started in to understand [D3.js](https://d3js.org) which is, as the name suggests, based on Javascript. We will present a simple option to support data D3 visualisation with Python using the Python library [Vincent](https://github.com/wrobstory/vincent), that bridges the gap between a Python back-end and a front-end that supports D3.js visualisation. Vincent takes our data in Python format and translates them into [Vega](https://github.com/trifacta/vega), a JSON-based visualisation grammar that will be used on top of D3.
+
 Firstly, we need to install Vincent:
 
 ```
@@ -18,7 +20,15 @@ Using the list of most frequent terms(without hashtags) from our case study data
 torres@vm:~$  sudo pip install vincent
 ```
 
-## usar l'API de Google per treure etiquetes addicionals de les fotos de tweeter per saber més coses
+## Task 4.2: How to provide our service combined with third-party services?
+Posar aqui l exemple de API de google maps i pintar-ho
+
+## Task 4.3:  How to provide our services through the an API?
+Com hem dit, en general pero, els serveis usen APIs, no sempre son persones les uqe consumeixen els nostres serveis.
+AIXO M HO HAIG DE MIRAR BE.
+
+## Task 4.4:  Advanced Analytics as a Service in the Cloud
+usar l'API de Google per treure etiquetes addicionals de les fotos de tweeter per saber més coses
 
 
 # How to Submit this Assignment:  
