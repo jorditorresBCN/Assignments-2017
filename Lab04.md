@@ -202,8 +202,7 @@ Create a .pynb file with markdown cells describing the program steps and the cha
 
 ## Task 4.4:  Using Advanced Analytics as a Service in the Cloud
 usar l'API de Google per treure etiquetes addicionals de les fotos de tweeter per saber més coses
-
-Making Text Within Images Searchable (https://cloud.google.com/vision/docs/samples)
+AQUI HI HA UN BON TUTORIAL :  FINS I TOT PODRIA FER HO OPCIONAL AQUEST DARRER i que seguissin al peu lletra el tutorial aquest
 https://github.com/GoogleCloudPlatform/cloud-vision/tree/master/python/text
 
 
