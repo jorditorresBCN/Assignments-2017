@@ -1,11 +1,22 @@
 # Lab 2: Doors in the Cloud
 In this Lab we’ll discuss the overhall structure of a tweet and we will discuss how to pre-process the text before we can get into some more interesting analysis in next Lab. In particular, we will seen how tokenisation, despite being a well-understood problem, can get tricky with Twitter data. Previously we will start installing A a Python Development Environment that will be very helpful.
 
+* [Pre-lab howemork 2](#Prelab)
+   * [HW 2.1: Installing Anaconda](HW1)
+   * [HW 2.2: Register Our App on Twitter](HW2)  
+* [Tasks Lab 2](#Tasks)
+   * [Task 2.1: Get Started with NLTK](NLTK)
+   * [Task 2.2: Getting Started with `tweepy`](tweepy)  
+   * [Task 2.3:  Tweet pre-processing](preproc)  
 
+
+<a name="Prelab"/>
 #  Pre-lab homework 2
+<a name="HW1"/>
 ## HW 2.1: Installing Anaconda
  Download and installing Anaconda in your labtop following hands-on 4 ([Python Development Environment Quick Start](Phyton-Development-Environment-Quick-Start.md)) guidelines. Start a Jupyter notebook on your terminal and create a note book that contains your previous [`Lab1.guessnumber.py`](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab01.md) code including some explanation of your steps using `markdown` cells. Save your notebook as `Lab2.guessnumber.pynb` and add it to your remote github repository.
- 
+
+<a name="HW2"/> 
 ## HW 2.2: Register Our App on Twitter  
 Cloud applications are characterized by an increased focus on user participation and content creation, but also by a deep interaction and interconnection of applications sharing con-tent from different types of services in order to integrate multiple systems together.  This scenario is, doubtlessly, pos-sible thanks to the rise of  the “Application Programming In-terfaces” (API). 
 
@@ -24,8 +35,11 @@ The first step in this homework is the registration of your app. In particular, 
 
 Note that you will need a Twitter account in order to login, create an app, and get these credentials.
 
- 
+<a name="Tasks"/>
+
 #  Tasks of Lab 2
+
+<a name="NLTK"/>
 
 ## Task 2.1: Get Started with NLTK
 One of the most popular packages in Python for NLP is Natural Language Toolkit ([NLTK](http://www.nltk.org). The toolkit provides a friendly interface for many of the common NLP tasks, as well as lexical resources and linguistic data.
@@ -85,6 +99,7 @@ count = Counter(filtered)
 ```
 Add a new code cell to the same notebook with the code (and the comments with markdown cells if you consider interesting)  that computes and prints the 10 most common word after removing the stop words.  Now it make more sense, right? "TensorFlow" is the most common word!!!
 
+<a name="tweepy"/>
 ## Task 2.2: Getting Started with `tweepy`  
 [These libraries](https://dev.twitter.com/resources/twitter-libraries), while not necessarily built or tested by Twitter, should support the current Twitter API.
 In this task we will use `tweepy` package as a tool to access Twitter data in a fairly easy way with Python. There are different types of data we can collect, however we will focus on the “tweet” object.
@@ -171,6 +186,8 @@ for tweet in tweepy.Cursor(api.user_timeline).items(1):
 As a conclusion, you can notice that with `tweepy` we can easily collect all the information and store them in the original JSON format, fairly easy to convert into different data models (many storage systems provide import feature).
 
 Use the previous API presented for obtaining information about your tweets.  Keep track of your executions and comments in the   `Lab2.TweepyAPI.ipynb` notebook.
+
+<a name="preproc"/>
 
 ## Task 2.3:  Tweet pre-processing
 In this taks we’ll enter in more detail to the overhall structure of a tweet and discuss how to pre-process the text of it before we can get into some more interesting analysis in next Lab. In particular, we will seen how tokenisation, despite being a well-understood problem, can get tricky with Twitter data. After that we’ll discuss the analysis of term frequencies to extract meaningful terms from our tweets. 
