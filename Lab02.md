@@ -3,10 +3,10 @@ In this Lab we’ll discuss the overhall structure of a tweet and we will discus
 
 
 #  Pre-lab homework 2
-## Installing Anaconda
+## HW 2.1: Installing Anaconda
  Download and installing Anaconda in your labtop following hands-on 4 ([Python Development Environment Quick Start](Phyton-Development-Environment-Quick-Start.md)) guidelines. Start a Jupyter notebook on your terminal and create a note book that contains your previous [`Lab1.guessnumber.py`](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab01.md) code including some explanation of your steps using `markdown` cells. Save your notebook as `Lab2.guessnumber.pynb` and add it to your remote github repository.
  
- ## Register Our App on Twitter  
+ ## HW 2.2: Register Our App on Twitter  
 Twitter implements OAuth as its standard authentication mechanism, and in order to have access to Twitter data programmatically, we need to create an app that interacts with the Twitter API. There are four primary identifiers  we will need to note for an OAuth workflow: consumer key, consumer secret, access token, and access token secret.  
 
 The first step is the registration of your app. In particular, you need to point your browser to http://apps.twitter.com, log-in to Twitter and register a new application.
@@ -17,6 +17,8 @@ You will receive a **Consumer Key** and a **Consumer secret**.   From the config
 
 Note that you will need a Twitter account in order to login, create an app, and get these credentials.
 
+ ## HW 2.3: algo de NLTK ???
+ 
 #  Tasks of Lab 2
 
 ## Task 2.1: Get Started with NLTK
