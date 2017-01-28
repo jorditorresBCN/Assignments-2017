@@ -2,12 +2,12 @@
 In this Lab we’ll discuss the overhall structure of a tweet and we will discuss how to pre-process the text before we can get into some more interesting analysis in next Lab. In particular, we will seen how tokenisation, despite being a well-understood problem, can get tricky with Twitter data. Previously we will start installing A a Python Development Environment that will be very helpful.
 
 * [Pre-lab howemork 2](#Prelab)
-   * [HW 2.1: Installing Anaconda](HW1)
-   * [HW 2.2: Register Our App on Twitter](HW2)  
+   * [HW 2.1: Installing Anaconda](#HW1)
+   * [HW 2.2: Register Our App on Twitter](#HW2)  
 * [Tasks Lab 2](#Tasks)
-   * [Task 2.1: Get Started with NLTK](NLTK)
-   * [Task 2.2: Getting Started with `tweepy`](tweepy)  
-   * [Task 2.3:  Tweet pre-processing](preproc)  
+   * [Task 2.1: Get Started with NLTK](#NLTK)
+   * [Task 2.2: Getting Started with `tweepy`](#tweepy)  
+   * [Task 2.3:  Tweet pre-processing](#preproc)  
 
 
 <a name="Prelab"/>
@@ -27,7 +27,7 @@ Web APIs are a key component into today Cloud era. Many cloud applications provi
 One example amount the vast number of available one is Twitter API. Twitter API allows to access all tweets made by any user, the tweets containing a particular term or even a combination of terms, tweets done on the topic in a particular date range, etc.
 
 
-Twitter implements OAuth (called Open Authorization)  as its standard authentication mechanism, and in order to have access to Twitter data programmatically, we need to create an app that interacts with the Twitter API. There are four primary identifiers  we will need to note for an OAuth workflow: consumer key, consumer secret, access token, and access token secret.  A good new from developer's perspective is that the Python ecosystem has already wellestablished libraries for most social media platforms, which come with an implementation of the authentication process.
+In order to set up our Lab 2 to access Twitter data, there are some  preliminary steps. Twitter implements OAuth (called Open Authorization)  as its standard authentication mechanism, and in order to have access to Twitter data programmatically, we need to create an app that interacts with the Twitter API. There are four primary identifiers  we will need to note for an OAuth workflow: consumer key, consumer secret, access token, and access token secret.  A good new from developer's perspective is that the Python ecosystem has already wellestablished libraries for most social media platforms, which come with an implementation of the authentication process.
 
 The first step in this homework is the registration of your app. In particular, you need to point your browser to http://apps.twitter.com, log-in to Twitter and register a new application. You will receive a **Consumer Key** and a **Consumer secret**.   From the configuration page "Keys and Access Token" of your app, you can also obtain the  **Access Token** and a **Access Token Secret**.  Save this information to perform the following Lab session.
 
@@ -103,6 +103,13 @@ Add a new code cell to the same notebook with the code (and the comments with ma
 ## Task 2.2: Getting Started with `tweepy`  
 [These libraries](https://dev.twitter.com/resources/twitter-libraries), while not necessarily built or tested by Twitter, should support the current Twitter API.
 In this task we will use `tweepy` package as a tool to access Twitter data in a fairly easy way with Python. There are different types of data we can collect, however we will focus on the “tweet” object.
+
+### Task 2.2.1: The Twitter API
+As a [homework](#HW1) we already register Our App on Twitter in order to set up our project to access Twitter data. However, the Twitter API limits access to applications. You can find more detail in [the official documentation](https://dev.twitter.com/rest/public/rate-limiting). It's also important to consider that [different APIs have different rate limits](https://dev.twitter.com/rest/public/rate-limiting). The implications of hitting the API limits is that Twitter will return an error message rather than the data we are asking for. Moreover, if we continue performing more requests to the API, the time required to obtain regular access again will increase as Twitter could flag us as potential abusers. If our application needs many API requests we can use the `time` module (`time.sleep()` function). 
+
+Another important thing before to start is to know that we have two classes of API: **REST APIs** and **Streaming API**. All the REST APIs only allow you to go back in time (tweets that have already been published). Often these APIs limit the amount of tweets you can retrieve, not just in terms of rate limits as we mentioned, but also in terms of time span. In fact, it's usually possible to go back in time up to approximately one week. Also another aspect to consider about the REST API is that they are not guaranteed to provide all the tweets published on Twitter. 
+
+On the other hand, the Streaming API looks into the future, we can retrieve all the tweets that match our filter criteria, as they are published.  The Streaming API is useful when we want to filter a particular keyword and download a massive amount of tweets about it, While the REST APIs are useful when we want to search for tweets authored by a specific user or we want to access our own timeline.
 
 
 ### Task 2.2.1: Accessing your twitter account information  
