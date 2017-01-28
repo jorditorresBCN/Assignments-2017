@@ -24,7 +24,6 @@ The first step in this homework is the registration of your app. In particular, 
 
 Note that you will need a Twitter account in order to login, create an app, and get these credentials.
 
- ## HW 2.3: algo de NLTK ???
  
 #  Tasks of Lab 2
 
