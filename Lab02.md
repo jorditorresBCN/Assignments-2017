@@ -1,6 +1,11 @@
 # Lab 2: Doors in the Cloud
 In this Lab we’ll discuss the overhall structure of a tweet and we will discuss how to pre-process the text before we can get into some more interesting analysis in next Lab. In particular, we will seen how tokenisation, despite being a well-understood problem, can get tricky with Twitter data. Previously we will start installing A a Python Development Environment that will be very helpful.
 
+
+#  Pre-lab homework 2
+
+#  Tasks Lab 2
+
 ## Task 2.1:  Installing Anaconda
  Download and installing Anaconda in your labtop following hands-on 4 ([Python Development Environment Quick Start](Phyton-Development-Environment-Quick-Start.md)) guidelines. Start a Jupyter notebook on your terminal and create a note book that contains your previous [`Lab1.guessnumber.py`](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab01.md) code including some explanation of your steps using `markdown` cells. Save your notebook as `Lab2.guessnumber.pynb` and add it to your remote github repository.
 
