@@ -1,5 +1,8 @@
 # Lab 4: Interacting with users and services in the Cloud
 
+#  Pre-lab homework 4
+
+#  Tasks of Lab 4
 
 ## Task 4.1:  How to provide your services through an API?
 As we show, we can plots in Python using libraries like matplotlib.  However, how to provide our results through an API to consumers?
