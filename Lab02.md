@@ -101,7 +101,7 @@ Add a new code cell to the same notebook with the code (and the comments with ma
 
 <a name="tweepy"/>
 ## Task 2.2: Getting Started with `tweepy`  
-[These libraries](https://dev.twitter.com/resources/twitter-libraries), while not necessarily built or tested by Twitter, should support the current Twitter API.
+
 In this task we will use `tweepy` package as a tool to access Twitter data in a fairly easy way with Python. There are different types of data we can collect, however we will focus on the “tweet” object.
 
 ### Task 2.2.1: The Twitter API
@@ -112,9 +112,10 @@ Another important thing before to start is to know that we have two classes of A
 On the other hand, the Streaming API looks into the future, we can retrieve all the tweets that match our filter criteria, as they are published.  The Streaming API is useful when we want to filter a particular keyword and download a massive amount of tweets about it, While the REST APIs are useful when we want to search for tweets authored by a specific user or we want to access our own timeline.
 
 
-### Task 2.2.1: Accessing your twitter account information  
-Twitter provides [REST APIs](https://dev.twitter.com/rest/public) we can use to interact with their service. There is also a bunch of Python-based clients out there as [Tweepy](http://tweepy.readthedocs.io/en/v3.5.0/).
-The easiest way to install the latest version is by using pip/easy_install to pull it from [PyPI](https://pypi.python.org/pypi) from your local directory:
+### Task 2.2.2: Accessing your twitter account information  
+
+In order to interact with the Twitter APIs, we need a Python client that implements the different calls to the API itself. There are several options as we can see from the [official documentation](https://dev.twitter.com/resources/twitter-libraries). We will chose for this lab [Tweepy](http://tweepy.readthedocs.io/en/v3.5.0/).
+The easiest way to install the latest version is by using pip/easy_install to pull it from [PyPI](https://pypi.python.org/pypi) to your local directory:
 
 ```
 torres@vm:~$  pip install tweepy
@@ -163,8 +164,8 @@ print('Description: ' + str(user.description))
 ```
 Are the data printed correct? Are it yours? 
 
-### Task 2.2.2: Accessing Tweets  
-Tweepy provides the convenient Cursor interface to iterate through different types of objects. For example, we can read our own Twitter homepage with (we are using 1 to limit the number of tweets we are reading and only reading the `text` of the tweet):
+### Task 2.2.3: Accessing Tweets  
+Tweepy provides the convenient Cursor interface to iterate through different types of objects. For example, we can read our own Twitter home timeline with (we are using 1 to limit the number of tweets we are reading and only reading the `text` of the tweet):
 
 ```
 for status in tweepy.Cursor(api.home_timeline).items(1):
@@ -201,8 +202,8 @@ In this taks we’ll enter in more detail to the overhall structure of a tweet a
 
 The code used in this Lab is using part of the work done by [Marco Bonzanini](https://marcobonzanini.com/2015/03/02/mining-twitter-data-with-python-part-1/)). As Marco indicates, it is far from perfect but it’s a good starting point to become aware of the complexity of the problem, and fairly easy to extend.
 
-Let’s have a look at the structure of the previous tweet that you printed
-The key attributes are the following:
+Let’s have a look at the structure of the previous tweet that you printed.
+The main attributes are the following:
 
 * text: the text of the tweet itself
 * created_at: the date of creation
@@ -215,6 +216,8 @@ The key attributes are the following:
 * entities: list of entities like URLs, @-mentions, hashtags and symbols
 * in_reply_to_user_id: user identifier if the tweet is a reply to a specific user
 * in_reply_to_status_id: status identifier id the tweet is a reply to a specific status
+* \_json: This is a dictionary with the JSON response of the status
+* author: The tweet author
 
 As you can see there’s a lot of information we can play with. All the \*_id fields also have a \*_id_str counterpart, where the same information is stored as a string rather than a big int (to avoid overflow problems). 
 
