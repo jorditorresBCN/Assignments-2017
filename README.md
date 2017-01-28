@@ -19,6 +19,11 @@ to provide code examples that can get you easily started.
 [Lab5]: https://github.com/jorditorresBCN/Assignments/blob/master/Lab05.md
 
 ## Course Project
+
+>Tell me and I forget. Teach me and I remember. Involve me and I learn.
+>
+>Benjamin Franklin
+
 The project offers an excellent opportunity for the student to dive into course content by implementing a protoype (proof of concept implementation of a business idea created by the student) using the latest in the Cloud technology. 
 
 An alternative to the project may be to create a self-contained practical guide (hands-on) that guides the reader in learning one of the latest cloud technologies. 
