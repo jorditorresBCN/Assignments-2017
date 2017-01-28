@@ -29,11 +29,14 @@ Note that you will need a Twitter account in order to login, create an app, and 
 #  Tasks of Lab 2
 
 ## Task 2.1: Get Started with NLTK
+One of the most popular packages in Python for NLP is Natural Language Toolkit ([NLTK](http://www.nltk.org). The toolkit provides a friendly interface for many of the common NLP tasks, as well as lexical resources and linguistic data.
+
 Tokenisation is one of the most basic, yet most important, steps in text analysis required in the following task. The purpose of tokenisation is to split a stream of text into smaller units called tokens, usually words or phrases. For this purpouse we will use the [NLTK](http://www.nltk.org) Python Natural Language Processing Toolkit:
 ```
 import nltk
 ```
-After importing NLTK, we need download NLTK Data which include a lot of corpora, grammars, models and etc. You can find the complete nltk data list [here](http://nltk.org/nltk_data/). You can downloaded all nltk resources by `nltk.download('all')` but it takes ~3.5G. For english text we could use `nltk.download('punkt')` to download the NLTK data package that includes a pre-trained tokenizer for English.
+A difference between NLTK and many other packages is that this framework also comes with linguistic data for specific tasks. Given their size, such data is not included in the default installation, but has to be downloaded separately. For this reason, after importing NLTK, we need download NLTK Data which include a lot of corpora, grammars, models and etc. You can find the complete nltk data list [here](http://nltk.org/nltk_data/). You can downloaded all nltk resources by `nltk.download('all')` but it takes ~3.5G. For english text we could use `nltk.download('punkt')` to download the NLTK data package that includes a pre-trained tokenizer for English.
+
 Let’s see the example using the NLTK to tokenise the book [First Contact with TensorFlow](http://www.jorditorres.org/Tensorflow)  (`FirstContactWithTensorFlow.txt`could be donwloaded from this github) and outputs the 10 most common word in the book.
 ```
 import nltk
