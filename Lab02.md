@@ -6,7 +6,16 @@ In this Lab we’ll discuss the overhall structure of a tweet and we will discus
 ## HW 2.1: Installing Anaconda
  Download and installing Anaconda in your labtop following hands-on 4 ([Python Development Environment Quick Start](Phyton-Development-Environment-Quick-Start.md)) guidelines. Start a Jupyter notebook on your terminal and create a note book that contains your previous [`Lab1.guessnumber.py`](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab01.md) code including some explanation of your steps using `markdown` cells. Save your notebook as `Lab2.guessnumber.pynb` and add it to your remote github repository.
  
- ## HW 2.2: Register Our App on Twitter  
+## HW 2.2: Register Our App on Twitter  
+Cloud applications are characterized by an increased focus on user participation and content creation, but also by a deep interaction and interconnection of applications sharing con-tent from different types of services in order to integrate multiple systems together.  This scenario is, doubtlessly, pos-sible thanks to the rise of  the “Application Programming In-terfaces” (API). 
+
+An API, or Application Programming Interface, provide a way for computer systems to interact with each other. There are many types of APIs. Every programming language has a built-in API that it used to write programs. For instance, you studied in previous courses that operating systems them-selves have APIs used by programs to open files or draw text on the screen. 
+Due this course is centered in the Cloud, we are going to fo-cus on API that are built with web technologies as HTTP. We will refer to this type of API as web API, an interface to ei-ther a web server or a web browser. These APIs are used ex-tensively for the development of web applications and work at either the server end or the client end. 
+Web APIs are a key component into today Cloud era. Many cloud applications provide an API that allows developers to integrate their own code with these applications, taking ad-vantage of the services' functionality in their own apps.
+
+One example amount the vast number of available one is Twitter API. Twitter API allows to access all tweets made by any user, the tweets containing a particular term or even a combination of terms, tweets done on the topic in a particular date range, etc.
+
+
 Twitter implements OAuth as its standard authentication mechanism, and in order to have access to Twitter data programmatically, we need to create an app that interacts with the Twitter API. There are four primary identifiers  we will need to note for an OAuth workflow: consumer key, consumer secret, access token, and access token secret.  
 
 The first step is the registration of your app. In particular, you need to point your browser to http://apps.twitter.com, log-in to Twitter and register a new application.
