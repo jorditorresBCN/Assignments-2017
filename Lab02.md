@@ -3,13 +3,23 @@ In this Lab we’ll discuss the overhall structure of a tweet and we will discus
 
 
 #  Pre-lab homework 2
-
-#  Tasks Lab 2
-
-## Task 2.1:  Installing Anaconda
+## Installing Anaconda
  Download and installing Anaconda in your labtop following hands-on 4 ([Python Development Environment Quick Start](Phyton-Development-Environment-Quick-Start.md)) guidelines. Start a Jupyter notebook on your terminal and create a note book that contains your previous [`Lab1.guessnumber.py`](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab01.md) code including some explanation of your steps using `markdown` cells. Save your notebook as `Lab2.guessnumber.pynb` and add it to your remote github repository.
+ 
+ ## Register Our App on Twitter  
+Twitter implements OAuth as its standard authentication mechanism, and in order to have access to Twitter data programmatically, we need to create an app that interacts with the Twitter API. There are four primary identifiers  we will need to note for an OAuth workflow: consumer key, consumer secret, access token, and access token secret.  
 
-## Task 2.2: Get Started with NLTK
+The first step is the registration of your app. In particular, you need to point your browser to http://apps.twitter.com, log-in to Twitter and register a new application.
+
+You will receive a **Consumer Key** and a **Consumer secret**.   From the configuration page "Keys and Access Token" of your app, you can also obtain the  **Access Token** and a **Access Token Secret**. 
+
+> **Warning**: these are application settings that should always be kept private.
+
+Note that you will need a Twitter account in order to login, create an app, and get these credentials.
+
+#  Tasks of Lab 2
+
+## Task 2.1: Get Started with NLTK
 Tokenisation is one of the most basic, yet most important, steps in text analysis required in the following task. The purpose of tokenisation is to split a stream of text into smaller units called tokens, usually words or phrases. For this purpouse we will use the [NLTK](http://www.nltk.org) Python Natural Language Processing Toolkit:
 ```
 import nltk
@@ -33,16 +43,16 @@ tokens = get_tokens()
 count = Counter(tokens)
 print count.most_common(10)
 ```
-### Task 2.2.1: Word Count
+### Task 2.1.1: Word Count
 Create a notebook with the name `Lab2.WordCountWithNLTK.ipynb`, that computes and prints the 10 most common word in the book.
 
-### Task 2.2.2: Word Count
+### Task 2.1.2: Word Count
 Add a new code cell into the same notebook with the code that computes and prints the total number of word of this book.   
 
 ULL! que em dona error encara!
 
 
-### Task 2.2.3: Remove puntuation
+### Task 2.1.3: Remove puntuation
 We can see that punctiation are many of the most common words. We can remove the punctuation using the character deletion step of translate method as:
 
 ```
@@ -52,7 +62,7 @@ We can see that punctiation are many of the most common words. We can remove the
 ```
 Add a new code cell to the same notebook with the code (and the comments with markdown cells if you consider interesting)  that computes and prints the 10 most common word without punctuation characters. 
     
-### Task 2.2.4: Stop Words
+### Task 2.1.4: Stop Words
 Is not "Tensorflow" the most commond word? Why? What are Stop Words? Include your answer in a markdown cells in the same notebook.
 
 When we are working with text mining applications, we often hear of the term “Stop Word Removal". We can do it using the same `nltk` package: 
@@ -64,22 +74,12 @@ count = Counter(filtered)
 ```
 Add a new code cell to the same notebook with the code (and the comments with markdown cells if you consider interesting)  that computes and prints the 10 most common word after removing the stop words.  Now it make more sense, right? "TensorFlow" is the most common word!!!
 
-## Task 2.3: Getting Started with `tweepy`  
+## Task 2.2: Getting Started with `tweepy`  
 [These libraries](https://dev.twitter.com/resources/twitter-libraries), while not necessarily built or tested by Twitter, should support the current Twitter API.
 In this task we will use `tweepy` package as a tool to access Twitter data in a fairly easy way with Python. There are different types of data we can collect, however we will focus on the “tweet” object.
 
-### Task 2.3.1: Register Our App on Twitter  
-Twitter implements OAuth as its standard authentication mechanism, and in order to have access to Twitter data programmatically, we need to create an app that interacts with the Twitter API. There are four primary identifiers  we will need to note for an OAuth workflow: consumer key, consumer secret, access token, and access token secret.  
 
-The first step is the registration of your app. In particular, you need to point your browser to http://apps.twitter.com, log-in to Twitter and register a new application.
-
-You will receive a **Consumer Key** and a **Consumer secret**.   From the configuration page "Keys and Access Token" of your app, you can also obtain the  **Access Token** and a **Access Token Secret**. 
-
-> **Warning**: these are application settings that should always be kept private.
-
-Note that you will need a Twitter account in order to login, create an app, and get these credentials.
-
-### Task 2.3.2: Accessing your twitter account information  
+### Task 2.2.1: Accessing your twitter account information  
 Twitter provides [REST APIs](https://dev.twitter.com/rest/public) we can use to interact with their service. There is also a bunch of Python-based clients out there as [Tweepy](http://tweepy.readthedocs.io/en/v3.5.0/).
 The easiest way to install the latest version is by using pip/easy_install to pull it from [PyPI](https://pypi.python.org/pypi) from your local directory:
 
@@ -130,7 +130,7 @@ print('Description: ' + str(user.description))
 ```
 Are the data printed correct? Are it yours? 
 
-### Task 2.3.2: Accessing Tweets  
+### Task 2.2.2: Accessing Tweets  
 Tweepy provides the convenient Cursor interface to iterate through different types of objects. For example, we can read our own Twitter homepage with (we are using 1 to limit the number of tweets we are reading and only reading the `text` of the tweet):
 
 ```
@@ -161,7 +161,7 @@ As a conclusion, you can notice that with `tweepy` we can easily collect all the
 
 Use the previous API presented for obtaining information about your tweets.  Keep track of your executions and comments in the   `Lab2.TweepyAPI.ipynb` notebook.
 
-## Task 2.4:  Tweet pre-processing
+## Task 2.3:  Tweet pre-processing
 In this taks we’ll enter in more detail to the overhall structure of a tweet and discuss how to pre-process the text of it before we can get into some more interesting analysis in next Lab. In particular, we will seen how tokenisation, despite being a well-understood problem, can get tricky with Twitter data. After that we’ll discuss the analysis of term frequencies to extract meaningful terms from our tweets. 
 
 The code used in this Lab is using part of the work done by [Marco Bonzanini](https://marcobonzanini.com/2015/03/02/mining-twitter-data-with-python-part-1/)). As Marco indicates, it is far from perfect but it’s a good starting point to become aware of the complexity of the problem, and fairly easy to extend.
