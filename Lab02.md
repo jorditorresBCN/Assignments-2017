@@ -16,11 +16,9 @@ Web APIs are a key component into today Cloud era. Many cloud applications provi
 One example amount the vast number of available one is Twitter API. Twitter API allows to access all tweets made by any user, the tweets containing a particular term or even a combination of terms, tweets done on the topic in a particular date range, etc.
 
 
-Twitter implements OAuth as its standard authentication mechanism, and in order to have access to Twitter data programmatically, we need to create an app that interacts with the Twitter API. There are four primary identifiers  we will need to note for an OAuth workflow: consumer key, consumer secret, access token, and access token secret.  
+Twitter implements OAuth (called Open Authorization)  as its standard authentication mechanism, and in order to have access to Twitter data programmatically, we need to create an app that interacts with the Twitter API. There are four primary identifiers  we will need to note for an OAuth workflow: consumer key, consumer secret, access token, and access token secret.  A good new from developer's perspective is that the Python ecosystem has already wellestablished libraries for most social media platforms, which come with an implementation of the authentication process.
 
-The first step is the registration of your app. In particular, you need to point your browser to http://apps.twitter.com, log-in to Twitter and register a new application.
-
-You will receive a **Consumer Key** and a **Consumer secret**.   From the configuration page "Keys and Access Token" of your app, you can also obtain the  **Access Token** and a **Access Token Secret**. 
+The first step in this homework is the registration of your app. In particular, you need to point your browser to http://apps.twitter.com, log-in to Twitter and register a new application. You will receive a **Consumer Key** and a **Consumer secret**.   From the configuration page "Keys and Access Token" of your app, you can also obtain the  **Access Token** and a **Access Token Secret**.  Save this information to perform the following Lab session.
 
 > **Warning**: these are application settings that should always be kept private.
 
