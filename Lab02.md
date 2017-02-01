@@ -11,7 +11,7 @@ In this Lab we’ll discuss the overhall structure of a tweet and we will discus
 
 
 <a name="Prelab"/>
-#  Pre-lab homework 2
+#  Pre-lab homework 2 (week 3)
 <a name="HW1"/>
 ## HW 2.1: Installing Anaconda
  Download and installing Anaconda in your labtop following hands-on 4 ([Python Development Environment Quick Start](Phyton-Development-Environment-Quick-Start.md)) guidelines. Start a Jupyter notebook on your terminal and create a note book that contains your previous [`Lab1.guessnumber.py`](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab01.md) code including some explanation of your steps using `markdown` cells. Save your notebook as `Lab2.guessnumber.pynb` and add it to your remote github repository.
@@ -37,7 +37,7 @@ Note that you will need a Twitter account in order to login, create an app, and 
 
 <a name="Tasks"/>
 
-#  Tasks of Lab 2
+#  Tasks of Lab 2 (week 3)
 
 <a name="NLTK"/>
 
