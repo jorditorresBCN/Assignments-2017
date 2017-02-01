@@ -3,6 +3,15 @@
 
 This Lab has built on top of the previous ones to discuss some basis for extracting interesting terms from a data set of tweets while we “keep the connection open” and gather all the upcoming tweets about a particular event. 
 
+* [Pre-lab howemork 3](#Prelab)
+   * [HW 2.1: Installing Anaconda](#HW1)
+   * [HW 2.2: Register Our App on Twitter](#HW2)  
+* [Tasks Lab 2](#Tasks)
+   * [Task 2.1: Get Started with NLTK](#NLTK)
+   * [Task 2.2: Getting Started with `tweepy`](#tweepy)  
+   * [Task 2.3:  Tweet pre-processing](#preproc)  
+
+
 #  Pre-lab homework 3
 
 #  Tasks of Lab 3
