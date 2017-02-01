@@ -3,17 +3,18 @@ In this Lab session you will be asked to put in practice the basic knowledge req
 
 
 
-#  Pre-lab homework 1
+#  Pre-lab homework 0 (week 1)
 Have a look of these following hands-on to check if you have the basics to follow this course. If not do it. 
 * Hands-on 0: [Run a Linux OS in a Virtual Machine](https://github.com/jorditorresBCN/Quick-Start/blob/master/LinuxOS-VirtualMachine.md) (Only for Windows users)
 * Hands-on 1: [Git and GitHub Quick Start](https://github.com/jorditorresBCN/Quick-Start/blob/master/Git-Github-Quick-Start.md)
 * Hands-on 2: [Markdown syntax](https://github.com/jorditorresBCN/Quick-Start/blob/master/Quick-Start-Markdown.md)
 * Hands-on 3: [Python Quick Start](https://github.com/jorditorresBCN/Quick-Start/blob/master/Python-Quick-Start.md) 
 
+#  Pre-lab homework 1 (week 2)
 Create an AWS account following the following hands-on:
 * Hands-on 5: [Getting Started in the Cloud with AWS](https://github.com/jorditorresBCN/Quick-Start/blob/master/Quick-Start-AWS.md)
 
-#  Tasks of Lab 1
+#  Tasks of Lab 1 (week 2)
 ## Task 1.1: 
 Install Python in your local labtop.
 ## Task 1.2: 
