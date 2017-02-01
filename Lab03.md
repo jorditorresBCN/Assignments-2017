@@ -4,18 +4,25 @@
 This Lab has built on top of the previous ones to discuss some basis for extracting interesting terms from a data set of tweets while we “keep the connection open” and gather all the upcoming tweets about a particular event. 
 
 * [Pre-lab howemork 3](#Prelab)
-   * [HW 2.1: Installing Anaconda](#HW1)
-   * [HW 2.2: Register Our App on Twitter](#HW2)  
-* [Tasks Lab 2](#Tasks)
-   * [Task 2.1: Get Started with NLTK](#NLTK)
-   * [Task 2.2: Getting Started with `tweepy`](#tweepy)  
-   * [Task 2.3:  Tweet pre-processing](#preproc)  
+   * [HW 3.1: XXXX](#HW1)
+   * [HW 3.2: XXXX](#HW2)  
+* [Tasks Lab 3](#Tasks)
+   * [Task 3.1: Streaming API of Twitter](#Tasks33)
+   * [Task 3.2: Counting terms](#Tasks32)  
+   * [Task 3.3: Case study](#Tasks33)  
+   * [Task 3.4: Student proposal](#Tasks34)  
+   
+<a name="Prelab"/>
+#  Pre-lab homework 3 (week 4)
+<a name="HW1"/>
+## HW 3.1:
 
+<a name="HW2"/>
+## HW 3.2:
 
-#  Pre-lab homework 3
-
-#  Tasks of Lab 3
-
+<a name="Tasks"/>
+#  Tasks of Lab 3 (week 4)
+<a name="Tasks31"/>
 ## Task 3.1:  Streaming API of Twitter
 In case we want to “keep the connection open”, and gather all the upcoming tweets about a particular event, the [Streaming API](https://dev.twitter.com/streaming/overview) is what we need.  The Streaming APIs give developers low latency access to Twitter’s global stream of Tweet data. A proper implementation of a streaming client will be pushed messages indicating Tweets and other events have occurred. 
 Connecting to the streaming API requires keeping a persistent HTTP connection open. In many cases this involves thinking about your application differently than if you were interacting with the REST API. Visit the [Streaming API](https://dev.twitter.com/streaming/overview) for more details about the differences between Streaming and REST. 
@@ -66,6 +73,7 @@ twitter_stream.filter(track=['ArtificialIntelligence'])
 
 The above script will save each tweet on a new line, so you can use the command `wc -l python.json` from a Unix shell to know how many tweets you’ve gathered. Warning, depending on the search term, we can gather tons of tweets within a few minutes.
 
+<a name="Tasks32"/>
 ## Task 3.2:  Counting terms
 The first exploratory analysis that we can perform is a simple word count. In this way, we can observe what are the terms most commonly used in the data set.
 
@@ -204,6 +212,7 @@ terms_only = [term for term in preprocess(tweet['text'])
 
 Although we do not consider it in this Lab, there are other functions from NLTK very useful. For instance, to put things in context, some analysis considers sequences of two terms. In this case we can use `bigrams()` function that will take a list of tokens and produce a list of tuples using adjacent tokens.
 
+<a name="Tasks33"/>
 ## Task 3.3:  Case study
 
 At "[Racó (course intranet)](https://raco.fib.upc.edu/home/portada/jordi.torres)" you can find a very small dataset as a example. This dataset contains 1060 tweets downloaded from around 18:05 to 18:15  on January 13. We used "Barcelona" as a `track` parameter at `twitter_stream.filter` function. 
@@ -251,8 +260,8 @@ that uses the function `zip()`. We obtain the following plot:
 
 We can see that people were talking about football, more than other things! And it seems that they were mostly talking about the football [league match that was played the next day](http://www.fcbarcelonanoticias.com/Calendario-y-resultados-liga.php?IDR=184).
 
-
-## Task 3.3:  Student proposal
+<a name="Tasks34"/>
+## Task 3.4:  Student proposal
 
 We are asking to the student to create an example that will allow us to find some interesting insight from Twitter, using some realistic data taken by the student. Using what we have learnt in the previous Labs and sections, you can download some data using the streaming API, pre-proces the data in JSON format and extract some interesting terms and hashtags from the tweets. 
 
