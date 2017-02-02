@@ -139,10 +139,27 @@ GeoJSON supports a variety of geometric types of format that can be used to visu
 }
 
 ```
+In this GeoJSON object, the first key is the `type` of object being represented. This field is
+mandatory and its value must be one of the following:
+* `Point`: This is used to represent a single position
+* `MultiPoint`: This represents multiple positions
+* `LineString`: This specifies a string of lines that go through two or more positions
+* `MultiLineString`: This is equivalent to multiple strings of lines
+* `Polygon`: This represents a closed string of lines, that is, the first and the last positions are the same
+* `GeometryCollection`: This is a list of different geometries
+* `Feature`: This is one of the preceding items (excluding GeometryCollection) with additional custom properties
+* `FeatureCollection`: This is used to represent a list of features
 
-For our examples, we just need the simplest structure, a Point. A point is identified by its coordinates (latitude and longitude). In GeoJSON, we can also represent objects such as a Feature or aFeatureCollection. The first one is basically a geometry with additional properties, while the second one is a list of features. Our Twitter data set can be represented in GeoJSON as `aFeatureCollection`. In order to generate this GeoJSON data structure we simply need to iterate all the tweets looking for the coordinates field. A very important warning is that this field may not be present. Today many tweets are not includes their geographic location (many users prefer not indicate this information on their tweets).
+Given that `type` in the preceding example has the `FeatureCollection` value, we will expect the `features` field to be a list of objects (each of which is a `Feature`).
 
-This code will create the GeoJSON data structure (for tweets where the coordinates are explicitely given) and then the data are dumped into a file called geo_data.json:
+The two features shown in the example are simple points, so in both cases, the
+`coordinates` field is an array of two elements: longitude and latitude. This field also
+allows for a third element to be there, representing altitude (when omitted, the altitude is
+assumed to be zero).
+
+For our examples, we just need the simplest structure, a `Point` identified by its coordinates (latitude and longitude). In order to generate this GeoJSON data structure we simply need to iterate all the tweets looking for the coordinates field. A very important warning is that this field may not be present. As we mentioned before, many tweets not include their geographic location (many users prefer not indicate this information on their tweets).
+
+The following code will create the GeoJSON data structure (for tweets where the coordinates are explicitely given) and then the data are dumped into a file called geo_data.json:
 ```
 fname = 'Lab3.CaseStudy.json'
 with open(fname, 'r') as f:
