@@ -1,9 +1,13 @@
 # Lab 4: Interacting with users and services in the Cloud
 
-#  Pre-lab homework 4
-
+* [Task 4.1: How to provide your services through an API?](#Tasks41)
+* [Task 4.2: How to provide our service combined with third-party services?](#Tasks42)  
+* [Task 4.3: Student proposal](#Tasks43)  
+* [Task 4.4: Using Advanced Analytics as a Service in the Cloud (Optional - 5%) ](#Tasks44)  
+   
+<a name="Tasks41"/>
 #  Tasks of Lab 4
-
+<a name="Tasks41"/>
 ## Task 4.1:  How to provide your services through an API?
 As we show, we can plots in Python using libraries like matplotlib.  However, how to provide our results through an API to consumers?
 If you want to use python to build a small server or just want to provide web-base API with minimal efforts, you can just use python `SimpleHTTPServer` and `SocketServer` packages. 
@@ -91,7 +95,7 @@ With this procedure, we can plot [many different types of charts](http://vincent
 If you are interested in building a real server, there are many good Python frameworks for building a RESTful API as [Flask](http://flask.pocoo.org/), [Falcon](http://falconframework.org/) and [Bottle](http://bottlepy.org/docs/dev/index.html).
 
 
-
+<a name="Tasks42"/>
 ## Task 4.2: How to provide our service combined with third-party services?
 
 Twitter allows its users to provide their location when they publish a tweet, in the form of latitude and longitude coordinates. With this information, we are ready to create some nice visualisation for our data, in the form of interactive maps.
@@ -197,13 +201,15 @@ A screenshot of the results:
 
 As you can look, in our example we have few geolocated tweets. However, the code is the same for any other example. 
 
+<a name="Tasks43"/>
 ## Task 4.3: Student proposal
 
 We are asking to the student to reproduce the steps descrived in the previous tasks in their dataset generated in Lab 3. Visit the [Leaflet Quick Start Guide](http://leafletjs.com/examples/quick-start/) for more details about the `html`file and  how Leaflet.js can be used. 
 
 Create a .pynb file with markdown cells describing the program steps and the characteristics of the dataset created (e.g. the time frame for the download, etc.).
 
-## Task 4.4:  Using Advanced Analytics as a Service in the Cloud
+<a name="Tasks44"/>
+## Task 4.4:  Using Advanced Analytics as a Service in the Cloud (Optional - 5%) 
 usar l'API de Google per treure etiquetes addicionals de les fotos de tweeter per saber més coses
 AQUI HI HA UN BON TUTORIAL :  FINS I TOT PODRIA FER HO OPCIONAL AQUEST DARRER i que seguissin al peu lletra el tutorial aquest
 https://github.com/GoogleCloudPlatform/cloud-vision/tree/master/python/text
