@@ -8,7 +8,6 @@ This Lab has built on top of the previous ones to discuss some basis for extract
 * [Task 3.3: Case study](#Tasks33)  
 * [Task 3.4: Student proposal](#Tasks34)  
    
-<a name="Tasks"/>
 #  Tasks of Lab 3 (week 4)
 <a name="Tasks31"/>
 ## Task 3.1:  Streaming API of Twitter
