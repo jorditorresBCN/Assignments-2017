@@ -3,37 +3,20 @@
 
 This Lab has built on top of the previous ones to discuss some basis for extracting interesting terms from a data set of tweets while we “keep the connection open” and gather all the upcoming tweets about a particular event. 
 
-* [Pre-lab howemork 3](#Prelab)
-   * [HW 3.1: XXXX](#HW1)
-   * [HW 3.2: XXXX](#HW2)  
 * [Tasks Lab 3](#Tasks)
    * [Task 3.1: Streaming API of Twitter](#Tasks33)
-   * [Task 3.2: Counting terms](#Tasks32)  
+   * [Task 3.2: Analyzing tweets - counting terms](#Tasks32)  
    * [Task 3.3: Case study](#Tasks33)  
    * [Task 3.4: Student proposal](#Tasks34)  
    
-<a name="Prelab"/>
-#  Pre-lab homework 3 (week 4)
-<a name="HW1"/>
-## HW 3.1:
-
-<a name="HW2"/>
-## HW 3.2:
-
 <a name="Tasks"/>
 #  Tasks of Lab 3 (week 4)
 <a name="Tasks31"/>
 ## Task 3.1:  Streaming API of Twitter
 In case we want to “keep the connection open”, and gather all the upcoming tweets about a particular event, the [Streaming API](https://dev.twitter.com/streaming/overview) is what we need.  The Streaming APIs give developers low latency access to Twitter’s global stream of Tweet data. A proper implementation of a streaming client will be pushed messages indicating Tweets and other events have occurred. 
-Connecting to the streaming API requires keeping a persistent HTTP connection open. In many cases this involves thinking about your application differently than if you were interacting with the REST API. Visit the [Streaming API](https://dev.twitter.com/streaming/overview) for more details about the differences between Streaming and REST. 
+Connecting to the streaming API requires keeping a persistent HTTP connection open. In many cases this involves thinking about your application differently than if you were interacting with the REST API. Visit the [Streaming API](https://dev.twitter.com/streaming/overview) for more details about the differences between Streaming and REST. The Streaming API is one of the favorite ways of getting a massive amount of data without exceeding the rate limits. If your intention is to conduct singular searches, read user profile information, or post Tweets, consider using the REST APIs instead.
 
-
-If your intention is to conduct singular searches, read user profile information, or post Tweets, consider using the REST APIs instead.
-
-
-without any of the overhead associated with polling a REST endpoint.
-
-We need to extend the StreamListener() to customise the way we process the incoming data. We will base our explanation with a working example (from [Marco Bonzanini](https://marcobonzanini.com/2015/03/02/mining-twitter-data-with-python-part-1/) ) that gathers all the new tweets with the "ArtificialIntelligence" content:
+We need to extend the `StreamListener()` class to customise the way we process the incoming data. We will base our explanation with a working example (from [Marco Bonzanini](https://marcobonzanini.com/2015/03/02/mining-twitter-data-with-python-part-1/) ) that gathers all the new tweets with the "ArtificialIntelligence" content:
 ```
 import tweepy
 from tweepy import OAuthHandler
@@ -71,10 +54,12 @@ twitter_stream = Stream(auth, MyListener())
 twitter_stream.filter(track=['ArtificialIntelligence'])
 ```
 
-The above script will save each tweet on a new line, so you can use the command `wc -l python.json` from a Unix shell to know how many tweets you’ve gathered. Warning, depending on the search term, we can gather tons of tweets within a few minutes.
+The core of the streaming logic is implemented in the `CustomListener` class, which extends `StreamListener` and overrides two methods: `on_data()` and `on_error()`. These are handlers that are triggered when data is coming through and an error is given by the API. if the error is that we have been rate limited by the Twitter API, we need to wait before we can use the service again. The `on_data()` method is called when data is coming through. This function simply stores the data as it is received in the  `ArtificialIntelligenceTweets.json` file. Each line of this file will then contain a single tweet, in the JSON format. You can use the command `wc -l ArtificialIntelligenceTweets.json` from a Unix shell to know how many tweets you’ve gathered.
+
+Before continuing the hands-on, be sure that you generated correctly the `.json` file. now try with another term of your interest.
 
 <a name="Tasks32"/>
-## Task 3.2:  Counting terms
+## Task 3.2:  Analizing tweets - Counting terms
 The first exploratory analysis that we can perform is a simple word count. In this way, we can observe what are the terms most commonly used in the data set.
 
 Let's go to read the file with all tweets in order to be sure that everything is fine:
@@ -212,10 +197,13 @@ terms_only = [term for term in preprocess(tweet['text'])
 
 Although we do not consider it in this Lab, there are other functions from NLTK very useful. For instance, to put things in context, some analysis considers sequences of two terms. In this case we can use `bigrams()` function that will take a list of tokens and produce a list of tuples using adjacent tokens.
 
+Do the same analysis with the `.json` file generated by you in the previous task.
+
+
 <a name="Tasks33"/>
 ## Task 3.3:  Case study
 
-At "[Racó (course intranet)](https://raco.fib.upc.edu/home/portada/jordi.torres)" you can find a very small dataset as a example. This dataset contains 1060 tweets downloaded from around 18:05 to 18:15  on January 13. We used "Barcelona" as a `track` parameter at `twitter_stream.filter` function. 
+At "[Racó (course intranet)](https://raco.fib.upc.edu/home/portada/jordi.torres)" you can find a small dataset as a example (please do not distribute due to Twitter licensing). This dataset contains 1060 tweets downloaded from around 18:05 to 18:15  on January 13. We used "Barcelona" as a `track` parameter at `twitter_stream.filter` function. 
 
 We would like to get a rough idea of what was telling people about Barcelona. For example, we can count and sort the most commonly used hastags:
 ```
@@ -259,6 +247,8 @@ that uses the function `zip()`. We obtain the following plot:
 ![Lab3Plot](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab3Plot.png "lab3Plot")
 
 We can see that people were talking about football, more than other things! And it seems that they were mostly talking about the football [league match that was played the next day](http://www.fcbarcelonanoticias.com/Calendario-y-resultados-liga.php?IDR=184).
+
+Create a "matplot" with your dataset generated by you in the previous task.
 
 <a name="Tasks34"/>
 ## Task 3.4:  Student proposal
