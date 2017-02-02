@@ -10,7 +10,7 @@
 <a name="Tasks41"/>
 ## Task 4.1:  How to provide your services through an API?
 As we show, we can plots in Python using libraries like matplotlib.  However, how to provide our results through an API to consumers?
-If you want to use python to build a small server or just want to provide web-base API with minimal efforts, you can just use python `SimpleHTTPServer` and `SocketServer` packages. 
+If you want to use python to build a prototype server (of your service) and want to provide web-base API with minimal efforts, you can just use python `SimpleHTTPServer` and `SocketServer` packages. 
 
 Create the python file `OurService.py`:
 
@@ -64,7 +64,7 @@ bar = vincent.Bar(data, iter_idx='x')
 bar.to_json('term_freq.json')
 
 ```
-At this point, the file term_freq.json will contain a description of the plot that can be handed over to D3.js and Vega. A simple template (taken from Vincent resources) to visualise the plot:
+At this point, the file `term_freq.json` will contain a description of the plot that can be handed over to D3.js and Vega. A simple template (taken from [Vincent resources](https://github.com/wrobstory/vincent)) to visualise the plot:
 
 ```html
 <html>  
@@ -90,19 +90,57 @@ parse("term_freq.json");
 Save the above HTML page as `OurService.html`.
 Now you can open your browser at http://localhost:8954 and obtain acces to `OurService.html`.
 
-With this procedure, we can plot [many different types of charts](http://vincent.readthedocs.io/en/latest/) with `Vincent`.
+With this procedure, we can plot many different types of charts with `Vincent`. [Explore yourself](http://vincent.readthedocs.io/en/latest/). If you are interested in building a real server, there are many good Python frameworks for building a RESTful API as [Flask](http://flask.pocoo.org/), [Falcon](http://falconframework.org/) and [Bottle](http://bottlepy.org/docs/dev/index.html).
 
-If you are interested in building a real server, there are many good Python frameworks for building a RESTful API as [Flask](http://flask.pocoo.org/), [Falcon](http://falconframework.org/) and [Bottle](http://bottlepy.org/docs/dev/index.html).
-
+Before to start the next [task 4.2](#Tasks42), create a `.pynb` file that demonstrates that you followed this example.
 
 <a name="Tasks42"/>
 ## Task 4.2: How to provide our service combined with third-party services?
 
-Twitter allows its users to provide their location when they publish a tweet, in the form of latitude and longitude coordinates. With this information, we are ready to create some nice visualisation for our data, in the form of interactive maps.
+In order to augment the value of our service we can build our service upon other services. As a example of combining  our service with third-party services I suggest to plotting tweets on a map. Twitter allows its users to provide their location when they publish a tweet, in the form of latitude and longitude coordinates. With this information, we are ready to create some nice visualisation for our data, in the form of interactive maps. 
+However the problem in our Twitter case is that we can find details about the geographic localization of the user's device in the form of geographic coordinates only in a small portion of tweets. Many users disable this functionality on their mobile, however there is still some tweets tagged with this information and allow us to show an example of using a third-party services that allows a nice way to provide an easy-to-digest of a particular feature of a dataset. 
+
+
 
 For this purpouse we will use [GeoJSON](http://geojson.org), a format for encoding a variety of geographic data structures and [Leaflet.js](http://leafletjs.com), a Javascript library for interactive maps.
 
-GeoJSON supports a variety of geometric types of format that can be used to visualise the desired shapes onto a map. For our examples, we just need the simplest structure, a Point. A point is identified by its coordinates (latitude and longitude). In GeoJSON, we can also represent objects such as a Feature or aFeatureCollection. The first one is basically a geometry with additional properties, while the second one is a list of features. Our Twitter data set can be represented in GeoJSON as `aFeatureCollection`. In order to generate this GeoJSON data structure we simply need to iterate all the tweets looking for the coordinates field. A very important warning is that this field may not be present. Today many tweets are not includes their geographic location (many users prefer not indicate this information on their tweets).
+GeoJSON supports a variety of geometric types of format that can be used to visualise the desired shapes onto a map. A GeoJSON object can represent a geometry, feature, or collection of features. Geometries only contain the information about the shape; its examples include Point, LineString, Polygon, and more complex shapes. Features extend this concept as they contain a geometry plus additional (custom) properties. Finally, a collection of features is simply a list of features. A GeoJSON data structure is always a JSON object. The following snippet shows an example (taken from https://github.com/bonzanini/Book-SocialMediaMiningPython) of GeoJSON that represents a collection with two different points, each point used to pin a particular city:
+```
+{
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-0.12
+					51.5
+				]
+			},
+			"properties": {
+				"name": "London"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-74,
+					40.71
+				]
+			},
+			"properties": {
+				"name": "New York City"
+			}
+		}
+	]
+}
+
+```
+
+For our examples, we just need the simplest structure, a Point. A point is identified by its coordinates (latitude and longitude). In GeoJSON, we can also represent objects such as a Feature or aFeatureCollection. The first one is basically a geometry with additional properties, while the second one is a list of features. Our Twitter data set can be represented in GeoJSON as `aFeatureCollection`. In order to generate this GeoJSON data structure we simply need to iterate all the tweets looking for the coordinates field. A very important warning is that this field may not be present. Today many tweets are not includes their geographic location (many users prefer not indicate this information on their tweets).
 
 This code will create the GeoJSON data structure (for tweets where the coordinates are explicitely given) and then the data are dumped into a file called geo_data.json:
 ```
