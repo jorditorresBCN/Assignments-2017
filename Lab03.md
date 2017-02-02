@@ -3,11 +3,10 @@
 
 This Lab has built on top of the previous ones to discuss some basis for extracting interesting terms from a data set of tweets while we “keep the connection open” and gather all the upcoming tweets about a particular event. 
 
-* [Tasks Lab 3](#Tasks)
-   * [Task 3.1: Streaming API of Twitter](#Tasks33)
-   * [Task 3.2: Analyzing tweets - counting terms](#Tasks32)  
-   * [Task 3.3: Case study](#Tasks33)  
-   * [Task 3.4: Student proposal](#Tasks34)  
+* [Task 3.1: Streaming API of Twitter](#Tasks33)
+* [Task 3.2: Analyzing tweets - counting terms](#Tasks32)  
+* [Task 3.3: Case study](#Tasks33)  
+* [Task 3.4: Student proposal](#Tasks34)  
    
 <a name="Tasks"/>
 #  Tasks of Lab 3 (week 4)
