@@ -265,16 +265,22 @@ Create a .pynb file with markdown cells describing the program steps and the cha
 
 <a name="Tasks44"/>
 ## Task 4.4:  Using Advanced Analytics as a Service in the Cloud (Optional - 5%) 
-usar l'API de Google per treure etiquetes addicionals de les fotos de tweeter per saber més coses
-AQUI HI HA UN BON TUTORIAL :  FINS I TOT PODRIA FER HO OPCIONAL AQUEST DARRER i que seguissin al peu lletra el tutorial aquest
-https://github.com/GoogleCloudPlatform/cloud-vision/tree/master/python/text
+As an "optional" task (only 5% of the lab grade), for students that want to go in more deep, we suggest to use the [Cloud Vision API](https://cloud.google.com/vision/) from Google to detect text within images as an example of Advanced Analytics as a Service in the Cloud.  This hands-on follows https://github.com/GoogleCloudPlatform/cloud-vision/tree/master/python/text. This hands-on detect text within images, stores this text in an index, and then lets you query this index.
+
+[Cloud Vision API](https://cloud.google.com/vision/) enables developers to understand the content of an image by encapsulating powerful machine learning models in an easy to use REST API. It quickly classifies images into thousands of categories (e.g., "sailboat", "lion", "Eiffel Tower"), detects individual objects and faces within images, and finds and reads printed words contained within images. You can build metadata on your image catalog, moderate offensive content, or enable new marketing scenarios through image sentiment analysis. Analyze images uploaded in the request or integrate with your image storage on Google Cloud Storage. Try the API [here (Drag image file here or Browse from your computer)](https://cloud.google.com/vision/).
+
+This example uses `TEXT_DETECTION` Vision API requests to build an inverted index from the stemmed words found in the images, and stores that index in a Redis database. The example uses the nltk library already discused in our labs for finding stopwords and doing stemming. The resulting index can be queried to find images that match a given set of words, and to list text that was found in each matching image.
+
+Follow the [jorditorresBCN/cloud-vision](https://github.com/jorditorresBCN/cloud-vision/tree/master/python/text) github forked from [GoogleCloudPlatform/cloud-vision](https://github.com/GoogleCloudPlatform/cloud-vision). 
+
 
 
 # How to Submit this Assignment:  
 Be sure that you have updated your remote github repository with  the Lab `.ipynb` file generated along this Lab. Submit **before the deadline** to the *RACO Practicals section* a "Lab4.txt" file including: 
 
 1. Group number
-2. name and email of the members of this group
-3. your `.py` and `.html` files created.
-4. link to your dataset created in task 3.4.
-5. add any comment that you consider necessary.
+2. Name and email of the members of this group
+3. Include `.pynb`, `.py` and `.html` files created for this lab.
+4. Add screenshots of maps created in task 4.3.
+5. In case you finished optional task 4.4, include a report explaining it.
+6. Add any comment that you consider necessary.
