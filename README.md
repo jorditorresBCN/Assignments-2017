@@ -27,7 +27,7 @@ The project will be individual (or in pairs) and needs to be agreed with the tea
 
 **Three levels:** 
 * **Minimum (max  grade 60%)**: Prepare a presentation of some of related technologies presented along this part of the course (slides)
-* **Medium (max grade 90%)**: An alternative to the project may be to create a self-contained practical guide (hands-on) that guides the reader in learning one of the latest cloud technologies. 
+* **Medium (max grade 90%)**: An alternative to the project may be to create a self-contained practical guide (hands-on) that guides the reader in learning one of the latest cloud analytics technologies. 
 * **Full**:  Create an applications using existing APIs. [Starting here](https://www.analyticsvidhya.com/blog/2017/02/6-deep-learning-applications-beginner-python/?utm_source=feedburner&utm_medium=email&utm_campaign=Feed%3A+AnalyticsVidhya+%28Analytics+Vidhya%29)
   * Colorize photos using Deep Learning  with Algorithmia API
   * Building a ChatBot with Watson API
