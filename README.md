@@ -33,5 +33,7 @@ The project will be individual (or in pairs) and needs to be agreed with the tea
   * Building a ChatBot with Watson API
   * News Aggregator based on Sentiment with Aylien API
 
+* **Advanced (bonus of +5%)** Using GitHub API create a realtime REST service of Deep Learning metrix [as this example] (https://twitter.com/fchollet/status/830499993450450944) ([example of other uses](http://www.timqian.com/star-history/#imatge-upc/detection-2016-nipsws&jorditorresBCN/LibroTensorFlow)
+
 * **Advanced (bonus of +10%)** The project offers an excellent opportunity for the student to dive into course content by implementing a protoype (proof of concept implementation of a business idea created by the student) using the latest in the Cloud technology. 
 
