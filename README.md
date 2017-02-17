@@ -37,3 +37,9 @@ The project will be individual (or in pairs) and needs to be agreed with the tea
 
 * **Advanced (bonus of +10%)** The project offers an excellent opportunity for the student to dive into course content by implementing a protoype (proof of concept implementation of a business idea created by the student) using the latest in the Cloud technology. 
 
+
+## Deadlines
+### Deadlines for Labs
+The deadlines indicated are suggestions for when you should ideally finish each Hands-on. They are meant to help keep you on track so that you maintain an appropriate pace throughout the program. There are penalties if you miss these deadlines. It is a recommended best practice to try and meet each suggested deadline.
+### Deadline for course Project
+The deadline indicated is a hard deadline.
