@@ -16,13 +16,13 @@ Create an AWS account following the following hands-on:
 
 #  Tasks of Lab 1 (week 2)
 ## Task 1.1: 
-Install Python in your local labtop.
+Install Python in your local laptop.
 ## Task 1.2: 
-Create a python code that uses the “random” library. We will value positively if you build a creative program in python. The minimum example accepted will be a code that generates a random number between 1 and 20. Then let the player guess the number introduced, displaying if the number is to low or high. The game ends either when the number is guesses correctly. The suggested program name is `Lab1.guessnumber.py`. 
+Create a python code that uses the “random” library. We will value positively if you build a creative program in python. The minimum example accepted will be a code that generates a random number between 1 and 20. Then let the player guess the number introduced, displaying if the number is to low or high. The game ends either when the number is guessed correctly. The suggested program name is `Lab1.guessnumber.py`. 
 ## Task 1.3:  
 Create a private repository CLOUD-COMPUTING-COURSE-2017 in your github account (use you student email (".upc.edu") for creating your github account in order to have private repositories or benefits as student pack).
 ## Task 1.4:  
-Update your remote repository from your local repository on your labtop:
+Update your remote repository from your local repository on your laptop:
 ```
 echo "# CLOUD-COMPUTING-COURSE-2017" >> README.md
 git init
@@ -37,12 +37,12 @@ git push -u origin master
 ## Task 1.5:  
 Update the `README.md` file including all the information of your group (member's name and emails).
 ## Task 1.6:  
-Invite `JordiTorresBCN` to your remote private repository as a collaborator using `settings` button (for evaluation purpouse).
+Invite `JordiTorresBCN` to your remote private repository as a collaborator using `settings` button (for evaluation purpose).
 ## Task 1.7:  
-Create a AWS instance EC2. Pull down all the contents of your github repositori making an exact clone using `git clone` command. 
+Create a AWS instance EC2. Pull down all the contents of your github repository making an exact clone using `git clone` command. 
 ## Task 1.8:  
 Execute the program `Lab1.guessnumber.py` in your AWS instance. Take an screenshot of the xterm that are you using as a proof. 
-Include this screenshot in your local repository on your labtop with the name `Lab1.AWSterminal.png`.
+Include this screenshot in your local repository on your laptop with the name `Lab1.AWSterminal.png`.
 ## Task 1.9:    
 Update your remote github repository with the updated `README.md`and the new file `Lab1.AWSterminal.png` using the `git`commands `add`, `commit` and `push`.  
 
