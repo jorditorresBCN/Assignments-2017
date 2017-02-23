@@ -68,13 +68,11 @@ tokens = get_tokens()
 count = Counter(tokens)
 print count.most_common(10)
 ```
-### Task 2.1.1: Word Count
+### Task 2.1.1: Word Count 1
 Create a notebook with the name `Lab2.WordCountWithNLTK.ipynb`, that computes and prints the 10 most common word in the book.
 
-### Task 2.1.2: Word Count
+### Task 2.1.2: Word Count 2
 Add a new code cell into the same notebook with the code that computes and prints the total number of word of this book.   
-
-ULL! que em dona error encara!
 
 
 ### Task 2.1.3: Remove puntuation
