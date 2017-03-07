@@ -14,22 +14,22 @@ In this Lab we’ll discuss the overall structure of a tweet and we will discuss
 #  Pre-lab homework 2 (week 3)
 <a name="HW1"/>
 ## HW 2.1: Installing Anaconda
-Download and installing Anaconda in your laptop following hands-on 4 ([Python Development Environment Quick Start](https://github.com/jorditorresBCN/Quick-Start/blob/master/Python-Development-Environment-Quick-Start.md)) guidelines. Start a Jupyter notebook on your terminal and create a note book that contains your previous [`Lab1.guessnumber.py`](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab01.md) code including some explanation of your steps using `markdown` cells. Save your notebook as `Lab2.guessnumber.pynb` and add it to your remote github repository.
+Download and installing Anaconda in your laptop following hands-on 4 ([Python Development Environment Quick Start](https://github.com/jorditorresBCN/Quick-Start/blob/master/Python-Development-Environment-Quick-Start.md)) guidelines. Start a Jupyter notebook on your terminal and create a note book that contains your previous [`Lab1.guessnumber.py`](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab01.md) code including some explanation of your steps using `markdown` cells. Save your notebook as `Lab2.guessnumber.pynb` and add it to your remote GitHub repository.
 
 <a name="HW2"/> 
 ## HW 2.2: Register Our App on Twitter  
-Cloud applications are characterized by an increased focus on user participation and content creation, but also by a deep interaction and interconnection of applications sharing con-tent from different types of services in order to integrate multiple systems together.  This scenario is, doubtlessly, pos-sible thanks to the rise of  the “Application Programming In-terfaces” (API). 
+Cloud applications are characterized by an increased focus on user participation and content creation, but also by a deep interaction and interconnection of applications sharing con-tent from different types of services in order to integrate multiple systems together. This scenario is, doubtlessly, possible thanks to the rise of  the “Application Programming Interfaces” (API). 
 
-An API, or Application Programming Interface, provide a way for computer systems to interact with each other. There are many types of APIs. Every programming language has a built-in API that it used to write programs. For instance, you studied in previous courses that operating systems them-selves have APIs used by programs to open files or draw text on the screen. 
-Due this course is centered in the Cloud, we are going to fo-cus on API that are built with web technologies as HTTP. We will refer to this type of API as web API, an interface to ei-ther a web server or a web browser. These APIs are used ex-tensively for the development of web applications and work at either the server end or the client end. 
+An API, or Application Programming Interface, provide a way for computer systems to interact with each other. There are many types of APIs. Every programming language has a built-in API that it used to write programs. For instance, you studied in previous courses that operating systems themselves have APIs used by programs to open files or draw text on the screen. 
+Due this course is centered in the Cloud, we are going to focus on API that are built with web technologies as HTTP. We will refer to this type of API as web API, an interface to either a web server or a web browser. These APIs are used extensively for the development of web applications and work at either the server end or the client end. 
 Web APIs are a key component into today Cloud era. Many cloud applications provide an API that allows developers to integrate their own code with these applications, taking ad-vantage of the services' functionality in their own apps.
 
 One example amount the vast number of available one is Twitter API. Twitter API allows to access all tweets made by any user, the tweets containing a particular term or even a combination of terms, tweets done on the topic in a particular date range, etc.
 
 
-In order to set up our Lab 2 to access Twitter data, there are some  preliminary steps. Twitter implements OAuth (called Open Authorization)  as its standard authentication mechanism, and in order to have access to Twitter data programmatically, we need to create an app that interacts with the Twitter API. There are four primary identifiers  we will need to note for an OAuth workflow: consumer key, consumer secret, access token, and access token secret.  A good new from developer's perspective is that the Python ecosystem has already wellestablished libraries for most social media platforms, which come with an implementation of the authentication process.
+In order to set up our Lab 2 to access Twitter data, there are some preliminary steps. Twitter implements OAuth (called Open Authorization) as its standard authentication mechanism, and in order to have access to Twitter data programmatically, we need to create an app that interacts with the Twitter API. There are four primary identifiers  we will need to note for an OAuth workflow: consumer key, consumer secret, access token, and access token secret. A good new from developer's perspective is that the Python ecosystem has already wellestablished libraries for most social media platforms, which come with an implementation of the authentication process.
 
-The first step in this homework is the registration of your app. In particular, you need to point your browser to http://apps.twitter.com, log-in to Twitter and register a new application. You will receive a **Consumer Key** and a **Consumer secret**.   From the configuration page "Keys and Access Token" of your app, you can also obtain the  **Access Token** and a **Access Token Secret**.  Save this information to perform the following Lab session.
+The first step in this homework is the registration of your app. In particular, you need to point your browser to http://apps.twitter.com, log-in to Twitter and register a new application. You will receive a **Consumer Key** and a **Consumer secret**. From the configuration page "Keys and Access Token" of your app, you can also obtain the **Access Token** and a **Access Token Secret**. Save this information to perform the following Lab session.
 
 > **Warning**: these are application settings that should always be kept private.
 
@@ -50,7 +50,7 @@ import nltk
 ```
 A difference between NLTK and many other packages is that this framework also comes with linguistic data for specific tasks. Given their size, such data is not included in the default installation, but has to be downloaded separately. For this reason, after importing NLTK, we need download NLTK Data which include a lot of corpora, grammars, models and etc. You can find the complete nltk data list [here](http://nltk.org/nltk_data/). You can downloaded all nltk resources by `nltk.download('all')` but it takes ~3.5G. For english text we could use `nltk.download('punkt')` to download the NLTK data package that includes a pre-trained tokenizer for English.
 
-Let’s see the example using the NLTK to tokenise the book [First Contact with TensorFlow](http://www.jorditorres.org/Tensorflow)  (`FirstContactWithTensorFlow.txt`could be donwloaded from this github) and outputs the 10 most common word in the book.
+Let’s see the example using the NLTK to tokenise the book [First Contact with TensorFlow](http://www.jorditorres.org/Tensorflow)  (`FirstContactWithTensorFlow.txt`could be downloaded from this github) and outputs the 10 most common words in the book.
 ```
 import nltk
 nltk.download('punkt') 
@@ -69,7 +69,7 @@ count = Counter(tokens)
 print count.most_common(10)
 ```
 ### Task 2.1.1: Word Count 1
-Create a notebook with the name `Lab2.WordCountWithNLTK.ipynb`, that computes and prints the 10 most common word in the book.
+Create a notebook with the name `Lab2.WordCountWithNLTK.ipynb`, that computes and prints the 10 most common words in the book.
 
 ### Task 2.1.2: Word Count 2
 Add a new code cell into the same notebook with the code that computes and prints the total number of word of this book.   
@@ -83,7 +83,7 @@ We can see that punctiation are many of the most common words. We can remove the
     no_punctuation = lowers.translate(None, string.punctuation)
     tokens = nltk.word_tokenize(no_punctuation)
 ```
-Add a new code cell to the same notebook with the code (and the comments with markdown cells if you consider interesting)  that computes and prints the 10 most common word without punctuation characters. 
+Add a new code cell to the same notebook with the code (and the comments with markdown cells if you consider interesting) that computes and prints the 10 most common words without punctuation characters. 
     
 ### Task 2.1.4: Stop Words
 Is not "Tensorflow" the most commond word? Why? What are Stop Words? Include your answer in a markdown cells in the same notebook.
@@ -95,7 +95,7 @@ tokens = get_tokens()
 filtered = [w for w in tokens if not w in stopwords.words('english')]
 count = Counter(filtered)
 ```
-Add a new code cell to the same notebook with the code (and the comments with markdown cells if you consider interesting)  that computes and prints the 10 most common word after removing the stop words.  Now it make more sense, right? "TensorFlow" is the most common word!!!
+Add a new code cell to the same notebook with the code (and the comments with markdown cells if you consider interesting)  that computes and prints the 10 most common word after removing the stop words.  Now it make more sense, right? "TensorFlow" is the most common word!
 
 <a name="tweepy"/>
 ## Task 2.2: Getting Started with `tweepy`  
@@ -107,7 +107,7 @@ As a [homework](#HW1) we already register Our App on Twitter in order to set up 
 
 Another important thing before to start is to know that we have two classes of API: **REST APIs** and **Streaming API**. All the REST APIs only allow you to go back in time (tweets that have already been published). Often these APIs limit the amount of tweets you can retrieve, not just in terms of rate limits as we mentioned, but also in terms of time span. In fact, it's usually possible to go back in time up to approximately one week. Also another aspect to consider about the REST API is that they are not guaranteed to provide all the tweets published on Twitter. 
 
-On the other hand, the Streaming API looks into the future, we can retrieve all the tweets that match our filter criteria, as they are published.  The Streaming API is useful when we want to filter a particular keyword and download a massive amount of tweets about it, While the REST APIs are useful when we want to search for tweets authored by a specific user or we want to access our own timeline.
+On the other hand, the Streaming API looks into the future, we can retrieve all the tweets that match our filter criteria, as they are published. The Streaming API is useful when we want to filter a particular keyword and download a massive amount of tweets about it, While the REST APIs are useful when we want to search for tweets authored by a specific user or we want to access our own timeline.
 
 
 ### Task 2.2.2: Accessing your twitter account information  
