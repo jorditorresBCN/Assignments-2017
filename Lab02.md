@@ -160,7 +160,7 @@ print('Friends: ' + str(user.followers_count))
 print('Created: ' + str(user.created_at))
 print('Description: ' + str(user.description))
 ```
-Are the data printed correct? Are it yours? 
+Is the data printed correctly? Is it yours? 
 
 ### Task 2.2.3: Accessing Tweets  
 Tweepy provides the convenient Cursor interface to iterate through different types of objects. For example, we can read our own Twitter home timeline with (we are using 1 to limit the number of tweets we are reading and only reading the `text` of the tweet):
@@ -196,7 +196,7 @@ Use the previous API presented for obtaining information about your tweets.  Kee
 <a name="preproc"/>
 
 ## Task 2.3:  Tweet pre-processing
-In this taks we’ll enter in more detail to the overhall structure of a tweet and discuss how to pre-process the text of it before we can get into some more interesting analysis in next Lab. In particular, we will seen how tokenisation, despite being a well-understood problem, can get tricky with Twitter data. After that we’ll discuss the analysis of term frequencies to extract meaningful terms from our tweets. 
+In these tasks we’ll enter in more detail to the overall structure of a tweet and discuss how to pre-process its text before we can get into some more interesting analysis in the next Lab. In particular, we will seen how tokenisation, despite being a well-understood problem, can get tricky with Twitter data. After that we’ll discuss the analysis of term frequencies to extract meaningful terms from our tweets. 
 
 The code used in this Lab is using part of the work done by [Marco Bonzanini](https://marcobonzanini.com/2015/03/02/mining-twitter-data-with-python-part-1/)). As Marco indicates, it is far from perfect but it’s a good starting point to become aware of the complexity of the problem, and fairly easy to extend.
 
@@ -217,7 +217,7 @@ The main attributes are the following:
 * \_json: This is a dictionary with the JSON response of the status
 * author: The tweet author
 
-As you can see there’s a lot of information we can play with. All the \*_id fields also have a \*_id_str counterpart, where the same information is stored as a string rather than a big int (to avoid overflow problems). 
+As you can see there is a lot of information we can play with. All the \*_id fields also have a \*_id_str counterpart, where the same information is stored as a string rather than a big int (to avoid overflow problems). 
 
 We will focus our task looking for the text of a tweet, breaking it down into words. While tokenisation is a well understood problem with several out-of-the-box solutions from popular libraries, Twitter data pose some challenges because of the nature of the language.
 Let’s see the example using the NLTK package previously used to tokenise a fictitious tweet:
