@@ -13,10 +13,12 @@ In this Lab we’ll discuss the overall structure of a tweet and we will discuss
 <a name="Prelab"/>
 #  Pre-lab homework 2 (week 3)
 <a name="HW1"/>
+
 ## HW 2.1: Installing Anaconda
 Download and installing Anaconda in your laptop following hands-on 4 ([Python Development Environment Quick Start](https://github.com/jorditorresBCN/Quick-Start/blob/master/Python-Development-Environment-Quick-Start.md)) guidelines. Start a Jupyter notebook on your terminal and create a note book that contains your previous [`Lab1.guessnumber.py`](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab01.md) code including some explanation of your steps using `markdown` cells. Save your notebook as `Lab2.guessnumber.pynb` and add it to your remote GitHub repository.
 
 <a name="HW2"/> 
+
 ## HW 2.2: Register Our App on Twitter  
 Cloud applications are characterized by an increased focus on user participation and content creation, but also by a deep interaction and interconnection of applications sharing con-tent from different types of services in order to integrate multiple systems together. This scenario is, doubtlessly, possible thanks to the rise of  the “Application Programming Interfaces” (API). 
 
