@@ -6,8 +6,10 @@
 * [Task 4.4: Using Advanced Analytics as a Service in the Cloud (Optional - 5%) ](#Tasks44)  
    
 <a name="Tasks41"/>
+
 #  Tasks of Lab 4
 <a name="Tasks41"/>
+
 ## Task 4.1:  How to provide your services through an API?
 As we show, we can plots in Python using libraries like matplotlib.  However, how to provide our results through an API to consumers?
 If you want to use python to build a prototype server (of your service) and want to provide web-base API with minimal efforts, you can just use python `SimpleHTTPServer` and `SocketServer` packages. 
