@@ -53,7 +53,7 @@ Firstly, we need to install Vincent:
 torres@vm:~$  sudo pip install vincent
 ```
 
-Using the list of most frequent hashtags from our case study data set, we want to plot their frequencies:
+Using the list of most frequent hashtags from the case study data set we used in the previous Lab, we want to plot their frequencies:
 
 
 ```
@@ -98,20 +98,20 @@ However, if you need to deploy your service in the Cloud, [AWS Lambda](https://c
 
 That’s how the Serverless Framework 
 
-Before to start the next [task 4.2](#Tasks42), create a `.pynb` file that demonstrates that you followed this example.
+Before starting the next [task 4.2](#Tasks42), create a `.pynb` file that demonstrates that you followed this example.
 
 <a name="Tasks42"/>
 
 ## Task 4.2: How to provide our service combined with third-party services?
 
-In order to augment the value of our service we can build our service upon other services. As a example of combining  our service with third-party services I suggest to plotting tweets on a map. Twitter allows its users to provide their location when they publish a tweet, in the form of latitude and longitude coordinates. With this information, we are ready to create some nice visualisation for our data, in the form of interactive maps. 
+In order to augment the value of our service we can build our service upon other services. As a example of combining our service with third-party services I suggest to plotting tweets on a map. Twitter allows its users to provide their location when they publish a tweet, in the form of latitude and longitude coordinates. With this information, we are ready to create some nice visualisation for our data, in the form of interactive maps. 
 However the problem in our Twitter case is that we can find details about the geographic localization of the user's device in the form of geographic coordinates only in a small portion of tweets. Many users disable this functionality on their mobile, however there is still some tweets tagged with this information and allow us to show an example of using a third-party services that allows a nice way to provide an easy-to-digest of a particular feature of a dataset. 
 
 
 
-For this purpouse we will use [GeoJSON](http://geojson.org), a format for encoding a variety of geographic data structures and [Leaflet.js](http://leafletjs.com), a Javascript library for interactive maps.
+For this purpose we will use [GeoJSON](http://geojson.org), a format for encoding a variety of geographic data structures and [Leaflet.js](http://leafletjs.com), a Javascript library for interactive maps.
 
-GeoJSON supports a variety of geometric types of format that can be used to visualise the desired shapes onto a map. A GeoJSON object can represent a geometry, feature, or collection of features. Geometries only contain the information about the shape; its examples include Point, LineString, Polygon, and more complex shapes. Features extend this concept as they contain a geometry plus additional (custom) properties. Finally, a collection of features is simply a list of features. A GeoJSON data structure is always a JSON object. The following snippet shows an example (taken from https://github.com/bonzanini/Book-SocialMediaMiningPython) of GeoJSON that represents a collection with two different points, each point used to pin a particular city:
+GeoJSON supports a variety of geometric types of format that can be used to visualize the desired shapes onto a map. A GeoJSON object can represent a geometry, feature, or collection of features. Geometries only contain the information about the shape; its examples include Point, LineString, Polygon, and more complex shapes. Features extend this concept as they contain a geometry plus additional (custom) properties. Finally, a collection of features is simply a list of features. A GeoJSON data structure is always a JSON object. The following snippet shows an example (taken from https://github.com/bonzanini/Book-SocialMediaMiningPython) of GeoJSON that represents a collection with two different points, each point used to pin a particular city:
 ```
 {
 	"type": "FeatureCollection",
@@ -168,6 +168,8 @@ For our examples, we just need the simplest structure, a `Point` identified by i
 
 The following code will create the GeoJSON data structure (for tweets where the coordinates are explicitely given) and then the data are dumped into a file called geo_data.json:
 ```
+import json
+
 fname = 'Lab3.CaseStudy.json'
 with open(fname, 'r') as f:
     geo_data = {
@@ -267,9 +269,9 @@ As you can look, in our example we have few geolocated tweets. However, the code
 
 ## Task 4.3: Student proposal
 
-We are asking to the student to reproduce the steps descrived in the previous tasks in their dataset generated in Lab 3. Visit the [Leaflet Quick Start Guide](http://leafletjs.com/examples/quick-start/) for more details about the `html`file and  how Leaflet.js can be used. 
+We are asking to the student to reproduce the steps described in the previous tasks in their dataset generated in Lab 3. Visit the [Leaflet Quick Start Guide](http://leafletjs.com/examples/quick-start/) for more details about the `html` file and  how `Leaflet.js` can be used. 
 
-Create a .pynb file with markdown cells describing the program steps and the characteristics of the dataset created (e.g. the time frame for the download, etc.).
+Create a `.pynb` file with markdown cells describing the program steps and the characteristics of the dataset created (e.g. the time frame for the download, etc.).
 
 <a name="Tasks44"/>
 
