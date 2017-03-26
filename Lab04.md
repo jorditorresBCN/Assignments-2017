@@ -101,6 +101,7 @@ That’s how the Serverless Framework
 Before to start the next [task 4.2](#Tasks42), create a `.pynb` file that demonstrates that you followed this example.
 
 <a name="Tasks42"/>
+
 ## Task 4.2: How to provide our service combined with third-party services?
 
 In order to augment the value of our service we can build our service upon other services. As a example of combining  our service with third-party services I suggest to plotting tweets on a map. Twitter allows its users to provide their location when they publish a tweet, in the form of latitude and longitude coordinates. With this information, we are ready to create some nice visualisation for our data, in the form of interactive maps. 
@@ -263,6 +264,7 @@ A screenshot of the results:
 As you can look, in our example we have few geolocated tweets. However, the code is the same for any other example. 
 
 <a name="Tasks43"/>
+
 ## Task 4.3: Student proposal
 
 We are asking to the student to reproduce the steps descrived in the previous tasks in their dataset generated in Lab 3. Visit the [Leaflet Quick Start Guide](http://leafletjs.com/examples/quick-start/) for more details about the `html`file and  how Leaflet.js can be used. 
@@ -270,6 +272,7 @@ We are asking to the student to reproduce the steps descrived in the previous ta
 Create a .pynb file with markdown cells describing the program steps and the characteristics of the dataset created (e.g. the time frame for the download, etc.).
 
 <a name="Tasks44"/>
+
 ## Task 4.4:  Using Advanced Analytics as a Service in the Cloud (Optional - 5%) 
 As an "optional" task (only 5% of the lab grade), for students that want to go in more deep, we suggest to use the [Cloud Vision API](https://cloud.google.com/vision/) from Google to detect text within images as an example of Advanced Analytics as a Service in the Cloud.  This hands-on follows https://github.com/GoogleCloudPlatform/cloud-vision/tree/master/python/text. This hands-on detect text within images, stores this text in an index, and then lets you query this index.
 
