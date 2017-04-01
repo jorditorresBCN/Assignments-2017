@@ -4,11 +4,11 @@
 >
 >Benjamin Franklin
 
-There will be two kinds of assignments: Labs and one project. Pre-lab homeworks will be assigned for some labs. Students are expected to complete and submit the pre-lab homeworks assigned before each lab session.
+There will be two kinds of assignments: 5 Labs and one project. Pre-lab homework will be assigned for some labs. Students are expected to complete and submit the assigned pre-lab homework before each lab session.
 
 ## Labs
-The students will begin creating a basic toolbox to get started in the Cloud. This will prepare them to practice with APIs, the doors in the Cloud. All these things together will allow the students to mine the deluge of data coming from the Cloud, or use new advanced analytics services provided nowadays by the Cloud. Finally, we will look under the hood of these advanced analytics services in the Cloud, either in terms of software or hardware, in order to understand how their high performance requirements can be provided. The purpose is
-to provide code examples that can get you easily started.
+The students will begin by creating a basic toolbox to get started in the Cloud. This will prepare them to practice with APIs, the doors in the Cloud. Together, these things will allow the students to mine the deluge of data coming from the Cloud, or use new advanced analytics services provided nowadays by the Cloud. Finally, we will look under the hood of these advanced analytics services in the Cloud, either in terms of software or hardware, in order to understand how their high performance requirements can be provided. The purpose is
+to provide code examples that can get you started easily.
 
 - Lab 1: [Basic "Knowledge Toolbox" to getting started in the Cloud][Lab1] **10%**
 - Lab 2: [Doors in the Cloud][Lab2]                                        **20%**
