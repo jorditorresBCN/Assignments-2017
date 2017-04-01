@@ -39,7 +39,7 @@ Note that you will need a Twitter account in order to login, create an app, and 
 
 <a name="Tasks"/>
 
-#  Tasks of Lab 2 (week 3)
+#  Tasks of Lab 2
 
 <a name="NLTK"/>
 
