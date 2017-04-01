@@ -8,7 +8,7 @@ This Lab has built on top of the previous ones to discuss some basis for extract
 * [Task 3.3: Case study](#Tasks33)  
 * [Task 3.4: Student proposal](#Tasks34)  
    
-#  Tasks of Lab 3 (week 4)
+#  Tasks of Lab 3
 
 <a name="Tasks31"/>
 
