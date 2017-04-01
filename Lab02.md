@@ -12,7 +12,7 @@ In this Lab we will discuss the overall structure of a tweet and discuss how to 
 
 <a name="Prelab"/>
 
-#  Pre-lab homework 2 (week 3)
+#  Pre-lab homework 2
 
 <a name="HW1"/>
 
