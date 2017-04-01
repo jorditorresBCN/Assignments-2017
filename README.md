@@ -40,4 +40,4 @@ The project can be done in pairs and need to be approved by your teacher before 
 ### Deadlines for Labs
 The deadlines indicated are suggestions for when you should ideally finish each Hands-on. They are meant to help keep you on track so that you maintain an appropriate pace throughout the program. There are penalties if you miss these deadlines. It is a recommended best practice to try and meet each suggested deadline.
 ### Deadline for course Project
-We have a hard deadline for the project to be finished acording the course planification.
+The deadlines indicated in the course syllabus is a hard deadline.
