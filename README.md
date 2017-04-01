@@ -23,9 +23,9 @@ to provide code examples that can get you started easily.
 [Lab5]: https://github.com/jorditorresBCN/Assignments/blob/master/Lab05.md
 
 ## Course Project
-The project can be done in pairs and approved by your teacher before starting (from the student's proposal for the project).
+The project can be done in pairs and need to be approved by your teacher before starting (from the student's proposal for the project).
 
-**Five levels:** 
+**Four levels:** 
 * **Minimum (max  grade 60%)**: One possibility of project is to prepare a presentation of some related technologies with this part of the course (with slides).
 * **Medium (max grade 90%)**: Another alternative to the project may be to create a self-contained practical guide (hands-on) that guides the reader in learning one of the latest cloud technologies.
 * **Full**:  The standard project is to create an application using existing APIs. For example:  
@@ -40,4 +40,4 @@ The project can be done in pairs and approved by your teacher before starting (f
 ### Deadlines for Labs
 The deadlines indicated are suggestions for when you should ideally finish each Hands-on. They are meant to help keep you on track so that you maintain an appropriate pace throughout the program. There are penalties if you miss these deadlines. It is a recommended best practice to try and meet each suggested deadline.
 ### Deadline for course Project
-The deadline indicated is a hard deadline.
+We have a hard deadline for the project to be finished acording the course planification.
