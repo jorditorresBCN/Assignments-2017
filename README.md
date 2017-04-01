@@ -32,6 +32,8 @@ The project can be done in pairs and need to be approved by your teacher before 
   * Colorize photos using Deep Learning  with Algorithmia API
   * Building a ChatBot with Watson API
   * News Aggregator based on Sentiment with Aylien API
+  
+
 [Starting here for more information](https://www.analyticsvidhya.com/blog/2017/02/6-deep-learning-applications-beginner-python/?utm_source=feedburner&utm_medium=email&utm_campaign=Feed%3A+AnalyticsVidhya+%28Analytics+Vidhya%29)
 * **Advanced (bonus of +10%)**  The project offers an excellent opportunity for the student to dive into course content by implementing a protoype (proof of concept implementation of a business idea created by the student) using the latest Cloud technology. Your teacher will be deligted to help you
 
@@ -41,3 +43,8 @@ The project can be done in pairs and need to be approved by your teacher before 
 The deadlines indicated are suggestions for when you should ideally finish each Hands-on. They are meant to help keep you on track so that you maintain an appropriate pace throughout the program. There are penalties if you miss these deadlines. It is a recommended best practice to try and meet each suggested deadline.
 ### Deadline for course Project
 The deadlines indicated in the course syllabus is a hard deadline.
+
+
+## Acknowledgements
+I would like to thank some of my former students for his help with proofreading this documentation and improving it: Eloy Gil, Dani Cea, Xisco Sastre, Maurici Yagüez and Mauro Gómez.
+
