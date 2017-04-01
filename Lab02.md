@@ -1,5 +1,5 @@
 # Lab 2: Doors in the Cloud
-In this Lab we’ll discuss the overall structure of a tweet and we will discuss how to pre-process the text before we can get into some more interesting analysis in the next Lab. In particular, we will see how tokenisation, despite being a well-understood problem, can get tricky with Twitter data. Previously we will start installing a Python Development Environment that will be very helpful.
+In this Lab we will discuss the overall structure of a tweet and discuss how to pre-process the text before we can get into some more interesting analysis in the next Lab. In particular, we will see how tokenisation, despite being a well-understood problem, can get tricky with Twitter data. Prior to this, we will  install A Python Development Environment which will be very helpful.
 
 * [Pre-lab howemork 2](#Prelab)
    * [HW 2.1: Installing Anaconda](#HW1)
@@ -11,7 +11,9 @@ In this Lab we’ll discuss the overall structure of a tweet and we will discuss
 
 
 <a name="Prelab"/>
+
 #  Pre-lab homework 2 (week 3)
+
 <a name="HW1"/>
 
 ## HW 2.1: Installing Anaconda
@@ -100,6 +102,7 @@ count = Counter(filtered)
 Add a new code cell to the same notebook with the code (and the comments with markdown cells if you consider interesting)  that computes and prints the 10 most common word after removing the stop words.  Now it make more sense, right? "TensorFlow" is the most common word!
 
 <a name="tweepy"/>
+
 ## Task 2.2: Getting Started with `tweepy`  
 
 In this task we will use `tweepy` package as a tool to access Twitter data in a fairly easy way with Python. There are different types of data we can collect, however we will focus on the “tweet” object.
