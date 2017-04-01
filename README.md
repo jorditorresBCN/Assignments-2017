@@ -44,5 +44,5 @@ The deadlines indicated in the course syllabus is a hard deadline.
 
 
 ## Acknowledgements
-I would like to thank some of my former students for his help with proofreading this documentation and improving it: Eloy Gil, Dani Cea, Xisco Sastre, Maurici Yagüez and Mauro Gómez.
+I would like to thank some of my former students for his help with proofreading this documentation and improving it: Eloy Gil, Dani Cea, Xisco Sastre, Maurici Yagüez and Mauro Gómez. Also to Barcelona Supercomputing Center for give acces their computing facilities to our students.
 
