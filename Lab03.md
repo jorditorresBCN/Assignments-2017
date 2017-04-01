@@ -1,7 +1,7 @@
 # Lab 3: Extracting and Analyzing data from the Cloud
 
 
-This Lab has built on top of the previous ones to discuss some basis for extracting interesting terms from a data set of tweets while we “keep the connection open” and gather all the upcoming tweets about a particular event. 
+This Lab is built on top of the previous ones to discuss a basis for extracting interesting terms from a data set of tweets while we “keep the connection open” and gather all the upcoming tweets about a particular event.
 
 * [Task 3.1: Streaming API of Twitter](#Tasks31)
 * [Task 3.2: Analyzing tweets - counting terms](#Tasks32)  
