@@ -23,11 +23,11 @@ to provide code examples that can get you started easily.
 [Lab5]: https://github.com/jorditorresBCN/Assignments/blob/master/Lab05.md
 
 ## Course Project
-The project will be individual (or in pairs) and needs to be agreed with the teacher before to start it. 
+The project could be individual or in pairs and approved by the teacher before starting (from the student's proposals for his project).
 
 **Five levels:** 
 * **Minimum (max  grade 60%)**: Prepare a presentation of some of related technologies presented along this part of the course (slides)
-* **Medium (max grade 90%)**: An alternative to the project may be to create a self-contained practical guide (hands-on) that guides the reader in learning one of the latest cloud analytics technologies. 
+* **Medium (max grade 90%)**: An alternative to the project may be to create a self-contained practical guide (hands-on) that guides the reader in learning one of the latest cloud technologies.
 * **Full**:  Create an applications using existing APIs. [Starting here](https://www.analyticsvidhya.com/blog/2017/02/6-deep-learning-applications-beginner-python/?utm_source=feedburner&utm_medium=email&utm_campaign=Feed%3A+AnalyticsVidhya+%28Analytics+Vidhya%29)
   * Colorize photos using Deep Learning  with Algorithmia API
   * Building a ChatBot with Watson API
@@ -35,7 +35,7 @@ The project will be individual (or in pairs) and needs to be agreed with the tea
 
 * **Advanced (bonus of +5%)** Using GitHub API create a realtime REST service of Deep Learning metrix [as this example] (https://twitter.com/fchollet/status/830499993450450944) ([example of other uses](http://www.timqian.com/star-history/#imatge-upc/detection-2016-nipsws&jorditorresBCN/LibroTensorFlow)
 
-* **Advanced (bonus of +10%)** The project offers an excellent opportunity for the student to dive into course content by implementing a protoype (proof of concept implementation of a business idea created by the student) using the latest in the Cloud technology. 
+* **Advanced (bonus of +10%)**  The project offers an excellent opportunity for the student to dive into course content by implementing a protoype (proof of concept implementation of a business idea created by the student) using the latest Cloud technology.
 
 
 ## Deadlines
