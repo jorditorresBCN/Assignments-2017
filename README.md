@@ -23,18 +23,22 @@ to provide code examples that can get you started easily.
 [Lab5]: https://github.com/jorditorresBCN/Assignments/blob/master/Lab05.md
 
 ## Course Project
-The project can be done in pairs and need to be approved by your teacher before starting (from the student's proposal for the project). 
+The project can be done in groups of 1,2 or 3 students.  The project need to be approved by your teacher before starting (from the student's proposal for the project). 
 
-**Four levels:** 
-* **Minimum (max  grade 60%)**: One possibility of project is to prepare a presentation of some related technologies with this part of the course (with slides).
-* **Medium (max grade 90%)**: Another alternative to the project may be to create a self-contained practical guide (hands-on) that guides the reader in learning one of the latest cloud technologies.
-* **Full**:  The standard project is to create an application using existing APIs. [Starting here for more information](https://www.analyticsvidhya.com/blog/2017/02/6-deep-learning-applications-beginner-python/?utm_source=feedburner&utm_medium=email&utm_campaign=Feed%3A+AnalyticsVidhya+%28Analytics+Vidhya%29). For example:  
+**Six levels:** 
+* **Minimum (max  grade obtained 60%)**: One possibility of project is to prepare a presentation of some related technologies with this part of the course (with slides).
+* **Medium (max grade obtained 90%)**: Another alternative to the project may be to create a self-contained practical guide (hands-on) that guides the reader in learning one of the latest cloud technologies.
+
+* **Full (option 1)**:  The standard project is to create an application using existing APIs. [Starting here for more information](https://www.analyticsvidhya.com/blog/2017/02/6-deep-learning-applications-beginner-python/?utm_source=feedburner&utm_medium=email&utm_campaign=Feed%3A+AnalyticsVidhya+%28Analytics+Vidhya%29). For example:  
   * Colorize photos using Deep Learning  with Algorithmia API
   * Building a ChatBot with Watson API
   * News Aggregator based on Sentiment with Aylien API
   
-* **Advanced (bonus of +10%)**  The project offers an excellent opportunity for the student to dive into course content by implementing a protoype (proof of concept implementation of a business idea created by the student) using the latest Cloud technology. Your teacher will be deligted to help you
+* **Full (option 2)**:  Carry out one of the projects suggested by the professor during this course.
+  
+* **Advanced (option 1) (bonus of +10%)**  The project offers an excellent opportunity for the student to dive into course content by implementing a protoype (proof of concept implementation of a business idea created by the student) using the latest Cloud technology. Your teacher will be deligted to help you
 
+* **Advanced (option 2) (bonus of +10%)**  Surprise the teacher with a project proposal that he accepts
 
 ## Deadlines
 #### Deadlines for Labs
