@@ -96,8 +96,7 @@ With this procedure, we can plot many different types of charts with `Vincent`. 
 
 However, if you need to deploy your service in the Cloud, [AWS Lambda](https://cloudacademy.com/amazon-web-services/understanding-aws-lambda-course/) allows you to not deal with over/under capacity, deployments, scaling and fault tolerance, OS or language updates, metrics, and logging. AWS Lambda introduced a new serverless world. AWS community started working on a complete solution to develop AWS-powered microservices or backends for web, mobile, and IoT applications. The migration required facilitation because of the building-block nature of AWS Lambda and its complex symbiosis with Amazon API Gateway. One example is [Serverless Framework](https://serverless.com) that allows to build auto-scaling, pay-per-execution, event-driven apps on AWS Lambda. **(optional project)**
 
-That’s how the Serverless Framework 
-
+ 
 Before starting the next [task 4.2](#Tasks42), create a `.pynb` file that demonstrates that you followed this example.
 
 <a name="Tasks42"/>
