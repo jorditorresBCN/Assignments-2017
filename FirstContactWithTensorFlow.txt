@@ -1,9 +1,6 @@
     
-    
-    
-    
-    
-    
+ 
+
     
   First contact with TensorFlow
    get started with Deep Learning programming
@@ -156,7 +153,6 @@ whose work we consume every day without knowing
     About the Author	137
     About BSC	139
     About UPC	139
-    About Grup d'Estudi de Machine Learning de Barcelona	140
     
     
     
@@ -3379,7 +3375,9 @@ interdisciplinary research, where ecosystems like the ones
 found in Barcelona as UPC and BSC-CNS, with deep 
 knowledge in High Performance Computing and Big Data 
 Technologies, will play a big role in this new scenario.
-  Acknowledgments
+
+
+Acknowledgments
 
 First of all I want to thanks everybody that helped me to 
 write the Spanish version of this book. All of them are 
@@ -3396,12 +3394,6 @@ the Spanish Government, the TIN2015-65316-P project, with
 funding from the Spanish Ministry of Economy and 
 Competitivity, the European Union FEDER funds, and the 
 SGR 2014-SGR-1051.
-
-
-
-
-
-
 
 
 
@@ -3431,14 +3423,6 @@ design. More information about him can be found on his web
 page http://www.JordiTorres.Barcelona
 
 
-
-
-
-    
-    
-    
-    
-    
     
 	
 
@@ -3626,27 +3610,4 @@ r0.7/tutorials/recurrent/index.html [Accessed: 16/03/2016].
   Hello World en TensorFlow [Online]. Available at:  
 http://www.jorditorres.org/libro-hello-world-en-tensorflow/ 
 [Accessed: 16/03/2016].
-     
-    
-     
-    
-     
-    
-     
-    
-    
-    
-    	ii
-    69
-     
-    
-    	
-    	
-    	
-    68
-    
-    	ix
-    	xi
-    	xiii
-    
-     
+   
