@@ -64,7 +64,7 @@ import codecs
 from collections import Counter
 
 def get_tokens():
-    tf = codecs.open('FirstContactWithTensorFlow.txt', 'r', 'utf-8-sig')
+   with open('FirstContactWithTensorFlow.txt', 'r') as tf:
     text = tf.read()
     tokens = nltk.word_tokenize(text)
     return tokens
