@@ -1684,7 +1684,7 @@ And the same happens with the size of the dimension D1 of
 expended_centroides tensor, where TensorFlow deduces the 
 size of the dimension D1 of expanded_vectors tensor.
 Therefore, in the allocation step (step 1) the algorithm can be 
-expressed in these four lines of TensorFlow«s code, which 
+expressed in these four lines of TensorFlow"s code, which 
 calculates the Squared Euclidean Distance:
 
 
@@ -3012,7 +3012,7 @@ In this short chapter I'll introduce how to use the GPUs. For
 those readers wanting to understand a little bit more of how 
 these devices work, some references will be given in the last 
 section, but. Given the introductory focus of this book, I'll 
-not enter in detail for the distributed versi—n, but for those 
+not enter in detail for the distributed versi-n, but for those 
 readers interested some references will be given in the last 
 section.
    Execution environment with GPUs
@@ -3384,7 +3384,7 @@ write the Spanish version of this book. All of them are
 mentioned in the Acknowledgments of the Spanish book . 
 For this English version, I want to give special thanks to my 
 colleagues that helped me with the translation of this book: 
-Joan Capdevila, Mauro G—mez, Josep Ll. Berral, Katy 
+Joan Capdevila, Mauro G-mez, Josep Ll. Berral, Katy 
 Wallace and Christopher Bonnett. Without their great 
 support I couldn't have finished this English version before 
 Easter.
@@ -3562,11 +3562,11 @@ convmatrix.html [Accessed: 5/1/2016].
   	TensorFlow, (2016) Tutorials: Deep MNIST for experts. [on line]. 
 Availbile at: https://www.tensorflow.org/versions/master/tutorials/
 mnist/pros/index.html  [Consulted on: 2/1/2016] 
-  	TensorFlow, (2016) Python API. ADAM Optimizer [on l’ne]. 
+  	TensorFlow, (2016) Python API. ADAM Optimizer [on l'ne]. 
 Available at: https://www.tensorflow.org/versions/master/
 api_docs/python/train.html#AdamOptimizer [Accessed: 2/1/2016].
      
-         	Github, (2016) Source code of this book [on l’ne]. Availible at:
+         	Github, (2016) Source code of this book [on l'ne]. Availible at:
      https://github.com/jorditorresBCN/TutorialTensorFlow 
      [Consulted on: 29/12/2015].
      
@@ -3582,7 +3582,7 @@ from the Barcelona Supercomputing Center (BSC-CNS).
          	Distributed TensorFlow, (2016) [online]. Available at:
      https://github.com/tensorflow/tensorflow/tree/master/tensorflow/
      core/distributed_runtime [Accessed: 16/12/2015].
-         	Github, (2016) Source code of this book [on l’ne]. Availible at:
+         	Github, (2016) Source code of this book [on l'ne]. Availible at:
      https://github.com/jorditorresBCN/TutorialTensorFlow 
      [Consulted on: 29/12/2015].
      
