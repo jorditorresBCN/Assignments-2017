@@ -59,7 +59,6 @@ Let’s see the example using the NLTK to tokenise the book [First Contact with 
 import nltk
 nltk.download('punkt') 
 import string
-import codecs
 
 from collections import Counter
 
