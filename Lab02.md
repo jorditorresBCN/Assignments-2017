@@ -59,11 +59,12 @@ Let’s see the example using the NLTK to tokenise the book [First Contact with 
 import nltk
 nltk.download('punkt') 
 import string
+import codecs
 
 from collections import Counter
 
 def get_tokens():
-   with open('FirstContactWithTensorFlow.txt', 'r') as tf:
+    tf = codecs.open('FirstContactWithTensorFlow.txt', 'r', 'utf-8-sig')
     text = tf.read()
     tokens = nltk.word_tokenize(text)
     return tokens
