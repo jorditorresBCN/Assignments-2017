@@ -25,12 +25,10 @@ then you are ready to begin writing TensorFlow programs!
 
 
 ##  Tasks 2: Do the following hands-on (from course slides):
-* Hands-on TF.1
-* Hands-on TF.2
-* Hands-on TF.3
-* Hands-on TF.4
-* Hands-on TF.5 (optiomal)
+* Hands-on TF.1: TensorFlow basics
+* Hands-on TF.2: Linear Regression in TensorFlow
+* Hands-on TF.3: Clustering in TensorFlow
+* Hands-on TF.4: Single Layer Neural Network in TensorFlow 
+* Hands-on TF.5: Multi-layer Neural Network in TensorFlow (optiomal)
+* Hands-on TF.6: Multiple GPUs and TensorFlow (optiomal)
 
-
-
-_*D).*_
