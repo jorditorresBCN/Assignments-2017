@@ -29,8 +29,8 @@ then you are ready to begin writing TensorFlow programs!
 * Hands-on TF.2: Linear Regression in TensorFlow
 * Hands-on TF.3: Clustering in TensorFlow
 * Hands-on TF.4: Single Layer Neural Network in TensorFlow 
-* Hands-on TF.5: Multi-layer Neural Network in TensorFlow (optiomal)
-* Hands-on TF.6: Multiple GPUs and TensorFlow (optiomal)
+* Hands-on TF.5: Multi-layer Neural Network in TensorFlow **(optional)**
+* Hands-on TF.6: Multiple GPUs and TensorFlow **(optional)**
 
 
 # How to Submit this Assignment:  
@@ -38,6 +38,5 @@ Submit **before the deadline** to the *RACO Practicals section* a "Lab5.txt" fil
 
 1. Group number
 2. Name and email of the members of this group
-3. Include  all`.py` files created each hands-on
-5. In case you finished optional task 4.4, include a report explaining it.
-6. Add any comment that you consider necessary.
+3. Include  all`.py` files created during TF hands-on
+4. Add any comment that you consider necessary.
