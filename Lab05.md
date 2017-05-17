@@ -24,7 +24,7 @@ Hello, TensorFlow!
 then you are ready to begin writing TensorFlow programs!
 
 
-##  Tasks 2: 
+##  Tasks 2: Do the following hands-on (from course slides):
 * Hands-on TF.1
 * Hands-on TF.2
 * Hands-on TF.3
@@ -33,4 +33,4 @@ then you are ready to begin writing TensorFlow programs!
 
 
 
-_*Detailed content of this lab will be added here soon (after Easter).*_
+_*D).*_
