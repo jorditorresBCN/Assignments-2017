@@ -9,7 +9,7 @@ On this lab we will look under the hood of these types of advanced analytics ser
 * Clone or download this repository https://github.com/jorditorresBCN/FirstContactWithTensorFlow-2nEdition
 * Validate your TensorFlow installation (assuming that target directory is ~/tensorflow ):
 
-´´´
+```
 source ~/tensorflow/bin/activate 
 git clone https://github.com/jorditorresBCN/FirstContactWithTensorFlow-2ndEdition.git
 cd FirstContactWithTensorFlow-2ndEdition/
