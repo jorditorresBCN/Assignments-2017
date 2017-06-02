@@ -22,7 +22,7 @@ Students will begin by creating a basic toolbox to get started in the Cloud. It 
 [Lab5]: https://github.com/angeltoribio-UPC-BCN/Assignments/blob/master/Lab05.md
 
 ## Course Project
-The course project can be done in groups of 1,2 or 3 students.  The students' proposal of the course project needs to be approved by the teacher before starting to develop. 
+The course project can be done in groups of 1,2 or 3 students.  Before starting the development, the students' proposal of the course project needs to be approved by the teacher. 
 
 **Six levels:** 
 * **Minimum (max  grade obtained 60%)**: One possible project idea is to prepare a presentation regarding technologies related to this part of the course (using slides).
