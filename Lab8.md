@@ -1,12 +1,13 @@
-# Lab 3: Extracting and Analyzing data from the Cloud
+# Lab 8: Extracting and Analyzing data using Elastic Search and Kibana
 
+In a previous hands-on we performed a data analysis using `matplotlib`. In this hands-on we are going to perform a data analysis using Kibana and Elastic Search.
 
-This Lab is built on top of the previous ones to discuss a basis for extracting interesting terms from a data set of tweets while we “keep the connection open” and gather all the upcoming tweets about a particular event.
+* [Task X.1: Elastic Search (ES)](#Tasks31)
+* [Task X.2: Kibana](#Tasks32)  
+* [Task X.3: Creating dashboards](#Tasks33)  
+* [Task X.4: Search bar](#Tasks34)  
+* [Task X.5: Acknoledgements](#Tasks35)  
 
-* [Task 3.1: Streaming API of Twitter](#Tasks31)
-* [Task 3.2: Analyzing tweets - counting terms](#Tasks32)  
-* [Task 3.3: Case study](#Tasks33)  
-* [Task 3.4: Student proposal](#Tasks34)  
    
 #  Tasks of Lab 3
 
@@ -260,6 +261,10 @@ We are asking to the student to create an example that will allow us to find som
 
 Create a `.pynb` file with markdown cells describing the program steps and the characteristics of the dataset created (e.g. the time frame for the download, etc.).
 
+<a name="Tasks54"/>
+## Task X.5:  Acknoledgements
+
+xxxxx
 
 # How to Submit this Assignment:  
 Be sure that you have updated your remote github repository with  the Lab `.ipynb` file generated along this Lab. Submit **before the deadline** to the *RACO Practicals section* a "Lab3.txt" file including: 
