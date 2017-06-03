@@ -15,7 +15,10 @@ In a previous hands-on we performed a data analysis using `matplotlib`. In this 
 
 <a name="Tasks31"/>
 
-The goal of this lab is collect information posted on Twitter, store it using Elasticsearh and display the information through graphs using Kibana. We will use *Beats* to collect information from Twitter, are open source data shippers that we will install as agents on our servers. Beats can send data directly to Elasticsearch or send it to Elasticsearch via Logstash, which we can use to parse and transform the data. 
+The goal of this lab is collect information posted on Twitter, store it using Elasticsearh and display the information through graphs using Kibana. We will use *Beats* to collect information from Twitter, are open source data shippers that we will install as agents on our servers. Beats can send data directly to Elasticsearch or send it to Elasticsearch via Logstash, which we can use to parse and transform the data. We will build the following workflow:
+
+![SlasticWorkflow](https://github.com/jorditorresBCN/Assignments-2017/blob/master/https://github.com/jorditorresBCN/Assignments-2017/blob/master/workflowElasticSearch.png "SlasticWorkflow")
+
 
 
 
@@ -97,6 +100,7 @@ Kibana can be started from the command line as follows:
 Kibana instance should be running at [`http://localhost:5601`](http://localhost:5601) in your browser if you run with default configuration (see[here] (https://www.elastic.co/guide/en/kibana/current/settings.html) for configuring Kibana). You can send an http request to port 5601 on local host which should give you a response something like this:
 
 ![KibanaWelcome](https://github.com/jorditorresBCN/Assignments-2017/blob/master/KibanaScreenWelcome.png "KibanaWelcome")
+
 
 *Warning: Keep the terminal open where Kibana was run to be able to keep the instance running. Create the Kibana folder in the same folder that ElasticSearch in order to use the default values  consideret in this hands-on.*
 
