@@ -6,7 +6,7 @@ In a previous hands-on we performed a data analysis using `matplotlib`. In this 
 
 * [Task 8.1: Elastic Search](#Tasks31)
 * [Task 8.2: Kibana](#Tasks32)  
-* [Task 8.3: Creating dashboards](#Tasks33)  
+* [Task 8.3: Longtash](#Tasks33)  
 * [Task 8.4: Search bar](#Tasks34)  
 * [Task 8.5: Acknoledgements](#Tasks35)  
 
@@ -14,6 +14,8 @@ In a previous hands-on we performed a data analysis using `matplotlib`. In this 
 #  Tasks of Lab 8
 
 <a name="Tasks31"/>
+
+The goal of this lab is collect information posted on Twitter, store it using Elasticsearh and display the information through graphs using Kibana.
 
 ## Task 8.1: Elastic Search
 
@@ -42,7 +44,7 @@ After these simple steps an Elasticsearch instance should be running at [`http:/
 ```
 
 
-*Important: Keep the terminal open where elastic search is running to be able to keep the instance running.You could also use [`nohup`](https://en.wikipedia.org/wiki/Nohup) mode to run the instance in the background.*
+*Warning: Keep the terminal open where elastic search is running to be able to keep the instance running.You could also use [`nohup`](https://en.wikipedia.org/wiki/Nohup) mode to run the instance in the background.*
 
 
 <a name="Tasks32"/>
@@ -62,8 +64,7 @@ Kibana instance should be running at [`http://localhost:5601`](http://localhost:
 
 ![KibanaWelcome](https://github.com/jorditorresBCN/Assignments-2017/blob/master/KibanaScreenWelcome.png "KibanaWelcome")
 
-
-*Important: Keep the terminal open where Kibana was run to be able to keep the instance running. *
+*Warning: Keep the terminal open where Kibana was run to be able to keep the instance running.*
 
 
 
@@ -81,150 +82,20 @@ XXXXX
 XXXXX
 
 
-
-The first exploratory analysis that we can perform is a simple word count. In this way, we can observe what are the terms most commonly used in the data set.
-
-Let's go to read the file with all tweets in order to be sure that everything is fine:
-
-```
-import json  
-with open('ArtificialIntelligenceTweets.json','r') as json_file:
-         for line in json_file:
-             tweet = json.loads(line)
-             print tweet["text"]
-```
-Now we are ready to start to tokenize all these tweets:
-         
-
-```
-import json
- 
-with open('ArtificialIntelligenceTweets.json', 'r') as f:
-    line = f.readline() 
-    tweet = json.loads(line) 
-    print(json.dumps(tweet, indent=4)) 
-```
-Now, if we want to process all our tweets, previously saved on file:
-
-```
-with open('ArtificialIntelligenceTweets.json', 'r') as f:
-#import io
-#f=io.open('data/stream_barcelona.json', 'r', encoding='utf8' )
-     for line in f:
-        tweet = json.loads(line)
-        tokens = preprocess(tweet['text'])
-        print(tokens)
-```
-Remember that `preprocess` have been defined in the previous Lab in order to capture Twitter-specific aspects of the text, such as #hashtags, @-mentions and URLs.:
-
-```
-import re
- 
-emoticons_str = r"""
-    (?:
-        [:=;] # Eyes
-        [oO\-]? # Nose (optional)
-        [D\)\]\(\]/\\OpP] # Mouth
-    )"""
- 
-regex_str = [
-    emoticons_str,
-    r'<[^>]+>', # HTML tags
-    r'(?:@[\w_]+)', # @-mentions
-    r"(?:\#+[\w_]+[\w\'_\-]*[\w_]+)", # hash-tags
-    r'http[s]?://(?:[a-z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-f][0-9a-f]))+', # URLs
- 
-    r'(?:(?:\d+,?)+(?:\.?\d+)?)', # numbers
-    r"(?:[a-z][a-z'\-_]+[a-z])", # words with - and '
-    r'(?:[\w_]+)', # other words
-    r'(?:\S)' # anything else
-]
-    
-tokens_re = re.compile(r'('+'|'.join(regex_str)+')', re.VERBOSE | re.IGNORECASE)
-emoticon_re = re.compile(r'^'+emoticons_str+'$', re.VERBOSE | re.IGNORECASE)
- 
-def tokenize(s):
-    return tokens_re.findall(s)
- 
-def preprocess(s, lowercase=False):
-    tokens = tokenize(s)
-    if lowercase:
-        tokens = [token if emoticon_re.search(token) else token.lower() for token in tokens]
-    return tokens
- ```
-In order to keep track of the frequencies while we are processing the tweets, we can use `collections.Counter()` which internally is a dictionary (term: count) with some useful methods like `most_common()`:
- 
- ```
-import operator 
-import json
-from collections import Counter
- 
-fname = 'ArtificialIntelligenceTweets.json'
-with open(fname, 'r') as f:
-    count_all = Counter()
-    for line in f:
-        tweet = json.loads(line)
-        # Create a list with all the terms
-        terms_all = [term for term in preprocess(tweet['text'])]
-        # Update the counter
-        count_all.update(terms_all)
-    print(count_all.most_common(5))
-    
-```
-As you can see, the above code produces words (or tokens) that are stop words. Given the nature of our data and our tokenisation, we should also be careful with all the punctuation marks and with terms like `RT` (used for re-tweets) and `via` (used to mention the original author), which are not in the default stop-word list.
-
-```
-import nltk
-from nltk.corpus import stopwords
-nltk.download("stopwords") # download the stopword corpus on our computer
-import string
- 
-punctuation = list(string.punctuation)
-stop = stopwords.words('english') + punctuation + ['rt', 'via', 'RT']
-
-```
-
-We can now substitute the variable `terms_all` in the first example with something like:
-
-```
-import operator 
-import json
-from collections import Counter
- 
-fname = 'ArtificialIntelligenceTweets.json'
-with open(fname, 'r') as f:
-    count_all = Counter()
-    for line in f:
-        tweet = json.loads(line)
-        # Create a list with all the terms
-        terms_stop = [term for term in preprocess(tweet['text']) if term not in stop]
-        count_all.update(terms_stop)
-    for word, index in count_all.most_common(5):
-        print '%s : %s' % (word, index)
-```
-
-Besides stop-word removal, we can further customise the list of terms/tokens we are interested in. 
-For instance, if we want to count *hastags* only:
-```
-terms_hash = [term for term in preprocess(tweet['text']) 
-              if term.startswith('#')]
-```
-In the case we are interested to count terms only, no hashtags and no mentions:
-```
-terms_only = [term for term in preprocess(tweet['text']) 
-              if term not in stop and
-              not term.startswith(('#', '@'))] 
-```
-> Mind the double brackets (( )) `startswith()` takes a tuple (not a list) if  we pass a list of inputs. 
-
-Although we do not consider it in this Lab, there are other functions from NLTK very useful. For instance, to put things in context, some analysis considers sequences of two terms. In this case we can use `bigrams()` function that will take a list of tokens and produce a list of tuples using adjacent tokens.
-
-Do the same analysis with the `.json` file generated by you in the previous task.
 
 
 <a name="Tasks33"/>
 
-## Task 3.3:  Case study
+## Task 8.3:  Logstash
+
+
+Logstash provides an input stream to Elastic for storage and search.
+
+https://www.elastic.co/guide/en/beats/libbeat/current/logstash-installation.html
+
+
+, and Kibana accesses the data for visualizations such as dashboards.[5]
+
 
 At "[Racó (course intranet)](https://raco.fib.upc.edu/home/portada/jordi.torres)" you can find a small dataset as a example (please do not distribute due to Twitter licensing). This dataset contains 1060 tweets downloaded from around 18:05 to 18:15  on January 13. We used "Barcelona" as a `track` parameter at `twitter_stream.filter` function. 
 
