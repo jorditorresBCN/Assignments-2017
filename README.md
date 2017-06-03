@@ -15,7 +15,7 @@ Students will begin by creating a basic toolbox to get started in the Cloud. It 
 - Lab 4: [Interacting with users and services in the Cloud][Lab4]          **20%** + **5% (optional part)**
 - Lab 5: [Under the hood of Cloud Advanced Analytics Services][Lab5]       **20%** + **5% (optional part)**
 
-[Lab1]: ./blob/master/Lab01.md
+[Lab1]: ./Lab01.md
 [Lab2]: https://github.com/angeltoribio-UPC-BCN/Assignments-2018/blob/master/Lab02.md
 [Lab3]: https://github.com/angeltoribio-UPC-BCN/Assignments-2018/blob/master/Lab03.md
 [Lab4]: https://github.com/angeltoribio-UPC-BCN/Assignments-2018/blob/master/Lab04.md
