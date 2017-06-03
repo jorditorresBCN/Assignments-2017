@@ -24,7 +24,7 @@ The goal of this lab is collect information posted on Twitter, store it using El
 
 [Elastic Search](https://en.wikipedia.org/wiki/Elasticsearch) is an open source NoSQL distributed and scalable search engine. Elastic Search provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. 
 
-The installation of Elastic Search is quite simple following the documentation at https://www.elastic.co/guide/en/elasticsearch/reference/current/zip-targz.html. 
+The installation of Elastic Search is quite simple following the documentation [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/zip-targz.html). 
 
 ####  Download and install the .zip package
 The `.zip` archive for Elasticsearch v5.4.1 can be downloaded and installed as follows:
@@ -71,13 +71,30 @@ After these simple steps an Elasticsearch instance should be running at [`http:/
 [Kibana](https://en.wikipedia.org/wiki/Kibana) is an open source data exploration and visualization tool built on Elastic Search to help you understand data better. It provides visualization capabilities on top of the content indexed on an Elasticsearch cluster. Users can create bar, line and scatter plots, or pie charts and maps on top of large volumes of data.
 
 
-The installation and initialization of Kibana is similar to that of Elasticsearch:
+The installation and initialization of Kibana is similar to that of Elasticsearch following the documentation [here](https://www.elastic.co/guide/en/kibana/current/install.html). 
+Kibana is provided for Linux and Darwin as a .tar.gz package. I'm show the steps using the Darwin version (choose the correct version according your operation system). 
 
-1. Download and unzip Kibana (in the same folder you donwloaded ElasticSearch) from https://www.elastic.co/start
-3. Change the directory to Kibana folder `cd kibana-5.4.0-darwin-x86_64`
-4. Run bin/Kibana (or bin\Kibana.bat on Windows)
+####  Download and install the Kibana package
+The 64-bit Linux archive for Kibana v5.4.1 can be downloaded and installed as follows:  
+```
+wget https://artifacts.elastic.co/downloads/kibana/kibana-5.4.1-darwin-x86_64.tar.gz
+tar -xzf kibana-5.4.1-darwin-x86_64.tar.gz
+```
+#### Change the directory to Kibana folder 
+```
+cd kibana/ 
+```
 
-Kibana instance should be running at [`http://localhost:5601`](http://localhost:5601) in your browser if you run with default configuration.
+#### Running Elasticsearch from the command line
+Kibana can be started from the command line as follows:
+
+```
+./bin/kibana
+```
+
+#### Checking that Kibana is running
+
+Kibana instance should be running at [`http://localhost:5601`](http://localhost:5601) in your browser if you run with default configuration (see[here] (https://www.elastic.co/guide/en/kibana/current/settings.html) for configuring Kibana). You can send an http request to port 5601 on local host which should give you a response something like this:
 
 ![KibanaWelcome](https://github.com/jorditorresBCN/Assignments-2017/blob/master/KibanaScreenWelcome.png "KibanaWelcome")
 
