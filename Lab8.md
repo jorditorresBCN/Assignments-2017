@@ -9,7 +9,7 @@ In a previous hands-on we performed a data analysis using `matplotlib`. In this 
 * [Task 8.5: Acknoledgements](#Tasks35)  
 
    
-#  Tasks of Lab X
+#  Tasks of Lab 8
 
 <a name="Tasks31"/>
 
@@ -19,10 +19,26 @@ In a previous hands-on we performed a data analysis using `matplotlib`. In this 
 
 The installation of Elastic Search is quite simple and it is as follows:
 1. Download and unzip Elasticsearch from https://www.elastic.co/start 
-2. Change the directory to Elasticsearch folder cd elasticsearch-5.4.0` (commands according last visit on 01/Jun/2017)
+2. Change the directory to Elasticsearch folder `cd elasticsearch-5.4.0` (commands according last visit on 01/Jun/2017)
 3. Run `bin/elasticsearch` (or bin\elasticsearch.bat on Windows)
 
-After these simple steps an Elasticsearch instance should be running at [`http://localhost:9200`](http://localhost:9200) in your browser if you run with default configuration.
+After these simple steps an Elasticsearch instance should be running at [`http://localhost:9200`](http://localhost:9200) in your browser if you run with default configuration. You will receive: 
+```
+{
+  "name" : "zTy5Ohn",
+  "cluster_name" : "elasticsearch",
+  "cluster_uuid" : "MT8F5SiVTJmmkXh8lMjzag",
+  "version" : {
+    "number" : "5.4.0",
+    "build_hash" : "780f8c4",
+    "build_date" : "2017-04-28T17:43:27.229Z",
+    "build_snapshot" : false,
+    "lucene_version" : "6.5.0"
+  },
+  "tagline" : "You Know, for Search"
+}
+```
+
 
 *Important: Keep the terminal open where elastic search is running to be able to keep the instance running.You could also use [`nohup`](https://en.wikipedia.org/wiki/Nohup) mode to run the instance in the background.*
 
