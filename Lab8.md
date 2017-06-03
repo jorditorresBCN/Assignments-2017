@@ -60,6 +60,9 @@ The installation and initialization of Kibana is similar to that of Elasticsearc
 
 Kibana instance should be running at [`http://localhost:5601`](http://localhost:5601) in your browser if you run with default configuration.
 
+![UPC Barcelona Tech](https://github.com/jorditorresBCN/Quick-Start/blob/master/img/UPClogo.png "UPC logo")
+
+
 *Important: Keep the terminal open where Kibana was run to be able to keep the instance running. *
 
 
