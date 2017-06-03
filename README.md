@@ -13,7 +13,7 @@ Students will begin by creating a basic toolbox to get started in the Cloud. It 
 - Lab 2: [Doors in the Cloud][Lab2]                                        **20%**
 - Lab 3: [Extracting and Analyzing data from the Cloud][Lab3]              **20%**
 - Lab 4: [Interacting with users and services in the Cloud][Lab4]          **20%** + **5% (optional part)**
-- Lab 5: [Under the hood of Cloud Advanced Analytics Services][Lab5]       **20%** + **5% (optional part)**
+- Lab 5: [Under the hood of the Cloud: Advanced Analytics Services][Lab5]       **20%** + **5% (optional part)**
 
 [Lab1]: ./Lab01.md
 [Lab2]: ./Lab02.md
@@ -22,10 +22,11 @@ Students will begin by creating a basic toolbox to get started in the Cloud. It 
 [Lab5]: ./Lab05.md
 
 ## Course Project
-The course project can be done in groups of 1,2 or 3 students.  Before starting the development, the students' proposal of the course project needs to be approved by the teacher. 
+The course project can be done in groups of 1,2 or 3 students.  Before starting the development, students' require the teacher's approval of their course project proposal. 
 
 **Six levels:** 
 * **Minimum (max  grade obtained 60%)**: One possible project idea is to prepare a presentation regarding technologies related to this part of the course (using slides).
+
 * **Medium (max grade obtained 90%)**: Another project alternative is to create a self-contained practical guide (hands-on guide) that helps the reader in learning one of the latest cloud technologies.
 
 * **Full (option 1)**:  The standard project is to create an application using existing APIs. [Starting here for more information](https://www.analyticsvidhya.com/blog/2017/02/6-deep-learning-applications-beginner-python/?utm_source=feedburner&utm_medium=email&utm_campaign=Feed%3A+AnalyticsVidhya+%28Analytics+Vidhya%29). For example:  
@@ -35,13 +36,13 @@ The course project can be done in groups of 1,2 or 3 students.  Before starting 
   
 * **Full (option 2)**:  Carry out one of the projects suggested by the professor during this course.
   
-* **Advanced (option 1) (bonus of +10%)**  The project offers an excellent opportunity for the students to dive into course content by implementing a protoype (proof of concept implementation of a business idea created by the students) using some of the latest Cloud technology. Your teacher will be deligted to help you.
+* **Advanced (option 1) (+10% bonus)**  The project offers an excellent opportunity for students to dive into the course contents by implementing a protoype (proof of concept implementation of a business idea created by the students) using some of the latest Cloud technology. Your teacher will be deligted to help you.
 
-* **Advanced (option 2) (bonus of +10%)**  Surprise the teacher with a project proposal that he accepts.
+* **Advanced (option 2) (+10% bonus)**  Surprise the teacher with a project proposal that he accepts.
 
 ## Deadlines
 #### Deadlines for Labs
-The indicated deadlines are simply suggestions for you to ideally finish each hands-on assignment. They are meant to help you keeping on track and maintaining an appropriate pace throughout the program. There are no penalties if you miss the deadlines. It is a recommended best practice trying to meet each suggested deadline.
+The indicated deadlines are mere suggestions for you to ideally complete each hands-on assignment. They are meant to help you keeping on track and maintaining an appropriate pace throughout the program. There is no penalty if you miss the deadlines. 
 #### Deadline for the course Project
 The deadlines indicated in the course syllabus are a hard deadline.
 
