@@ -283,8 +283,12 @@ Create a `.pynb` file with markdown cells describing the program steps and the c
 
 <a name="Tasks35"/>
 
-## Task X.5:  Acknoledgements
-This hands-on was based on a [post at Analytics Vidhya](https://www.analyticsvidhya.com/blog/2017/05/beginners-guide-to-data-exploration-using-elastic-search-and-kibana) by Supreeth Manyam ([@ziron](https://datahack.analyticsvidhya.com/user/profile/ziron). Also the project of [Victoria Gabante](https://www.linkedin.com/in/victoria-gabante-guerra-03a679b2) and [Osmar Rodríguez](https://twitter.com/osmar106) in our master course [CC-MEI](http://jorditorres.org/CC-MEI-2017/) at UPC contributed in this hands-on.
+## Task X.5:  Acknowledgements
+This hands-on was partially based on based on a [post at Analytics Vidhya portal](https://www.analyticsvidhya.com/blog/2017/05/beginners-guide-to-data-exploration-using-elastic-search-and-kibana) by Supreeth Manyam ([@ziron](https://datahack.analyticsvidhya.com/user/profile/ziron).
+
+I will thank my former students [Victoria Gabante](https://www.linkedin.com/in/victoria-gabante-guerra-03a679b2) and [Osmar Rodríguez](https://twitter.com/osmar106), who provided insight and expertise in this hands-on with their project at my master course [CC-MEI](http://jorditorres.org/CC-MEI-2017/) at UPC.
+
+I would also like to show my gratitude to [Dani Cea](https://www.linkedin.com/in/danicea/) for his help on an earlier version of this hands-on 2 years ago. 
 
 
 # How to Submit this Assignment:  
