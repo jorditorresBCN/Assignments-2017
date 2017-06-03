@@ -2,27 +2,27 @@
 
 In a previous hands-on we performed a data analysis using `matplotlib`. In this hands-on we are going to perform a data analysis using Kibana and Elastic Search.
 
-* [Task X.1: Elastic Search](#Tasks31)
-* [Task X.2: Kibana](#Tasks32)  
-* [Task X.3: Creating dashboards](#Tasks33)  
-* [Task X.4: Search bar](#Tasks34)  
-* [Task X.5: Acknoledgements](#Tasks35)  
+* [Task 8.1: Elastic Search](#Tasks31)
+* [Task 8.2: Kibana](#Tasks32)  
+* [Task 8.3: Creating dashboards](#Tasks33)  
+* [Task 8.4: Search bar](#Tasks34)  
+* [Task 8.5: Acknoledgements](#Tasks35)  
 
    
 #  Tasks of Lab X
 
 <a name="Tasks31"/>
 
-## Task X.1: Elastic Search
+## Task 8.1: Elastic Search
 
 [Elastic Search](https://www.elastic.co) is an open source NoSQL distributed and scalable search engine. Elastic Search provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. 
 
 The installation of Elastic Search is quite simple and it is as follows:
-1. Download and unzip Elasticsearch
-2. Change the directory to Elasticsearch folder
-3. Run bin/elasticsearch (or bin\elasticsearch.bat on Windows)
+1. Download and unzip Elasticsearch from https://www.elastic.co/start 
+2. Change the directory to Elasticsearch folder cd elasticsearch-5.4.0` (commands according last visit on 01/Jun/2017)
+3. Run `bin/elasticsearch` (or bin\elasticsearch.bat on Windows)
 
-After these simple steps an Elasticsearch instance should be running at `http://localhost:9200` in your browser if you run with default configuration.
+After these simple steps an Elasticsearch instance should be running at [`http://localhost:9200`](http://localhost:9200) in your browser if you run with default configuration.
 
 *Important: Keep the terminal open where elastic search is running to be able to keep the instance running.You could also use [`nohup`](https://en.wikipedia.org/wiki/Nohup) mode to run the instance in the background.*
 
