@@ -1,5 +1,7 @@
 # Lab 8: Extracting and Analyzing data using Elastic Search and Kibana
 
+**_Last update: 6-June-2017_**
+
 In a previous hands-on we performed a data analysis using `matplotlib`. In this hands-on we are going to perform a data analysis using Kibana and Elastic Search.
 
 * [Task 8.1: Elastic Search](#Tasks31)
@@ -19,7 +21,7 @@ In a previous hands-on we performed a data analysis using `matplotlib`. In this 
 
 The installation of Elastic Search is quite simple and it is as follows:
 1. Download and unzip Elasticsearch from https://www.elastic.co/start 
-2. Change the directory to Elasticsearch folder `cd elasticsearch-5.4.0` (commands according last visit on 01/Jun/2017)
+2. Change the directory to Elasticsearch folder `cd elasticsearch-5.4.0` (commands according last visit on 01/June/2017)
 3. Run `bin/elasticsearch` (or bin\elasticsearch.bat on Windows)
 
 After these simple steps an Elasticsearch instance should be running at [`http://localhost:9200`](http://localhost:9200) in your browser if you run with default configuration. You will receive: 
@@ -42,54 +44,30 @@ After these simple steps an Elasticsearch instance should be running at [`http:/
 
 *Important: Keep the terminal open where elastic search is running to be able to keep the instance running.You could also use [`nohup`](https://en.wikipedia.org/wiki/Nohup) mode to run the instance in the background.*
 
-In case we want to “keep the connection open”, and gather all the upcoming tweets about a particular event, the [Streaming API](https://dev.twitter.com/streaming/overview) is what we need.  The Streaming APIs give developers low latency access to Twitter’s global stream of Tweet data. A proper implementation of a streaming client will be pushed messages indicating Tweets and other events have occurred. 
-Connecting to the streaming API requires keeping a persistent HTTP connection open. In many cases this involves thinking about your application differently than if you were interacting with the REST API. Visit the [Streaming API](https://dev.twitter.com/streaming/overview) for more details about the differences between Streaming and REST. The Streaming API is one of the favorite ways of getting a massive amount of data without exceeding the rate limits. If your intention is to conduct singular searches, read user profile information, or post Tweets, consider using the REST APIs instead.
-
-We need to extend the `StreamListener()` class to customise the way we process the incoming data. We will base our explanation with a working example (from [Marco Bonzanini](https://marcobonzanini.com/2015/03/02/mining-twitter-data-with-python-part-1/)) that gathers all the new tweets with the "ArtificialIntelligence" content:
-```
-import tweepy
-from tweepy import OAuthHandler
-
-consumer_key = 'YOUR-CONSUMER-KEY'
-consumer_secret = 'YOUR-CONSUMER-SECRET'
-access_token = 'YOUR-ACCESS-TOKEN'
-access_secret = 'YOUR-ACCESS-SECRET'
-
-auth = OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_secret)
- 
-api = tweepy.API(auth)
-```
-```
-from tweepy import Stream
-from tweepy.streaming import StreamListener
- 
-class MyListener(StreamListener):
- 
-    def on_data(self, data):
-        try:
-            with open('ArtificialIntelligenceTweets.json', 'a') as f:
-                f.write(data)
-                return True
-        except BaseException as e:
-            print("Error on_data: %s" % str(e))
-        return True
- 
-    def on_error(self, status):
-        print(status)
-        return True
- 
-twitter_stream = Stream(auth, MyListener())
-twitter_stream.filter(track=['ArtificialIntelligence'])
-```
-
-The core of the streaming logic is implemented in the `CustomListener` class, which extends `StreamListener` and overrides two methods: `on_data()` and `on_error()`. These are handlers that are triggered when data is coming through and an error is given by the API. if the error is that we have been rate limited by the Twitter API, we need to wait before we can use the service again. The `on_data()` method is called when data is coming through. This function simply stores the data as it is received in the  `ArtificialIntelligenceTweets.json` file. Each line of this file will then contain a single tweet, in the JSON format. You can use the command `wc -l ArtificialIntelligenceTweets.json` from a Unix shell to know how many tweets you’ve gathered.
-
-Before continuing the hands-on, be sure that you generated correctly the `.json` file. now try with another term of your interest.
 
 <a name="Tasks32"/>
 
-## Task 3.2:  Analizing tweets - Counting terms
+## Task 8.2:  Kibana
+
+[Kibana](https://en.wikipedia.org/wiki/Kibana) is an open source data exploration and visualization tool built on Elastic Search to help you understand data better. It provides visualization capabilities on top of the content indexed on an Elasticsearch cluster. Users can create bar, line and scatter plots, or pie charts and maps on top of large volumes of data.
+
+
+
+XXXXX
+
+
+XXXXX
+
+
+XXXXX
+
+
+XXXXX
+
+XXXXX
+
+
+
 The first exploratory analysis that we can perform is a simple word count. In this way, we can observe what are the terms most commonly used in the data set.
 
 Let's go to read the file with all tweets in order to be sure that everything is fine:
