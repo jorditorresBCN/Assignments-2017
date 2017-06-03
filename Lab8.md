@@ -6,7 +6,7 @@ In a previous hands-on we performed a data analysis using `matplotlib`. In this 
 
 * [Task 8.1: Elastic Search](#Tasks31)
 * [Task 8.2: Kibana](#Tasks32)  
-* [Task 8.3: Longtash](#Tasks33)  
+* [Task 8.3: Longtash and Beats](#Tasks33)  
 * [Task 8.4: Search bar](#Tasks34)  
 * [Task 8.5: Acknoledgements](#Tasks35)  
 
@@ -106,28 +106,13 @@ Kibana instance should be running at [`http://localhost:5601`](http://localhost:
 
 
 
-XXXXX
-
-
-XXXXX
-
-
-XXXXX
-
-
-XXXXX
-
-XXXXX
-
-
-
-
 <a name="Tasks33"/>
 
-## Task 8.3:  Logstash
-
+## Task 8.3: Logstash and Beats
 
 Logstash provides an input stream to Elastic for storage and search.
+
+
 
 https://www.elastic.co/guide/en/beats/libbeat/current/logstash-installation.html
 
@@ -135,12 +120,27 @@ https://www.elastic.co/guide/en/beats/libbeat/current/logstash-installation.html
 , and Kibana accesses the data for visualizations such as dashboards.[5]
 
 
+<a name="Tasks34"/>
+
+## Task 8.4: X-Pack
+
+https://www.elastic.co/guide/en/x-pack/current/installing-xpack.html
+
+
+## Task 8.XXXXX: COSES PENDENTS
+
+* ElasticSearch Head Plugin (https://mobz.github.io/elasticsearch-head/
+
+* Posible error: Total Fields Limit setting (https://discuss.elastic.co/t/total-fields-limit-setting/53004)  
+
+user: elastic
+
+password: changeme
 
 
 <a name="Tasks35"/>
 
-## Task X.5:  Acknowledgements
-This hands-on was partially based on based on a [post at Analytics Vidhya portal](https://www.analyticsvidhya.com/blog/2017/05/beginners-guide-to-data-exploration-using-elastic-search-and-kibana) by Supreeth Manyam ([@ziron](https://datahack.analyticsvidhya.com/user/profile/ziron).
+## Task 8.5:  Acknowledgements
 
 I will thank my former students [Victoria Gabante](https://www.linkedin.com/in/victoria-gabante-guerra-03a679b2) and [Osmar Rodríguez](https://twitter.com/osmar106), who provided insight and expertise in this hands-on with their project at my master course [CC-MEI](http://jorditorres.org/CC-MEI-2017/) at UPC.
 
