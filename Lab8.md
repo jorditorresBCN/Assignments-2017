@@ -28,7 +28,10 @@ The installation of Elastic Search is quite simple following the documentation a
 
 ####  Download and install the .zip package
 The `.zip` archive for Elasticsearch v5.4.1 can be downloaded and installed as follows:
-
+```
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.4.1.zip
+unzip elasticsearch-5.4.1.zip
+```
 #### Change the directory to Elasticsearch folder 
 ```
 cd elasticsearch-5.4.1/ 
@@ -58,7 +61,7 @@ After these simple steps an Elasticsearch instance should be running at [`http:/
 ```
 
 
-*Warnings: By default, Elasticsearch runs in the foreground, prints its logs to the standard output (stdout), and can be stopped by pressing Ctrl-C. Keep the terminal open where elastic search is running to be able to keep the instance running.You could also use [`nohup`](https://en.wikipedia.org/wiki/Nohup) mode to run the instance in the background.*
+*Warnings: By default, Elasticsearch runs in the foreground, prints its logs to the standard output (stdout), and can be stopped by pressing `Ctrl-C`. Keep the terminal open where elastic search is running to be able to keep the instance running.You could also use [`nohup`](https://en.wikipedia.org/wiki/Nohup) mode to run the instance in the background. Elasticsearch requires Java 8 or later. Use the official Oracle distribution. You can check the java version of your platform using the command `java -version`*
 
 
 <a name="Tasks32"/>
