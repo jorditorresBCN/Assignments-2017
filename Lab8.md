@@ -2,18 +2,30 @@
 
 In a previous hands-on we performed a data analysis using `matplotlib`. In this hands-on we are going to perform a data analysis using Kibana and Elastic Search.
 
-* [Task X.1: Elastic Search (ES)](#Tasks31)
+* [Task X.1: Elastic Search](#Tasks31)
 * [Task X.2: Kibana](#Tasks32)  
 * [Task X.3: Creating dashboards](#Tasks33)  
 * [Task X.4: Search bar](#Tasks34)  
 * [Task X.5: Acknoledgements](#Tasks35)  
 
    
-#  Tasks of Lab 3
+#  Tasks of Lab X
 
 <a name="Tasks31"/>
 
-## Task 3.1: Streaming API of Twitter
+## Task X.1: Elastic Search
+
+[Elastic Search](https://www.elastic.co) is an open source NoSQL distributed and scalable search engine. Elastic Search provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. 
+
+The installation of Elastic Search is quite simple and it is as follows:
+1- Download and unzip Elasticsearch
+2- Change the directory to Elasticsearch folder
+3- Run bin/elasticsearch (or bin\elasticsearch.bat on Windows)
+
+After these simple steps an Elasticsearch instance should be running at `http://localhost:9200` in your browser if you run with default configuration.
+
+*Important: Keep the terminal open where elastic search is running to be able to keep the instance running.You could also use [`nohup`](https://en.wikipedia.org/wiki/Nohup) mode to run the instance in the background.*
+
 In case we want to “keep the connection open”, and gather all the upcoming tweets about a particular event, the [Streaming API](https://dev.twitter.com/streaming/overview) is what we need.  The Streaming APIs give developers low latency access to Twitter’s global stream of Tweet data. A proper implementation of a streaming client will be pushed messages indicating Tweets and other events have occurred. 
 Connecting to the streaming API requires keeping a persistent HTTP connection open. In many cases this involves thinking about your application differently than if you were interacting with the REST API. Visit the [Streaming API](https://dev.twitter.com/streaming/overview) for more details about the differences between Streaming and REST. The Streaming API is one of the favorite ways of getting a massive amount of data without exceeding the rate limits. If your intention is to conduct singular searches, read user profile information, or post Tweets, consider using the REST APIs instead.
 
@@ -267,13 +279,5 @@ Create a `.pynb` file with markdown cells describing the program steps and the c
 This hands-on was based on a [post at Analytics Vidhya](https://www.analyticsvidhya.com/blog/2017/05/beginners-guide-to-data-exploration-using-elastic-search-and-kibana/?utm_source=feedburner&utm_medium=email&utm_campaign=Feed:+AnalyticsVidhya+(Analytics+Vidhya)) by Supreeth Manyam ([@ziron](https://datahack.analyticsvidhya.com/user/profile/ziron). Also the project of [Victoria Gabante](https://www.linkedin.com/in/victoria-gabante-guerra-03a679b2) and [Osmar Rodríguez](https://twitter.com/osmar106) in our master course [CC-MEI](http://jorditorres.org/CC-MEI-2017/) at UPC contributed in this hands-on.
 
 
-xxxxx
-
 # How to Submit this Assignment:  
-Be sure that you have updated your remote github repository with  the Lab `.ipynb` file generated along this Lab. Submit **before the deadline** to the *RACO Practicals section* a "Lab3.txt" file including: 
-
-1. Group number
-2. name and email of the members of this group
-3. github url that contains your lab answers (the same as Lab1 and Lab2)
-4. link to your dataset created in task 3.4.
-5. add any comment that you consider necessary.
+Submit **before the deadline** to the *RACO Practicals section* a "LabX.txt" following the guidelines indicated in the last theory class. 
