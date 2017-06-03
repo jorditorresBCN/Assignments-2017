@@ -261,7 +261,7 @@ We are asking to the student to create an example that will allow us to find som
 
 Create a `.pynb` file with markdown cells describing the program steps and the characteristics of the dataset created (e.g. the time frame for the download, etc.).
 
-<a name="Tasks54"/>
+<a name="Tasks35"/>
 
 ## Task X.5:  Acknoledgements
 This hands-on was based on a [post at Analytics Vidhya](https://www.analyticsvidhya.com/blog/2017/05/beginners-guide-to-data-exploration-using-elastic-search-and-kibana/?utm_source=feedburner&utm_medium=email&utm_campaign=Feed:+AnalyticsVidhya+(Analytics+Vidhya)) by Supreeth Manyam ([@ziron](https://datahack.analyticsvidhya.com/user/profile/ziron). Also the project of [Victoria Gabante](https://www.linkedin.com/in/victoria-gabante-guerra-03a679b2) and [Osmar Rodríguez](https://twitter.com/osmar106) in our master course [CC-MEI](http://jorditorres.org/CC-MEI-2017/) at UPC contributed in this hands-on.
