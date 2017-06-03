@@ -18,9 +18,9 @@ In a previous hands-on we performed a data analysis using `matplotlib`. In this 
 [Elastic Search](https://www.elastic.co) is an open source NoSQL distributed and scalable search engine. Elastic Search provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. 
 
 The installation of Elastic Search is quite simple and it is as follows:
-1- Download and unzip Elasticsearch
-2- Change the directory to Elasticsearch folder
-3- Run bin/elasticsearch (or bin\elasticsearch.bat on Windows)
+1. Download and unzip Elasticsearch
+2. Change the directory to Elasticsearch folder
+3. Run bin/elasticsearch (or bin\elasticsearch.bat on Windows)
 
 After these simple steps an Elasticsearch instance should be running at `http://localhost:9200` in your browser if you run with default configuration.
 
