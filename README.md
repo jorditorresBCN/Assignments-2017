@@ -16,10 +16,10 @@ Students will begin by creating a basic toolbox to get started in the Cloud. It 
 - Lab 5: [Under the hood of Cloud Advanced Analytics Services][Lab5]       **20%** + **5% (optional part)**
 
 [Lab1]: ./Lab01.md
-[Lab2]: https://github.com/angeltoribio-UPC-BCN/Assignments-2018/blob/master/Lab02.md
-[Lab3]: https://github.com/angeltoribio-UPC-BCN/Assignments-2018/blob/master/Lab03.md
-[Lab4]: https://github.com/angeltoribio-UPC-BCN/Assignments-2018/blob/master/Lab04.md
-[Lab5]: https://github.com/angeltoribio-UPC-BCN/Assignments-2018/blob/master/Lab05.md
+[Lab2]: ./Lab02.md
+[Lab3]: ./Lab03.md
+[Lab4]: ./Lab04.md
+[Lab5]: ./Lab05.md
 
 ## Course Project
 The course project can be done in groups of 1,2 or 3 students.  Before starting the development, the students' proposal of the course project needs to be approved by the teacher. 
