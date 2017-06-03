@@ -6,14 +6,14 @@ In this Lab session you will be asked to put in practice the basic knowledge req
 
 #  Pre-lab homework 0 
 Take a look at the following hands-on guides to check if you already have the basic knowledge to follow this course. If not, please do the assigments. 
-* Hands-on 0: [Run a Linux OS in a Virtual Machine](./LinuxOS-VirtualMachine.md) (Only for Windows users)
-* Hands-on 1: [Git and GitHub Quick Start](../Quick-Start/Git-Github-Quick-Start.md)
-* Hands-on 2: [Markdown syntax](./Quick-Start-Markdown.md)
-* Hands-on 3: [Python Quick Start](./Python-Quick-Start.md) 
+* Hands-on 0: [Run a Linux OS in a Virtual Machine](https://github.com/angeltoribio-UPC-BCN/Quick-Start/blob/master/LinuxOS-VirtualMachine.md) (Only for Windows users)
+* Hands-on 1: [Git and GitHub Quick Start](https://github.com/angeltoribio-UPC-BCN/Quick-Start/blob/master/Git-Github-Quick-Start.md)
+* Hands-on 2: [Markdown syntax](https://github.com/angeltoribio-UPC-BCN/Quick-Start/blob/master/Quick-Start-Markdown.md)
+* Hands-on 3: [Python Quick Start](https://github.com/angeltoribio-UPC-BCN/Quick-Start/blob/master/Python-Quick-Start.md) 
 
 #  Pre-lab homework 1
 Create an AWS account following the following hands-on:
-* Hands-on 5: [Getting Started in the Cloud with AWS](./Quick-Start-AWS.md)
+* Hands-on 5: [Getting Started in the Cloud with AWS](https://github.com/angeltoribio-UPC-BCN/Quick-Start/blob/master/Quick-Start-AWS.md)
 
 #  Tasks of Lab 1 
 ## Task 1.1: 
