@@ -15,18 +15,32 @@ In a previous hands-on we performed a data analysis using `matplotlib`. In this 
 
 <a name="Tasks31"/>
 
-The goal of this lab is collect information posted on Twitter, store it using Elasticsearh and display the information through graphs using Kibana.
+The goal of this lab is collect information posted on Twitter, store it using Elasticsearh and display the information through graphs using Kibana. We will use *Beats* to collect information from Twitter, are open source data shippers that we will install as agents on our servers. Beats can send data directly to Elasticsearch or send it to Elasticsearch via Logstash, which we can use to parse and transform the data. 
+
+
+
 
 ## Task 8.1: Elastic Search
 
-[Elastic Search](https://www.elastic.co) is an open source NoSQL distributed and scalable search engine. Elastic Search provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. 
+[Elastic Search](https://en.wikipedia.org/wiki/Elasticsearch) is an open source NoSQL distributed and scalable search engine. Elastic Search provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. 
 
-The installation of Elastic Search is quite simple and it is as follows:
-1. Download and unzip Elasticsearch from https://www.elastic.co/start 
-2. Change the directory to Elasticsearch folder `cd elasticsearch-5.4.0` (commands according last visit on 01/June/2017)
-3. Run `bin/elasticsearch` (or bin\elasticsearch.bat on Windows)
+The installation of Elastic Search is quite simple following the documentation at https://www.elastic.co/guide/en/elasticsearch/reference/current/zip-targz.html. 
 
-After these simple steps an Elasticsearch instance should be running at [`http://localhost:9200`](http://localhost:9200) in your browser if you run with default configuration. You will receive: 
+####  Download and install the .zip package
+The `.zip` archive for Elasticsearch v5.4.1 can be downloaded and installed as follows:
+
+#### Change the directory to Elasticsearch folder 
+```
+cd elasticsearch-5.4.1/ 
+```
+
+#### Running Elasticsearch from the command line
+```
+./bin/elasticsearch
+```
+
+#### Checking that Elasticsearch is running
+After these simple steps an Elasticsearch instance should be running at [`http://localhost:9200`](http://localhost:9200) in your browser if you run with default configuration. You can send an http request to port 9200 on local host which should give you a response something like this:
 ```
 {
   "name" : "zTy5Ohn",
@@ -44,7 +58,7 @@ After these simple steps an Elasticsearch instance should be running at [`http:/
 ```
 
 
-*Warning: Keep the terminal open where elastic search is running to be able to keep the instance running.You could also use [`nohup`](https://en.wikipedia.org/wiki/Nohup) mode to run the instance in the background.*
+*Warnings: By default, Elasticsearch runs in the foreground, prints its logs to the standard output (stdout), and can be stopped by pressing Ctrl-C. Keep the terminal open where elastic search is running to be able to keep the instance running.You could also use [`nohup`](https://en.wikipedia.org/wiki/Nohup) mode to run the instance in the background.*
 
 
 <a name="Tasks32"/>
