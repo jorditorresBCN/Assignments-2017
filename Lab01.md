@@ -1,19 +1,19 @@
 # Lab 1: 
-# Basic "Knowledge Toolbox" to getting started in the Cloud
-In this Lab session you will be asked to put in practice the basic knowledge required for Labs of this course.
+# Basic "Knowledge Toolbox" to get started in the Cloud
+In this Lab session you will be asked to put in practice the basic knowledge required for the Labs of this course.
 
 
 
 #  Pre-lab homework 0 
-Have a look of these following hands-on to check if you have the basics to follow this course. If not do it. 
-* Hands-on 0: [Run a Linux OS in a Virtual Machine](https://github.com/jorditorresBCN/Quick-Start/blob/master/LinuxOS-VirtualMachine.md) (Only for Windows users)
-* Hands-on 1: [Git and GitHub Quick Start](https://github.com/jorditorresBCN/Quick-Start/blob/master/Git-Github-Quick-Start.md)
-* Hands-on 2: [Markdown syntax](https://github.com/jorditorresBCN/Quick-Start/blob/master/Quick-Start-Markdown.md)
-* Hands-on 3: [Python Quick Start](https://github.com/jorditorresBCN/Quick-Start/blob/master/Python-Quick-Start.md) 
+Take a look at the following hands-on guides to check if you already have the basic knowledge to follow this course. If not, please do the assigments. 
+* Hands-on 0: [Run a Linux OS in a Virtual Machine](./LinuxOS-VirtualMachine.md) (Only for Windows users)
+* Hands-on 1: [Git and GitHub Quick Start](../Quick-Start/Git-Github-Quick-Start.md)
+* Hands-on 2: [Markdown syntax](./Quick-Start-Markdown.md)
+* Hands-on 3: [Python Quick Start](./Python-Quick-Start.md) 
 
 #  Pre-lab homework 1
 Create an AWS account following the following hands-on:
-* Hands-on 5: [Getting Started in the Cloud with AWS](https://github.com/jorditorresBCN/Quick-Start/blob/master/Quick-Start-AWS.md)
+* Hands-on 5: [Getting Started in the Cloud with AWS](./Quick-Start-AWS.md)
 
 #  Tasks of Lab 1 
 ## Task 1.1: 
@@ -30,10 +30,10 @@ git init
 git add README.md
 git add Lab1.guessnumber.py
 git commit -m "first commit"
-git remote add origin https://github.com/jorditorresBCN/CLOUD-COMPUTING-COURSE-2017.git
+git remote add origin https://github.com/angeltoribio-UPC-BCN/CLOUD-COMPUTING-COURSE-2017.git
 git push -u origin master
 ```
-> change `jorditorresBCN` with your github account
+> change `angeltoribio-UPC-BCN` with your github account
 
 ## Task 1.5:  
 Update the `README.md` file including all the information of your group (member's name and emails).
