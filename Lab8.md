@@ -17,7 +17,7 @@ In a previous hands-on we performed a data analysis using `matplotlib`. In this 
 
 The goal of this lab is collect information posted on Twitter, store it using Elasticsearh and display the information through graphs using Kibana. We will use *Beats* to collect information from Twitter, are open source data shippers that we will install as agents on our servers. Beats can send data directly to Elasticsearch or send it to Elasticsearch via Logstash, which we can use to parse and transform the data. We will build the following workflow:
 
-![SlasticWorkflow](https://github.com/jorditorresBCN/Assignments-2017/blob/master/https://github.com/jorditorresBCN/Assignments-2017/blob/master/workflowElasticSearch.png "SlasticWorkflow")
+![SlasticWorkflow](https://github.com/jorditorresBCN/Assignments-2017/blob/master/workflowElasticSearch.png "SlasticWorkflow")
 
 
 
