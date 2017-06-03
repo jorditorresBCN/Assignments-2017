@@ -52,6 +52,17 @@ After these simple steps an Elasticsearch instance should be running at [`http:/
 [Kibana](https://en.wikipedia.org/wiki/Kibana) is an open source data exploration and visualization tool built on Elastic Search to help you understand data better. It provides visualization capabilities on top of the content indexed on an Elasticsearch cluster. Users can create bar, line and scatter plots, or pie charts and maps on top of large volumes of data.
 
 
+The installation and initialization of Kibana is similar to that of Elasticsearch:
+
+1. Download and unzip Kibana (in the same folder you donwloaded ElasticSearch) from https://www.elastic.co/start
+3. Change the directory to Kibana folder `cd kibana-5.4.0-darwin-x86_64`
+4. Run bin/Kibana (or bin\Kibana.bat on Windows)
+
+Kibana instance should be running at [`http://localhost:5601`](http://localhost:5601) in your browser if you run with default configuration.
+
+*Important: Keep the terminal open where Kibana was run to be able to keep the instance running. *
+
+
 
 XXXXX
 
