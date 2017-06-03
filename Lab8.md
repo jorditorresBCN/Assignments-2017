@@ -288,7 +288,7 @@ This hands-on was partially based on based on a [post at Analytics Vidhya portal
 
 I will thank my former students [Victoria Gabante](https://www.linkedin.com/in/victoria-gabante-guerra-03a679b2) and [Osmar Rodríguez](https://twitter.com/osmar106), who provided insight and expertise in this hands-on with their project at my master course [CC-MEI](http://jorditorres.org/CC-MEI-2017/) at UPC.
 
-I would also like to show my gratitude to [Dani Cea](https://www.linkedin.com/in/danicea/) for his help on an earlier version of this hands-on 2 years ago. 
+I would also like to show my gratitude to [Dani Cea](https://www.linkedin.com/in/danicea/) for his help on an [earlier version of this hands-on](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab.cc.mei.eskibana.2015.pdf) 2 years ago. 
 
 
 # How to Submit this Assignment:  
