@@ -237,6 +237,19 @@ Also in the `logstash-5.4.1` folder create the file `twitter_template.json` that
 
 ```
 
+### Realizando la primera prueba con Kibana
+
+Después de todos estos pasos, es el momento de irnos a nuestro Kibana, y crearemos un nuevo index pattern, seleccionaremos que sea de tipo `tweeter` y en timestamp seleccionaremos `@timestamp`.
+
+
+##### Figura configureIndexPattern
+
+El index ha sido generado y ahora podríamos editar todos los campos que estamos ingiriendo, si queremos mostrarlos, analizarlos, etc:
+
+Si nos fueramos ahora a Discover, podríamos ver que Kibana ya nos muestra datos de los logs que tenemos ya dentro de Logstash y Elasticsearch:
+
+#### FALTA PANTALLA DE DISCOVER
+
 
 ### create index
 Create the index pattern in Kibana via „Management–>Index Patterns–> Add New
