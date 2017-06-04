@@ -1,6 +1,6 @@
-# Lab 1: 
+# Lab session #1: 
 # Basic "Knowledge Toolbox" to get started in the Cloud
-In this Lab session you will be asked to put in practice the basic knowledge required for the Labs of this course.
+In this Lab session you will be asked to put in practice the basic knowledge required for the Lab sessions of this course.
 
 
 
