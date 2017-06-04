@@ -273,7 +273,6 @@ At the top of the screen is the query box which allows you to filter your data b
 
 ![discovermessi](https://github.com/jorditorresBCN/Assignments-2017/blob/master/discovermessi.png "discovermessi")
 
-I ARA ELS ALTRES DUES COSES:
 
 <a name="Tasks35"/>
 
@@ -284,9 +283,9 @@ The easiest and fastest way to get started with Elasticsearch is to spin up a fr
 <a name="Tasks36"/>
 
 
-## Task 8.6:  Student project
+## Task 8.6:  Student project: Visualize and Dashboard (80% grade of the lab)
+Use the Visualize and Dashboard links in the navigation bar to obtain a awesome Dashboard that describes your data. 
 
-**TBD (next theory class)**
 
 <a name="Tasks37"/>
 
