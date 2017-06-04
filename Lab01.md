@@ -50,7 +50,7 @@ Update your remote github repository with the updated `README.md`and the new fil
 # How to Submit this Assignment:  
 Submit **before the deadline** to the *RACO Practicals section* a "Lab1.txt" file including: 
 
-1. Group number
+1. group number
 2. name and email of the members of this group
 3. github url that contains your lab answers
 4. indicate if you did or not the optional task and why 
