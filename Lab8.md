@@ -16,7 +16,7 @@ In a previous hands-on we performed a data analysis using `matplotlib`. In this 
 
 <a name="Tasks31"/>
 
-The goal of this lab is collect information posted on Twitter, store it using Elasticsearh and display the information through graphs using Kibana. We will use *Beats* to collect information from Twitter, are open source data shippers that we will install as agents on our servers. Beats can send data directly to Elasticsearch or send it to Elasticsearch via Logstash, which we can use to parse and transform the data. We will build the following workflow:
+The goal of this lab is to fetch twitter data using logstash and then put it into elasticsearch. Finally i want to do visualisation using kibana. We will use *Beats* to collect information from Twitter, are open source data shippers that we will install as agents on our servers. Beats can send data directly to Elasticsearch or send it to Elasticsearch via Logstash, which we can use to parse and transform the data. We will build the following workflow:
 
 ![SlasticWorkflow](https://github.com/jorditorresBCN/Assignments-2017/blob/master/workflowElasticSearch.png "SlasticWorkflow")
 
@@ -136,7 +136,8 @@ user: elastic
 
 password: changeme
 
-## Task 8.2222: Config file preparation
+## Task 8.2222: Logstash configuration
+
 
 In the `logstash-5.4.1` folder create the file `twitter.conf` (ncluded in this github) as:
 
@@ -180,7 +181,7 @@ You can include more `keywords` as:
 keywords => [ "barcelona", "messi" ]
 ```
 
-Also in the `logstash-5.4.1` folder create the file `twitter_template.json` (ncluded in this github) as:
+Also in the `logstash-5.4.1` folder create the file `twitter_template.json` that indicates the template used (included in this github) :
 
 
 ```
@@ -237,13 +238,17 @@ Also in the `logstash-5.4.1` folder create the file `twitter_template.json` (ncl
 ```
 
 
+### create index
+Create the index pattern in Kibana via „Management–>Index Patterns–> Add New
+
+
 IF THIS ERROR APPEARS: "Limit of total fields [1000] in index [twitter] has been exceeded"}
 
 afegir a Dev Tools section
 ``` 
 [2017-06-03T21:18:55,963][WARN ][logstash.outputs.elasticsearch] Could not index event to Elasticsearch. {:status=>400, :action=>["index", {:_id=>nil, :_index=>"twitter", :_type=>"tweet", :_routing=>nil}, 2017-06-03T19:18:55.000Z %{host} %{message}], :response=>{"index"=>{"_index"=>"twitter", "_type"=>"tweet", "_id"=>"AVxvZWi_fVHNJgzwxRRA", "status"=>400, "error"=>{"type"=>"illegal_argument_exception", "reason"=>"Limit of total fields [1000] in index [twitter] has been exceeded"}}}}
 ```
-``
+```
 PUT twitter/_settings 
 { 
    "index.mapping.total_fields.limit": 2000 
