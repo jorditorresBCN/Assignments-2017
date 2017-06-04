@@ -47,7 +47,7 @@ Include that screenshot in your local repository at your laptop with the name `L
 ## Task 1.9:    
 Update your remote github repository with the updated `README.md`and the new file `Lab1.AWSterminal.png` using the `git`commands `add`, `commit` and `push`.  
 
-# How to Submit this Assignment:  
+# How to submit this assignment:
 Submit **before the deadline** to the *RACO Practicals section* a "Lab1.txt" file including: 
 
 1. group number
