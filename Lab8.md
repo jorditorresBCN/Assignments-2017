@@ -9,7 +9,8 @@ In a previous hands-on we performed a data analysis using `matplotlib`. In this 
 * [Task 8.3: Longtash and Beats](#Tasks33)  
 * [Task 8.4: Using our Twitter dataset](#Tasks34) 
 * [Task 8.5: Elastic Cloud](#Tasks34) 
-* [Task 8.6: Acknoledgements](#Tasks36)  
+* [Task 8.6: Student Project](#Tasks36)  
+* [Task 8.7: Acknoledgements](#Tasks37)  
 
    
 #  Tasks of Lab 8
@@ -263,18 +264,33 @@ Click `Create` button. Kibana will now show you the index definition for the twi
 
 In order to treate new index pattern you can use Management–>Index Patterns–> Add New.
 
-##### FALTEN POSAR EXAMPLES 
+
+At this point, your index pattern is saved. You can now start discovering your data. Click on the Discover link in the navigation bar. This opens the Discover view which is a very helpful way to dive into your raw data. You should see something similar to this:
+
+![discover](https://github.com/jorditorresBCN/Assignments-2017/blob/master/discover.png "discover")
+
+At the top of the screen is the query box which allows you to filter your data based on search terms. Enter `messi`as a example in the filter box to filter results that only contain that field. On the left of the screen is the list of fields in the index. Each field has an icon to the left of the field name that indicates the data type for the field. If you click on the field name, it will expand to show you sample data for that field in the index. 
+
+![discovermessi](https://github.com/jorditorresBCN/Assignments-2017/blob/master/discovermessi.png "discovermessi")
+
+I ARA ELS ALTRES DUES COSES:
 
 <a name="Tasks35"/>
 
-## Task 8.5:  Elastic Cloud
-
+## Task 8.5:  Elastic Cloud (optional)
 
 The easiest and fastest way to get started with Elasticsearch is to spin up a free trial on Elastic Cloud [(here)](https://www.elastic.co/cloud/as-a-service/signup?ultron=kibana-get-started&blade=touch&hulk=email&mkt_tok=eyJpIjoiTVRGa05tTTJZVGN4WXpabSIsInQiOiJLT3p4RkJoSmZYcnF1SnZtdU1IXC9VNTArWHVkYTdvaXllMXdYXC8wWjROSTJESmpoN0x2T0hjbmNoV1V5b2VmdlB6VkFrdXBMaUNOZjlkRUkzQ1lwekNPbWVNUWVCSDZaaTA0ajlFXC9NTldpNlZCWThpdW1JSmdCT2pqeGpaNVVvQSJ9) , which comes with a free Kibana instance.
 
 <a name="Tasks36"/>
 
-## Task 8.6:  Acknowledgements
+
+## Task 8.6:  Student project
+
+**TBD (next theory class)**
+
+<a name="Tasks37"/>
+
+## Task 8.7:  Acknowledgements
 
 I will thank my former students [Victoria Gabante](https://www.linkedin.com/in/victoria-gabante-guerra-03a679b2) and [Osmar Rodríguez](https://twitter.com/osmar106), who provided insight and expertise in this hands-on with their project at my master course [CC-MEI](http://jorditorres.org/CC-MEI-2017/) at UPC.
 
