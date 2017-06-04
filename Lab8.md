@@ -118,16 +118,8 @@ curl -L -O https://artifacts.elastic.co/downloads/logstash/logstash-5.4.1.zip
 unzip logstash-5.4.1.zip
 ```
 
-To install the required plugin, run the following command inside the logstash directory according [this webpage](https://www.elastic.co/guide/en/beats/libbeat/current/logstash-installation.html). In our case we used (mac): 
 
-```
-./bin/logstash-plugin install logstash-input-beats
-```
-
-Logstash configuration
-
-
-In the `logstash-5.4.1` directory we need to create the file `twitter.conf` (ncluded in this github) that onfigure Logstash to listen on port 5044 for incoming Beats connections and to index into Elasticsearch as:
+In the `logstash-5.4.1` directory we need to create the configuration file `twitter.conf` (included in this github) that onfigure Logstash to listen on port 5044 for incoming Beats connections and to index into Elasticsearch as:
 
 ```
 input {
@@ -224,19 +216,37 @@ Also in the `logstash-5.4.1` folder create the file `twitter_template.json` that
 
 ```
 
-, and Kibana accesses the data for visualizations such as dashboards.[5]
+
+To install the required plugin, run the following command inside the logstash directory according [this webpage](https://www.elastic.co/guide/en/beats/libbeat/current/logstash-installation.html). In our case we used (mac): 
+
+```
+./bin/logstash-plugin install logstash-input-beats
+./bin/logstash-plugin update logstash-input-beats
+./bin/logstash -f twitter.conf
+    
+```
+
+Warning: It a error "Limit of total fields [1000] in index [twitter] has been exceeded" appears like: 
 
 
-<a name="Tasks34"/>
+``` 
+[2017-06-03T21:18:55,963][WARN ][logstash.outputs.elasticsearch] Could not index event to Elasticsearch. {:status=>400, :action=>["index", {:_id=>nil, :_index=>"twitter", :_type=>"tweet", :_routing=>nil}, 2017-06-03T19:18:55.000Z %{host} %{message}], :response=>{"index"=>{"_index"=>"twitter", "_type"=>"tweet", "_id"=>"AVxvZWi_fVHNJgzwxRRA", "status"=>400, "error"=>{"type"=>"illegal_argument_exception", "reason"=>"Limit of total fields [1000] in index [twitter] has been exceeded"}}}}
+```
+You can add the following command using the Dev Tools section:
+```
+PUT twitter/_settings 
+{ 
+   "index.mapping.total_fields.limit": 2000 
+}
 
-## Task 8.4: X-Pack
+```
+![Twittertotalfieldexceeded](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Twittertotalfieldexceeded.png "Twittertotalfieldexceeded")
 
-https://www.elastic.co/guide/en/x-pack/current/installing-xpack.html
+
+En el  twitter.conf se puede ver el nombre del index que es twitter
+##### FIGURA 2 Twittertotalfieldexceeded
 
 
-## Task 8.XXXXX: COSES PENDENTS
-
-* ElasticSearch Head Plugin (https://mobz.github.io/elasticsearch-head/
 
 * Posible error: Total Fields Limit setting (https://discuss.elastic.co/t/total-fields-limit-setting/53004)  
 
@@ -262,24 +272,6 @@ Si nos fueramos ahora a Discover, podríamos ver que Kibana ya nos muestra datos
 
 ### create index
 Create the index pattern in Kibana via „Management–>Index Patterns–> Add New
-
-
-IF THIS ERROR APPEARS: "Limit of total fields [1000] in index [twitter] has been exceeded"}
-
-afegir a Dev Tools section
-``` 
-[2017-06-03T21:18:55,963][WARN ][logstash.outputs.elasticsearch] Could not index event to Elasticsearch. {:status=>400, :action=>["index", {:_id=>nil, :_index=>"twitter", :_type=>"tweet", :_routing=>nil}, 2017-06-03T19:18:55.000Z %{host} %{message}], :response=>{"index"=>{"_index"=>"twitter", "_type"=>"tweet", "_id"=>"AVxvZWi_fVHNJgzwxRRA", "status"=>400, "error"=>{"type"=>"illegal_argument_exception", "reason"=>"Limit of total fields [1000] in index [twitter] has been exceeded"}}}}
-```
-```
-PUT twitter/_settings 
-{ 
-   "index.mapping.total_fields.limit": 2000 
-}
-
-
-```
-En el  twitter.conf se puede ver el nombre del index que es twitter
-##### FIGURA 2 Twittertotalfieldexceeded
 
 
 <a name="Tasks35"/>
