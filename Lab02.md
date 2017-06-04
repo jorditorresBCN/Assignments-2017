@@ -1,14 +1,13 @@
 # Lab 2: Doors in the Cloud
-In this Lab we will discuss the overall structure of a tweet and discuss how to pre-process the text before we can get into some more interesting analysis in the next Lab. In particular, we will see how tokenisation, despite being a well-understood problem, can get tricky with Twitter data. Prior to this, we will  install A Python Development Environment which will be very helpful.
+In this Lab session we will discuss the overall structure of a tweet and we'll discuss how to pre-process the text before we can get into some more interesting analysis in the next Lab session. In particular, we will see how tokenisation, despite being a well-understood problem, can get tricky dealing with Twitter data. Prior to this, we will install A Python Development Environment which will be very helpful for this and future sessions.
 
 * [Pre-lab howemork 2](#Prelab)
    * [HW 2.1: Installing Anaconda](#HW1)
-   * [HW 2.2: Register Our App on Twitter](#HW2)  
+   * [HW 2.2: Registering Our App on Twitter](#HW2)
 * [Tasks Lab 2](#Tasks)
-   * [Task 2.1: Get Started with NLTK](#NLTK)
-   * [Task 2.2: Getting Started with `tweepy`](#tweepy)  
-   * [Task 2.3:  Tweet pre-processing](#preproc)  
-
+   * [Task 2.1: Geting Started with NLTK](#NLTK)
+   * [Task 2.2: Getting Started with `tweepy`](#tweepy)
+   * [Task 2.3: Tweet pre-processing](#preproc)
 
 <a name="Prelab"/>
 
@@ -17,11 +16,11 @@ In this Lab we will discuss the overall structure of a tweet and discuss how to 
 <a name="HW1"/>
 
 ## HW 2.1: Installing Anaconda
-Download and installing Anaconda in your laptop following hands-on 4 ([Python Development Environment Quick Start](https://github.com/jorditorresBCN/Quick-Start/blob/master/Python-Development-Environment-Quick-Start.md)) guidelines. Start a Jupyter notebook on your terminal and create a note book that contains your previous [`Lab1.guessnumber.py`](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab01.md) code including some explanation of your steps using `markdown` cells. Save your notebook as `Lab2.guessnumber.ipynb` and add it to your remote GitHub repository.
+Download and install Anaconda in your laptop following the hands-on guidelines at ([Python Development Environment Quick Start](https://github.com/jorditorresBCN/Quick-Start/blob/master/Python-Development-Environment-Quick-Start.md)). Start a Jupyter notebook on your terminal and create a note book, using `markdown` cells, that contains your previous [`Lab1.guessnumber.py`](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab01.md) code including some explanation of the steps you've followed. Save your notebook as `Lab2.guessnumber.ipynb` and add it to your remote GitHub repository.
 
 <a name="HW2"/> 
 
-## HW 2.2: Register Our App on Twitter  
+## HW 2.2: Registering Our App on Twitter
 Cloud applications are characterized by an increased focus on user participation and content creation, but also by a deep interaction and interconnection of applications sharing con-tent from different types of services in order to integrate multiple systems together. This scenario is, doubtlessly, possible thanks to the rise of  the “Application Programming Interfaces” (API). 
 
 An API, or Application Programming Interface, provide a way for computer systems to interact with each other. There are many types of APIs. Every programming language has a built-in API that it used to write programs. For instance, you studied in previous courses that operating systems themselves have APIs used by programs to open files or draw text on the screen. 
@@ -45,7 +44,7 @@ Note that you will need a Twitter account in order to login, create an app, and 
 
 <a name="NLTK"/>
 
-## Task 2.1: Get Started with NLTK
+## Task 2.1: Geting Started with NLTK
 One of the most popular packages in Python for NLP is Natural Language Toolkit ([NLTK](http://www.nltk.org). The toolkit provides a friendly interface for many of the common NLP tasks, as well as lexical resources and linguistic data.
 
 Tokenisation is one of the most basic, yet most important, steps in text analysis required in the following task. The purpose of tokenisation is to split a stream of text into smaller units called tokens, usually words or phrases. For this purpouse we will use the [NLTK](http://www.nltk.org) Python Natural Language Processing Toolkit:
@@ -85,7 +84,7 @@ We can see that punctiation are many of the most common words. We can remove the
 ```
     lowers = text.lower()
     no_punctuation = lowers.translate(None, string.punctuation)
-    tokens = nltk.word_tokenize(no_punctuation)
+    tokens = nltk.word_tokenize(no_punctuation)
 ```
 Add a new code cell to the same notebook with the code (and the comments with markdown cells if you consider interesting) that computes and prints the 10 most common words without punctuation characters. 
     
@@ -103,11 +102,11 @@ Add a new code cell to the same notebook with the code (and the comments with ma
 
 <a name="tweepy"/>
 
-## Task 2.2: Getting Started with `tweepy`  
+## Task 2.2: Getting Started with `tweepy`
 
 In this task we will use `tweepy` package as a tool to access Twitter data in a fairly easy way with Python. There are different types of data we can collect, however we will focus on the “tweet” object.
 
-### Task 2.2.1: The Twitter API
+### Task 2.2.1: The Twitter API
 As a [homework](#HW1) we already register Our App on Twitter in order to set up our project to access Twitter data. However, the Twitter API limits access to applications. You can find more detail in [the official documentation](https://dev.twitter.com/rest/public/rate-limiting). It's also important to consider that [different APIs have different rate limits](https://dev.twitter.com/rest/public/rate-limiting). The implications of hitting the API limits is that Twitter will return an error message rather than the data we are asking for. Moreover, if we continue performing more requests to the API, the time required to obtain regular access again will increase as Twitter could flag us as potential abusers. If our application needs many API requests we can use the `time` module (`time.sleep()` function). 
 
 Another important thing before to start is to know that we have two classes of API: **REST APIs** and **Streaming API**. All the REST APIs only allow you to go back in time (tweets that have already been published). Often these APIs limit the amount of tweets you can retrieve, not just in terms of rate limits as we mentioned, but also in terms of time span. In fact, it's usually possible to go back in time up to approximately one week. Also another aspect to consider about the REST API is that they are not guaranteed to provide all the tweets published on Twitter. 
@@ -167,7 +166,7 @@ print('Description: ' + str(user.description))
 ```
 Is the data printed correctly? Is it yours? 
 
-### Task 2.2.3: Accessing Tweets  
+### Task 2.2.3: Accessing Tweets
 Tweepy provides the convenient Cursor interface to iterate through different types of objects. For example, we can read our own Twitter home timeline with (we are using 1 to limit the number of tweets we are reading and only reading the `text` of the tweet):
 
 ```
@@ -289,7 +288,7 @@ Keep track of your executions with different fictitious tweets and comments in t
 Now, we are ready for next Lab, where we will mining streaming twitter data.
 
 
-# How to Submit this Assignment:  
+# How to Submit this Assignment:
 Be sure that you have updated your remote github repository (using the `git`commands `add`, `commit` and `push`) with all the Lab `.ipynb` files generated along this Lab. Submit **before the deadline** to the *RACO Practicals section* a "Lab2.txt" file including: 
 
 1. Group number
