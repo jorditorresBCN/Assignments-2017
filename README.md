@@ -48,5 +48,5 @@ The deadlines indicated in the course syllabus are a hard deadline.
 
 
 ## Acknowledgements
-I would like to thank some of Prof. Jordi Torres former students for their help proofreading this documentation and improving it: Eloy Gil, Dani Cea, Xisco Sastre, Maurici Yagüez and Mauro Gómez. I acknowledge the contribution of Barcelona Supercomputing Center for allowing the students to use their computing facilities.
+I would like to thank Prof. Jordi Torres for developing the initial version of these lab sessions and to some of his former students for their help proofreading and improving the documentation: Eloy Gil, Dani Cea, Xisco Sastre, Maurici Yagüez and Mauro Gómez. I acknowledge the contribution of Barcelona Supercomputing Center for allowing the students to use their computing facilities.
 
