@@ -1,4 +1,4 @@
-# Lab 2: Doors in the Cloud
+# Lab session #2: Doors in the Cloud
 In this Lab session we will discuss the overall structure of a tweet and we'll discuss how to pre-process the text before we can get into some more interesting analysis in the next Lab session. In particular, we will see how tokenisation, despite being a well-understood problem, can get tricky dealing with Twitter data. Prior to this, we will install A Python Development Environment which will be very helpful for this and future sessions.
 
 * [Pre-lab howemork 2](#Prelab)
