@@ -16,7 +16,7 @@ In a previous hands-on we performed a data analysis using `matplotlib`. In this 
 
 <a name="Tasks31"/>
 
-The goal of this lab is to fetch twitter data using logstash and then put it into elasticsearch. Finally i want to do visualisation using kibana. We will use *Beats* to collect information from Twitter, are open source data shippers that we will install as agents on our servers. Beats can send data directly to Elasticsearch or send it to Elasticsearch via Logstash, which we can use to parse and transform the data. We will build the following workflow:
+The goal of this lab is to fetch twitter data using logstash and then put it into elasticsearch. Finally We want to do visualisation using kibana. We will use *Beats* to collect information from Twitter, are open source data shippers that we will install as agents on our servers. Beats can send data directly to Elasticsearch or send it to Elasticsearch via Logstash, which we can use to parse and transform the data. We will build the following workflow:
 
 ![SlasticWorkflow](https://github.com/jorditorresBCN/Assignments-2017/blob/master/workflowElasticSearch.png "SlasticWorkflow")
 
@@ -24,7 +24,7 @@ The goal of this lab is to fetch twitter data using logstash and then put it int
 
 
 
-## Task 8.1: Elasticsearch
+## Task 8.1: Intall elasticsearch
 
 [Elasticsearch](https://en.wikipedia.org/wiki/Elasticsearch) is an open source NoSQL distributed and scalable search engine. Elastic Search provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. 
 
@@ -70,7 +70,7 @@ After these simple steps an Elasticsearch instance should be running at [`http:/
 
 <a name="Tasks32"/>
 
-## Task 8.2:  Kibana
+## Task 8.2:  Install kibana
 
 [Kibana](https://en.wikipedia.org/wiki/Kibana) is an open source data exploration and visualization tool built on Elastic Search to help you understand data better. It provides visualization capabilities on top of the content indexed on an Elasticsearch cluster. Users can create bar, line and scatter plots, or pie charts and maps on top of large volumes of data.
 
@@ -107,39 +107,27 @@ Kibana instance should be running at [`http://localhost:5601`](http://localhost:
 
 <a name="Tasks33"/>
 
-## Task 8.3: Logstash and Beats
+## Task 8.3: Install logstash and beats
 
-Logstash provides an input stream to Elastic for storage and search.
+The simplest architecture for the Beats platform setup consists of one, Elasticsearch, and Kibana. The Beats insert the transactions directly into the Elasticsearch instance. If you want to perform additional processing or buffering on the data, however, you’ll want to install Logstash. An important advantage to this approach is that you can use Logstash to modify the data captured by Beats in any way you like. You can also use Logstash’s many output plugins to integrate with other systems.
 
+To download and install Logstash, use the commands that work with your system according [this webpage](https://www.elastic.co/guide/en/beats/libbeat/current/logstash-installation.html). In our case we used (mac): 
 
+```
+curl -L -O https://artifacts.elastic.co/downloads/logstash/logstash-5.4.1.zip
+unzip logstash-5.4.1.zip
+```
 
-https://www.elastic.co/guide/en/beats/libbeat/current/logstash-installation.html
+To install the required plugin, run the following command inside the logstash directory according [this webpage](https://www.elastic.co/guide/en/beats/libbeat/current/logstash-installation.html). In our case we used (mac): 
 
+```
+./bin/logstash-plugin install logstash-input-beats
+```
 
-, and Kibana accesses the data for visualizations such as dashboards.[5]
-
-
-<a name="Tasks34"/>
-
-## Task 8.4: X-Pack
-
-https://www.elastic.co/guide/en/x-pack/current/installing-xpack.html
-
-
-## Task 8.XXXXX: COSES PENDENTS
-
-* ElasticSearch Head Plugin (https://mobz.github.io/elasticsearch-head/
-
-* Posible error: Total Fields Limit setting (https://discuss.elastic.co/t/total-fields-limit-setting/53004)  
-
-user: elastic
-
-password: changeme
-
-## Task 8.2222: Logstash configuration
+Logstash configuration
 
 
-In the `logstash-5.4.1` folder create the file `twitter.conf` (ncluded in this github) as:
+In the `logstash-5.4.1` directory we need to create the file `twitter.conf` (ncluded in this github) that onfigure Logstash to listen on port 5044 for incoming Beats connections and to index into Elasticsearch as:
 
 ```
 input {
@@ -182,7 +170,6 @@ keywords => [ "barcelona", "messi" ]
 ```
 
 Also in the `logstash-5.4.1` folder create the file `twitter_template.json` that indicates the template used (included in this github) :
-
 
 ```
 {
@@ -236,6 +223,28 @@ Also in the `logstash-5.4.1` folder create the file `twitter_template.json` that
 }
 
 ```
+
+, and Kibana accesses the data for visualizations such as dashboards.[5]
+
+
+<a name="Tasks34"/>
+
+## Task 8.4: X-Pack
+
+https://www.elastic.co/guide/en/x-pack/current/installing-xpack.html
+
+
+## Task 8.XXXXX: COSES PENDENTS
+
+* ElasticSearch Head Plugin (https://mobz.github.io/elasticsearch-head/
+
+* Posible error: Total Fields Limit setting (https://discuss.elastic.co/t/total-fields-limit-setting/53004)  
+
+user: elastic
+
+password: changeme
+
+## Task 8.2222: 
 
 ### Realizando la primera prueba con Kibana
 
@@ -302,6 +311,10 @@ At the top of the screen is the query box which allows you to filter your data b
 
 ##### FIGURA 4 selleccionat Barcelona
 
+## Task 8.XXX:  Elastic Cloud
+
+
+The easiest and fastest way to get started with Elasticsearch is to spin up a free trial on Elastic Cloud [(here)](https://www.elastic.co/cloud/as-a-service/signup?ultron=kibana-get-started&blade=touch&hulk=email&mkt_tok=eyJpIjoiTVRGa05tTTJZVGN4WXpabSIsInQiOiJLT3p4RkJoSmZYcnF1SnZtdU1IXC9VNTArWHVkYTdvaXllMXdYXC8wWjROSTJESmpoN0x2T0hjbmNoV1V5b2VmdlB6VkFrdXBMaUNOZjlkRUkzQ1lwekNPbWVNUWVCSDZaaTA0ajlFXC9NTldpNlZCWThpdW1JSmdCT2pqeGpaNVVvQSJ9) , which comes with a free Kibana instance.
 
 <a name="Tasks36"/>
 
