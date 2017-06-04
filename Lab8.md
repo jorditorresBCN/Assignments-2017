@@ -154,11 +154,10 @@ output {
   }
 }
 ```
-
 You can include more `keywords` as:
 
 ```
-keywords => [ "barcelona", "messi" ]
+keywords => [ "barcelona", "london", "paris" ]
 ```
 
 Also in the `logstash-5.4.1` folder create the file `twitter_template.json` that indicates the template used (included in this github) :
@@ -243,9 +242,20 @@ PUT twitter/_settings
 
 <a name="Tasks34"/>
 
-## Task 8.4:  Using our Twitter data
+## Task 8.4:  Analizing our Twitter data
 
-We are going to use our Twitter data which is stored in the twitter index. Uncheck the Index contains time-based events option. We can access the Kibana web user interface via your browser [`http://localhost:5601`](http://localhost:5601).  Replace `logstash-*` with twitter and use as timestamp field `@timestamp`:
+Now we are ready to start to analize our Twitter Data:
+1. Select the `keywords` in the `logstash-5.4.1/twitter.conf` file.
+2. start elasticsearch, kibana and logstash using different xterm in order to see if during the initialization process any error occurs
+are corrently 
+```
+elasticsearch-5.4.1/bin/elasticsearch 
+curl -XDELETE 'http://localhost:9200/twitter'
+kibana-5.4.0-darwin-x86_64/bin/Kibana 
+logstash-5.4.1/bin/logstash -f logstash-5.4.1/twitter.conf
+```
+
+We are ready to access the Kibana web user interface via your browser [`http://localhost:5601`](http://localhost:5601).  Uncheck the Index contains time-based events option. Replace `logstash-*` with twitter and use as timestamp field `@timestamp`:
 
 ![configureIndexPattern](https://github.com/jorditorresBCN/Assignments-2017/blob/master/configureIndexPattern.png "configureIndexPattern")
 
