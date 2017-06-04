@@ -15,7 +15,7 @@ Take a look at the following hands-on guides to check if you already have the ba
 Create an AWS account following the following hands-on:
 * Hands-on 5: [Getting Started in the Cloud with AWS](https://github.com/angeltoribio-UPC-BCN/Quick-Start/blob/master/Quick-Start-AWS.md)
 
-#  Tasks of Lab 1 
+#  Tasks of Lab session #1 
 ## Task 1.1: 
 Install Python in your laptop.
 ## Task 1.2: 
