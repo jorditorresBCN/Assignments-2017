@@ -7,9 +7,9 @@ In a previous hands-on we performed a data analysis using `matplotlib`. In this 
 * [Task 8.1: Elasticsearch](#Tasks31)
 * [Task 8.2: Kibana](#Tasks32)  
 * [Task 8.3: Longtash and Beats](#Tasks33)  
-* [Task 8.4: Search bar](#Tasks34)  
-* [Task 8.5: Using our Twitter dataset](#Tasks35)  
-* [Task 8.56: Acknoledgements](#Tasks36)  
+* [Task 8.4: Using our Twitter dataset](#Tasks34) 
+* [Task 8.5: Elastic Cloud](#Tasks34) 
+* [Task 8.6: Acknoledgements](#Tasks36)  
 
    
 #  Tasks of Lab 8
@@ -222,12 +222,10 @@ To install the required plugin, run the following command inside the logstash di
 ```
 ./bin/logstash-plugin install logstash-input-beats
 ./bin/logstash-plugin update logstash-input-beats
-./bin/logstash -f twitter.conf
-    
+./bin/logstash -f twitter.conf 
 ```
 
-Warning: It a error "Limit of total fields [1000] in index [twitter] has been exceeded" appears like: 
-
+Warning: It a error `"Limit of total fields [1000] in index [twitter] has been exceeded"` appears like: 
 
 ``` 
 [2017-06-03T21:18:55,963][WARN ][logstash.outputs.elasticsearch] Could not index event to Elasticsearch. {:status=>400, :action=>["index", {:_id=>nil, :_index=>"twitter", :_type=>"tweet", :_routing=>nil}, 2017-06-03T19:18:55.000Z %{host} %{message}], :response=>{"index"=>{"_index"=>"twitter", "_type"=>"tweet", "_id"=>"AVxvZWi_fVHNJgzwxRRA", "status"=>400, "error"=>{"type"=>"illegal_argument_exception", "reason"=>"Limit of total fields [1000] in index [twitter] has been exceeded"}}}}
@@ -238,72 +236,28 @@ PUT twitter/_settings
 { 
    "index.mapping.total_fields.limit": 2000 
 }
-
 ```
 ![Twittertotalfieldexceeded](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Twittertotalfieldexceeded.png "Twittertotalfieldexceeded")
 
 
-En el  twitter.conf se puede ver el nombre del index que es twitter
-##### FIGURA 2 Twittertotalfieldexceeded
 
+<a name="Tasks34"/>
 
+## Task 8.4:  Using our Twitter data
 
-* Posible error: Total Fields Limit setting (https://discuss.elastic.co/t/total-fields-limit-setting/53004)  
+We are going to use our Twitter data which is stored in the twitter index. Uncheck the Index contains time-based events option. We can access the Kibana web user interface via your browser [`http://localhost:5601`](http://localhost:5601).  Replace `logstash-*` with twitter and use as timestamp field `@timestamp`:
 
-user: elastic
+![configureIndexPattern](https://github.com/jorditorresBCN/Assignments-2017/blob/master/configureIndexPattern.png "configureIndexPattern")
 
-password: changeme
+Click `Create` button. Kibana will now show you the index definition for the twitter index. You can see all of the fields names, their data types and if the fields are analyzed and indexed. This provides a good high level overview of the data configuration in the index. Y
 
-## Task 8.2222: 
+In order to treate new index pattern you can use Management–>Index Patterns–> Add New.
 
-### Realizando la primera prueba con Kibana
-
-Después de todos estos pasos, es el momento de irnos a nuestro Kibana, y crearemos un nuevo index pattern, seleccionaremos que sea de tipo `tweeter` y en timestamp seleccionaremos `@timestamp`.
-
-
-##### Figura configureIndexPattern
-
-El index ha sido generado y ahora podríamos editar todos los campos que estamos ingiriendo, si queremos mostrarlos, analizarlos, etc:
-
-Si nos fueramos ahora a Discover, podríamos ver que Kibana ya nos muestra datos de los logs que tenemos ya dentro de Logstash y Elasticsearch:
-
-#### FALTA PANTALLA DE DISCOVER
-
-
-### create index
-Create the index pattern in Kibana via „Management–>Index Patterns–> Add New
-
+##### FALTEN POSAR EXAMPLES 
 
 <a name="Tasks35"/>
 
-## Task 8.5:  Using our Twitter data
-
-We are going to use our Twitter data which is stored in the twitter index. Uncheck the Index contains time-based events option. Our data is not yet properly setup to handle time-based events. We'll fix this later. Replace logstash-* with twitter.
-
-
-*Warning: Keep the terminal open where Kibana was run to be able to keep the instance running. Create the Kibana folder in the same folder that ElasticSearch in order to use the default values  consideret in this hands-on.*
-
-xxxx xxxxx xxxx 
-We can access the Kibana web user interface via your browser [`http://localhost:5601`](http://localhost:5601). 
-
-When we first start Kibana, it will create a new Elasticsearch index called `.kibana` where it stores the visualizations and dashboards. Because this is the first time starting it, we should be prompted to configure an **index pattern**. We should see something similar to:
-
-##### FIGURA 1
-
-Click `Create` button. Kibana will now show you the index definition for the twitter index. You can see all of the fields names, their data types and if the fields are analyzed and indexed. This provides a good high level overview of the data configuration in the index. You can also filter fields in the filter box. You should see something similar to this:
-
-##### FIGURA 2
-
-
-At this point, your index pattern is saved. You can now start discovering your data. Click on the Discover link in the navigation bar. This opens the Discover view which is a very helpful way to dive into your raw data. You should see something similar to this:
-
-##### FIGURA 3
-
-At the top of the screen is the query box which allows you to filter your data based on search terms. Enter coordinates.coordinates:* in the filter box to filter results that only contain that field. On the left of the screen is the list of fields in the index. Each field has an icon to the left of the field name that indicates the data type for the field. If you click on the field name, it will expand to show you sample data for that field in the index. Looked for the field named coordinates.coordinates. The icon to the left of that field indicates that it is a number field. If you click the name of the field, you can see that it expands. You should see something similar to this:
-
-##### FIGURA 4 selleccionat Barcelona
-
-## Task 8.XXX:  Elastic Cloud
+## Task 8.5:  Elastic Cloud
 
 
 The easiest and fastest way to get started with Elasticsearch is to spin up a free trial on Elastic Cloud [(here)](https://www.elastic.co/cloud/as-a-service/signup?ultron=kibana-get-started&blade=touch&hulk=email&mkt_tok=eyJpIjoiTVRGa05tTTJZVGN4WXpabSIsInQiOiJLT3p4RkJoSmZYcnF1SnZtdU1IXC9VNTArWHVkYTdvaXllMXdYXC8wWjROSTJESmpoN0x2T0hjbmNoV1V5b2VmdlB6VkFrdXBMaUNOZjlkRUkzQ1lwekNPbWVNUWVCSDZaaTA0ajlFXC9NTldpNlZCWThpdW1JSmdCT2pqeGpaNVVvQSJ9) , which comes with a free Kibana instance.
