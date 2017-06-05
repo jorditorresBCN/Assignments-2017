@@ -23,8 +23,11 @@ Hello, TensorFlow!
 
 then you are ready to begin writing TensorFlow programs!
 
+Follow the course slides in order to work on the following two tasks.
 
-##  Tasks 5.2: TensorFlow basics (follow course slides):
+
+##  Tasks 5.2: TensorFlow basics
+
 * Hands-on TF.1: TensorFlow basics
 * Hands-on TF.2: Linear Regression in TensorFlow
 * Hands-on TF.3: Clustering in TensorFlow
