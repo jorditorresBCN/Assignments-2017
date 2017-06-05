@@ -24,13 +24,16 @@ Hello, TensorFlow!
 then you are ready to begin writing TensorFlow programs!
 
 
-##  Tasks 5.2: Do the following hands-on (from course slides):
+##  Tasks 5.2: TensorFlow basics (follow course slides):
 * Hands-on TF.1: TensorFlow basics
 * Hands-on TF.2: Linear Regression in TensorFlow
 * Hands-on TF.3: Clustering in TensorFlow
 * Hands-on TF.4: Single Layer Neural Network in TensorFlow 
-* Hands-on TF.5: Multi-layer Neural Network in TensorFlow **(optional)**
-* Hands-on TF.6: Multiple GPUs and TensorFlow **(optional)**
+* Hands-on TF.5: Multi-layer Neural Network in TensorFlow 
+
+##  Tasks 5.2: TensorFlow and Parallelism (follow course slides):
+
+* Hands-on TF.6: Multiple GPUs and TensorFlow 
 
 
 # How to Submit this Assignment:  
