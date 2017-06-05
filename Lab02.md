@@ -1,5 +1,5 @@
 # Lab session #2: Doors in the Cloud
-In this Lab session we will discuss the overall structure of a tweet and we'll discuss how to pre-process the text before we can get into some more interesting analysis in the next Lab session. In particular, we will see how tokenisation, despite being a well-understood problem, can get tricky dealing with Twitter data. Prior to this, we will install A Python Development Environment which will be very helpful for this and future sessions.
+In this Lab session we will discuss the overall structure of a tweet and how to pre-process the text before going into more interesting analysis in the next Lab session. In particular, we will see how tokenisation, despite being a well-understood problem, can get tricky dealing with Twitter data. Prior to this, we will install A Python Development Environment which will be very helpful for this and future sessions.
 
 * [Pre-lab howemork 2](#Prelab)
    * [HW 2.1: Installing Anaconda](#HW1)
@@ -16,7 +16,7 @@ In this Lab session we will discuss the overall structure of a tweet and we'll d
 <a name="HW1"/>
 
 ## HW 2.1: Installing Anaconda
-Download and install Anaconda in your laptop following the hands-on guidelines at ([Python Development Environment Quick Start](https://github.com/jorditorresBCN/Quick-Start/blob/master/Python-Development-Environment-Quick-Start.md)). Start a Jupyter notebook on your terminal and create a note book, using `markdown` cells, that contains your previous [`Lab1.guessnumber.py`](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab01.md) code including some explanation of the steps you've followed. Save your notebook as `Lab2.guessnumber.ipynb` and add it to your remote GitHub repository.
+Download and install Anaconda in your laptop following the hands-on guidelines at ([Python Development Environment Quick Start](https://github.com/angeltoribio-UPC-BCN/Quick-Start/blob/master/Python-Development-Environment-Quick-Start.md)). Start a Jupyter notebook on your terminal and create a note book, using `markdown` cells, that contains your previous [`Lab1.guessnumber.py`](https://github.com/angeltoribio-UPC-BCN/Assignments-2017/blob/master/Lab01.md) code including some explanation of the steps you've followed. Save your notebook as `Lab2.guessnumber.ipynb` and add it to your remote GitHub repository.
 
 <a name="HW2"/> 
 
@@ -238,7 +238,7 @@ print(word_tokenize(tweet))
 ```
 You will notice some peculiarities of twitter that are not captured by a general-purpose English tokeniser such as the one from NLTK: @-mentions, emoticons, URLs and #hash-tags are not recognised as single tokens. Right?
 
-Using some code borrowed from [Marco Bonzanini](https://marcobonzanini.com/2015/03/02/mining-twitter-data-with-python-part-1/) we could consider these aspects of the language (A former student of this course, [Cédric Bhihe](https://www.linkedin.com/in/cedricbhihe/), suggested [this alternative code](https://github.com/jorditorresBCN/Assignments-2017/blob/master/CedricTokenizer.py)).  
+Using some code borrowed from [Marco Bonzanini](https://marcobonzanini.com/2015/03/02/mining-twitter-data-with-python-part-1/) we could consider these aspects of the language (A former student of this course, [Cédric Bhihe](https://www.linkedin.com/in/cedricbhihe/), suggested [this alternative code](CedricTokenizer.py)).  
 
 ```python
 import re
