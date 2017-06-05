@@ -23,10 +23,9 @@ Hello, TensorFlow!
 
 then you are ready to begin writing TensorFlow programs!
 
-Follow the course slides in order to work on the following two tasks.
-
 
 ##  Tasks 5.2: TensorFlow basics
+Follow course slides https://github.com/jorditorresBCN/Assignments-2017/blob/master/First_Contact_with_TF_2nEd_slides-3.pdf
 
 * Hands-on TF.1: TensorFlow basics
 * Hands-on TF.2: Linear Regression in TensorFlow
@@ -34,7 +33,8 @@ Follow the course slides in order to work on the following two tasks.
 * Hands-on TF.4: Single Layer Neural Network in TensorFlow 
 * Hands-on TF.5: Multi-layer Neural Network in TensorFlow 
 
-##  Tasks 5.2: TensorFlow and Parallelism (follow course slides):
+##  Tasks 5.3: TensorFlow and Parallelism 
+Follow course slides https://github.com/jorditorresBCN/Assignments-2017/blob/master/First_Contact_with_TF_2nEd_slides-3.pdf
 
 * Hands-on TF.6: Multiple GPUs and TensorFlow 
 
