@@ -150,8 +150,6 @@ output {
     document_type => "tweet" 
     template => "twitter_template.json"
     template_name => "twitter"
-  	user => elastic
-	  password => changeme
   }
 }
 ```
