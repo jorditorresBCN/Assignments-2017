@@ -10,14 +10,18 @@ There will be two kinds of assignments: 5 Labs and one project. Pre-lab homework
 The students will begin by creating a basic toolbox to get started in the Cloud. This will prepare them to practice with APIs, the doors in the Cloud. Together, these things will allow the students to mine the deluge of data coming from the Cloud, or use new advanced analytics services provided nowadays by the Cloud. Finally, we will look under the hood of these advanced analytics services in the Cloud, either in terms of software or hardware, in order to understand how their high performance requirements can be provided. The purpose is
 to provide code examples that can get you started easily.
 
+(new)
 - Lab 1: Basic "Knowledge Toolbox" to getting started in the Cloud 
 - Lab 2: Doors in the Cloud                                        
 - Lab 3: Extracting and Analyzing data from the Cloud               
 - Lab 4: Interacting with users and services in the Cloud
 - Lab 5: (el Lab 6 k prepara Eloy, equivalent a anterior Task 4.4)
-- Lab 6: Under the hood of Cloud Advanced Analytics Services (k es l'anterior Lab 5 sobre TF)
-- Lab 7: Slastic world
+- Lab 6: Under the hood of Cloud Advanced Analytics Services: Tensorflow (k es l'anterior Lab 5.1 i 5.2 sobre TF)
+- Lab 7: Under the hood of Cloud Advanced Analytics Services: Parallelism (k es l'anterior Lab 5.3 sobre TF)
+- Lab 8: Extracting and Analyzing data using Elastic Search and Kibana (el lab 8)
 
+
+(old)
 - Lab 1: [Basic "Knowledge Toolbox" to getting started in the Cloud][Lab1]  
 - Lab 2: [Doors in the Cloud][Lab2]                                         
 - Lab 3: [Extracting and Analyzing data from the Cloud][Lab3]               
