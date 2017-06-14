@@ -3,7 +3,7 @@
 * [Task 4.1: How to provide your services through an API?](#Tasks41)
 * [Task 4.2: How to provide our service combined with third-party services?](#Tasks42)  
 * [Task 4.3: Student proposal](#Tasks43)  
-* [Task 4.4: Using Advanced Analytics as a Service in the Cloud (Optional - 5%) ](#Tasks44)  
+* [Task 4.4: Using Advanced Analytics as a Service in the Cloud  (XISCO: with foto from tweet) ](#Tasks44)  
    
 <a name="Tasks41"/>
 
