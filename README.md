@@ -10,17 +10,26 @@ There will be two kinds of assignments: 5 Labs and one project. Pre-lab homework
 The students will begin by creating a basic toolbox to get started in the Cloud. This will prepare them to practice with APIs, the doors in the Cloud. Together, these things will allow the students to mine the deluge of data coming from the Cloud, or use new advanced analytics services provided nowadays by the Cloud. Finally, we will look under the hood of these advanced analytics services in the Cloud, either in terms of software or hardware, in order to understand how their high performance requirements can be provided. The purpose is
 to provide code examples that can get you started easily.
 
-- Lab 1: [Basic "Knowledge Toolbox" to getting started in the Cloud][Lab1] **10%**
-- Lab 2: [Doors in the Cloud][Lab2]                                        **20%**
-- Lab 3: [Extracting and Analyzing data from the Cloud][Lab3]              **20%**
-- Lab 4: [Interacting with users and services in the Cloud][Lab4]          **20%** + **5% (optional part)**
-- Lab 5: [Under the hood of Cloud Advanced Analytics Services][Lab5]       **20%** + **5% (optional part)**
+- Lab 1: Basic "Knowledge Toolbox" to getting started in the Cloud 
+- Lab 2: Doors in the Cloud                                        
+- Lab 3: Extracting and Analyzing data from the Cloud               
+- Lab 4: Interacting with users and services in the Cloud
+- Lab 5: (el Lab 6 k prepara Eloy, equivalent a anterior Task 4.4)
+- Lab 6: Under the hood of Cloud Advanced Analytics Services (k es l'anterior Lab 5 sobre TF)
+- Lab 7: Slastic world
+
+- Lab 1: [Basic "Knowledge Toolbox" to getting started in the Cloud][Lab1]  
+- Lab 2: [Doors in the Cloud][Lab2]                                         
+- Lab 3: [Extracting and Analyzing data from the Cloud][Lab3]               
+- Lab 4: [Interacting with users and services in the Cloud][Lab4]           
+- Lab 5: [Under the hood of Cloud Advanced Analytics Services][Lab5]        
 
 [Lab1]: https://github.com/jorditorresBCN/Assignments/blob/master/Lab01.md
 [Lab2]: https://github.com/jorditorresBCN/Assignments/blob/master/Lab02.md
 [Lab3]: https://github.com/jorditorresBCN/Assignments/blob/master/Lab03.md
 [Lab4]: https://github.com/jorditorresBCN/Assignments/blob/master/Lab04.md
 [Lab5]: https://github.com/jorditorresBCN/Assignments/blob/master/Lab05.md
+
 
 ## Course Project
 The project can be done in groups of 1,2 or 3 students.  The project need to be approved by your teacher before starting (from the student's proposal for the project). 
