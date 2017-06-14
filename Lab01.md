@@ -11,7 +11,7 @@ Have a look of these following hands-on to check if you have the basics to follo
 * Hands-on 2: [Markdown syntax](https://github.com/jorditorresBCN/Quick-Start/blob/master/Quick-Start-Markdown.md)
 * Hands-on 3: [Python Quick Start](https://github.com/jorditorresBCN/Quick-Start/blob/master/Python-Quick-Start.md) 
 
-#  Pre-lab homework 1
+#  Pre-lab homework 1 (optional)
 Create an AWS account following the following hands-on:
 * Hands-on 5: [Getting Started in the Cloud with AWS](https://github.com/jorditorresBCN/Quick-Start/blob/master/Quick-Start-AWS.md)
 
@@ -39,12 +39,12 @@ git push -u origin master
 Update the `README.md` file including all the information of your group (member's name and emails).
 ## Task 1.6:  
 Invite `JordiTorresBCN` to your remote private repository as a collaborator using `settings` button (for evaluation purpose).
-## Task 1.7:  
+## Task 1.7: (optional)
 Create a AWS instance EC2. Pull down all the contents of your github repository making an exact clone using `git clone` command. 
-## Task 1.8:  
+## Task 1.8: (optional)
 Execute the program `Lab1.guessnumber.py` in your AWS instance. Take an screenshot of the xterm that are you using as a proof. 
 Include this screenshot in your local repository on your laptop with the name `Lab1.AWSterminal.png`.
-## Task 1.9:    
+## Task 1.9: (optional)   
 Update your remote github repository with the updated `README.md`and the new file `Lab1.AWSterminal.png` using the `git`commands `add`, `commit` and `push`.  
 
 # How to Submit this Assignment:  
