@@ -13,11 +13,9 @@ to provide code examples that can get you started easily.
 (new)
 - Lab 1: Basic "Knowledge Toolbox" to getting started in the Cloud 
 - Lab 2: Doors in the Cloud and Extracting and Analyzing data from the Cloud      (anteriors lab2 + lab 3)                                   
-- Lab 4: Interacting with users and services in the Cloud
-- Lab 5: (el Lab 6 k prepara Eloy, equivalent a anterior Task 4.4)
-- Lab 6: Under the hood of Cloud Advanced Analytics Services: Tensorflow (k es l'anterior Lab 5.1 i 5.2 sobre TF)
-- Lab 7: Under the hood of Cloud Advanced Analytics Services: Parallelism (k es l'anterior Lab 5.3 sobre TF)
-- Lab 8: Extracting and Analyzing data using Elastic Search and Kibana (el lab 8)
+- Lab 3: Interacting with users and services in the Cloud (anterior Lab 4)+ (el Lab 6 k prepara Eloy, equivalent a anterior Task 4.4 amb una foto de d'un tweet com a exemple)
+- Lab 4: Under the hood of Cloud Advanced Analytics Services: Tensorflow + Parallelism  (k es l'anterior Lab 5)
+- Lab 5: Extracting and Analyzing data using Elastic Search and Kibana (el lab 8)
 
 
 (old)
