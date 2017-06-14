@@ -10,7 +10,7 @@ There will be two kinds of assignments: 5 Labs and one project. Pre-lab homework
 The students will begin by creating a basic toolbox to get started in the Cloud. This will prepare them to practice with APIs, the doors in the Cloud. Together, these things will allow the students to mine the deluge of data coming from the Cloud, or use new advanced analytics services provided nowadays by the Cloud. Finally, we will look under the hood of these advanced analytics services in the Cloud, either in terms of software or hardware, in order to understand how their high performance requirements can be provided. The purpose is
 to provide code examples that can get you started easily.
 
-(new)
+( WARNING: Under revision the content of this github)
 - Lab 1: Basic "Knowledge Toolbox" to getting started in the Cloud 
 - Lab 2: Doors in the Cloud and Extracting and Analyzing data from the Cloud      (anteriors lab2 + lab 3)                                   
 - Lab 3: Interacting with users and services in the Cloud (anterior Lab 4)+ (el Lab 6 k prepara Eloy, equivalent a anterior Task 4.4 amb una foto de d'un tweet com a exemple)
