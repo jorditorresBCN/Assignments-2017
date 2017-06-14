@@ -12,8 +12,7 @@ to provide code examples that can get you started easily.
 
 (new)
 - Lab 1: Basic "Knowledge Toolbox" to getting started in the Cloud 
-- Lab 2: Doors in the Cloud                                        
-- Lab 3: Extracting and Analyzing data from the Cloud               
+- Lab 2: Doors in the Cloud and Extracting and Analyzing data from the Cloud      (anteriors lab2 + lab 3)                                   
 - Lab 4: Interacting with users and services in the Cloud
 - Lab 5: (el Lab 6 k prepara Eloy, equivalent a anterior Task 4.4)
 - Lab 6: Under the hood of Cloud Advanced Analytics Services: Tensorflow (k es l'anterior Lab 5.1 i 5.2 sobre TF)
