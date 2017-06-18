@@ -5,7 +5,7 @@ In previous lab we suggested an "optional" task that uses the [Cloud Vision API]
 On this lab we will look under the hood of these types of advanced analytics services in the Cloud, either in terms of hardware and software, in order to understand how their high performance requirements can be provided. We will use a GPU cluster (thanks to the support of Barcelona Supercomputing Center) and we will review the main characteristics of [TensorFlow](https://www.tensorflow.org), the most popular framework to build Artificial Intelligent models nowadays. 
 
 ## Task 5.1: Install TensorFlow in your local laptop
-* Follow the installation instructions from https://www.tensorflow.org/install/
+* Follow the installation instructions from https://www.tensorflow.org/install/ (I recommend the virtualenv installation)
 * Clone or download this repository https://github.com/jorditorresBCN/FirstContactWithTensorFlow-2nEdition
 * Validate your TensorFlow installation (assuming that target directory is ~/tensorflow ):
 
