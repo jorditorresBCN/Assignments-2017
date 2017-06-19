@@ -1,6 +1,6 @@
 # Lab 8: Extracting and Analyzing data using Elastic Search and Kibana
 
-**_Last update: 6-June-2017_**
+**_Last update: 19-June-2017_**
 
 In a previous hands-on we performed a data analysis using `matplotlib`. In this hands-on we are going to perform a data analysis using Kibana and Elastic Search.
 
