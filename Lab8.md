@@ -77,7 +77,7 @@ After these simple steps an Elasticsearch instance should be running at [`http:/
 
 
 The installation and initialization of Kibana is similar to that of Elasticsearch following the documentation [here](https://www.elastic.co/guide/en/kibana/current/install.html). 
-Kibana is provided for Linux and Darwin as a .tar.gz package. I'm show the steps using the Darwin version (choose the correct version according your operation system). 
+Kibana is provided for Linux and Darwin (macOS) as a .tar.gz package. I'm show the steps using the Darwin version (choose the correct version according your operation system). 
 
 ####  Download and install the Kibana package
 The 64-bit Linux archive for Kibana v5.4.1 can be downloaded and installed as follows:  
@@ -97,9 +97,9 @@ Kibana can be started from the command line as follows:
 ./bin/kibana
 ```
 
-#### Checking that Kibana is running
+#### Checking that Kibana is running
 
-Kibana instance should be running at [`http://localhost:5601`](http://localhost:5601) in your browser if you run with default configuration (see[here] (https://www.elastic.co/guide/en/kibana/current/settings.html) for configuring Kibana). We can access the Kibana web user interface via your browser [`http://localhost:5601`](http://localhost:5601).  When we first start Kibana, it will create a new Elasticsearch index called `.kibana` where it stores the visualizations and dashboards. Because this is the first time starting it, we should be prompted to configure an **index pattern**. We should see something similar to:
+Kibana instance should be running at [`http://localhost:5601`](http://localhost:5601) in your browser if you run with default configuration (see [here](https://www.elastic.co/guide/en/kibana/current/settings.html) for configuring Kibana). We can access the Kibana web user interface via your browser [`http://localhost:5601`](http://localhost:5601).  When we first start Kibana, it will create a new Elasticsearch index called `.kibana` where it stores the visualizations and dashboards. Because this is the first time starting it, we should be prompted to configure an **index pattern**. We should see something similar to:
 
 
 ![KibanaWelcome](https://github.com/jorditorresBCN/Assignments-2017/blob/master/KibanaScreenWelcome.png "KibanaWelcome")
@@ -112,7 +112,7 @@ Kibana instance should be running at [`http://localhost:5601`](http://localhost:
 
 The simplest architecture for the Beats platform setup consists of one, Elasticsearch, and Kibana. The Beats insert the transactions directly into the Elasticsearch instance. If you want to perform additional processing or buffering on the data, however, you’ll want to install Logstash. An important advantage to this approach is that you can use Logstash to modify the data captured by Beats in any way you like. You can also use Logstash’s many output plugins to integrate with other systems.
 
-To download and install Logstash, use the commands that work with your system according [this webpage](https://www.elastic.co/guide/en/beats/libbeat/current/logstash-installation.html). In our case we used (mac): 
+To download and install Logstash, use the commands that work with your system according [this webpage](https://www.elastic.co/guide/en/beats/libbeat/current/logstash-installation.html). In our case we used Darwin (macOS): 
 
 ```
 curl -L -O https://artifacts.elastic.co/downloads/logstash/logstash-5.4.1.zip
@@ -120,7 +120,7 @@ unzip logstash-5.4.1.zip
 ```
 
 
-In the `logstash-5.4.1` directory we need to create the configuration file `twitter.conf` (included in this github) that onfigure Logstash to listen on port 5044 for incoming Beats connections and to index into Elasticsearch as:
+In the `logstash-5.4.1` directory, it can be `/usr/share/logstash` if you installed Logstash from a .deb package in linux, we need to create the configuration file `twitter.conf` (included in this github) that onfigure Logstash to listen on port 5044 for incoming Beats connections and to index into Elasticsearch as:
 
 ```
 input {
@@ -284,6 +284,8 @@ The easiest and fastest way to get started with Elasticsearch is to spin up a fr
 ## Task 8.6:  Student project: Visualize and Dashboard (80% grade of the lab)
 Use the Visualize and Dashboard links in the navigation bar to obtain a awesome Dashboard that describes your data. 
 
+
+![KibanaDashboard](https://raw.githubusercontent.com/jorditorresBCN/Assignments-2017/master/KibanaScreenDashboard.png "KibanaDashboard")
 
 <a name="Tasks37"/>
 
