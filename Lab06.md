@@ -19,13 +19,13 @@ The base language is Python and those packages and almost every needed module wi
 Download the code from this repository.
 If you have [`git`](https://git-scm.com/) installed, you can do this by executing the following command:
 
-```$ git clone https://github.com/xiscosc/google-cloud-vision-example.git```
+```$ git clone https://github.com/jorditorresBCN/google-cloud-vision-example.git```
 
 This will download the repository of samples into the directory
 `cloud-vision`.
 
 Otherwise, github offers an
-[auto-generated zip file](https://github.com/xiscosc/google-cloud-vision-example/archive/master.zip) of the
+[auto-generated zip file](https://github.com/jorditorresBCN/google-cloud-vision-example/archive/master.zip) of the
 `master` branch, which you can download and extract.
 
 
@@ -50,8 +50,11 @@ for project ..."`
 
 ## Quick Start: Running the Example ##
 
+![Tweet](https://raw.githubusercontent.com/jorditorresBCN/Assignments-2017/master/tweetMN.png "Tweet")
+
+
 If you'd like to get the example up and running before we dive into the
-details, here are the steps.
+details, here are the steps to analyze the image of this [tweet](https://twitter.com/JordiTorresBCN/status/876706346229477376).
 
 1. Enable your virtualenv and go to the repository folder:
 ```
@@ -64,18 +67,18 @@ $ cd google-cloud-vision-example
 $ pip install -r requirements.txt
 ```
 
-2. Run the `label.py` passing an image as argument:
+2. Run the `label.py` passing the downloaded tweet image as argument:
 ```
 $ python label.py <path-to-image>
 ```
 
 3. Wait for the script to finish. It will show 5 possible classfications for your image:
 ```
-Results for image resources/koala.jpg:
-koala - 0.987
-mammal - 0.941
-vertebrate - 0.916
-wildlife - 0.877
-marsupial - 0.858
+Results for image Marenostrum.jpg:
+electricity - 0.770
+computer cluster - 0.745
+display device - 0.735
+electrical supply - 0.671
+electrical wiring - 0.667
 ```
 
