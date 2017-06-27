@@ -497,7 +497,7 @@ import operator
 import json
 from collections import Counter
  
-fname = 'Lab3.CaseStudy.json'
+fname = 'Lab2.CaseStudy.json'
 with open(fname, 'r') as f:
     count_all = Counter()
     for line in f:
@@ -530,7 +530,7 @@ plt.axis('tight');
 ```
 that uses the function `zip()`. We obtain the following plot:
 
-![Lab3Plot](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab3Plot.png "lab3Plot")
+![Lab2Plot](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab2Plot.png "lab2Plot")
 
 We can see that people were talking about football, more than other things! And it seems that they were mostly talking about the football [league match that was played the next day](http://www.fcbarcelonanoticias.com/Calendario-y-resultados-liga.php?IDR=184).
 
