@@ -11,19 +11,18 @@ The students will begin by creating a basic toolbox to get started in the Cloud.
 to provide code examples that can get you started easily.
 
 ( WARNING: Under revision the content of this github)
-- Lab 1: Basic "Knowledge Toolbox" to getting started in the Cloud 
+<!-- - Lab 1: Basic "Knowledge Toolbox" to getting started in the Cloud 
 - Lab 2: Doors in the Cloud and Extracting and Analyzing data from the Cloud      (anteriors lab2 + lab 3)                                   
 - Lab 3: Interacting with users and services in the Cloud (anterior Lab 4)+ (el Lab 6 k prepara Eloy, equivalent a anterior Task 4.4 amb una foto de d'un tweet com a exemple)
 - Lab 4: Under the hood of Cloud Advanced Analytics Services: Tensorflow + Parallelism  (k es l'anterior Lab 5)
 - Lab 5: Extracting and Analyzing data using Elastic Search and Kibana (el lab 8 fet per Torres i ampliar amb algun exemple de Dashboard)
+-->
 
-
-(old)
 - Lab 1: [Basic "Knowledge Toolbox" to getting started in the Cloud][Lab1]  
-- Lab 2: [Doors in the Cloud][Lab2]                                         
-- Lab 3: [Extracting and Analyzing data from the Cloud][Lab3]               
-- Lab 4: [Interacting with users and services in the Cloud][Lab4]           
-- Lab 5: [Under the hood of Cloud Advanced Analytics Services][Lab5]        
+- Lab 2: [Doors in the Cloud and Extracting and Analyzing data from the Cloud][Lab2]                                         
+- Lab 3: [Interacting with users and services in the Cloud][Lab3]            
+- Lab 4: [Under the hood of Cloud Advanced Analytics Services][Lab4]         
+- Lab 5: [Extracting and Analyzing data using Elastic Search and Kibana][Lab5]        
 
 [Lab1]: https://github.com/jorditorresBCN/Assignments/blob/master/Lab01.md
 [Lab2]: https://github.com/jorditorresBCN/Assignments/blob/master/Lab02.md

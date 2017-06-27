@@ -1,271 +1,373 @@
-# Lab 3: Extracting and Analyzing data from the Cloud
+# Lab 3: Interacting with users and services in the Cloud
 
-
-This Lab is built on top of the previous ones to discuss a basis for extracting interesting terms from a data set of tweets while we “keep the connection open” and gather all the upcoming tweets about a particular event.
-
-* [Task 3.1: Streaming API of Twitter](#Tasks31)
-* [Task 3.2: Analyzing tweets - counting terms](#Tasks32)  
-* [Task 3.3: Case study](#Tasks33)  
-* [Task 3.4: Student proposal](#Tasks34)  
+* [Task 3.1: How to provide your services through an API?](#Tasks31)
+* [Task 3.2: How to provide our service combined with third-party services?](#Tasks32)  
+* [Task 3.3: Student proposal](#Tasks33)  
+* [Task 3.4: Using Advanced Analytics as a Service in the Cloud](#Tasks34)  
    
-#  Tasks of Lab 3
-
 <a name="Tasks31"/>
 
-## Task 3.1: Streaming API of Twitter
-In case we want to “keep the connection open”, and gather all the upcoming tweets about a particular event, the [Streaming API](https://dev.twitter.com/streaming/overview) is what we need.  The Streaming APIs give developers low latency access to Twitter’s global stream of Tweet data. A proper implementation of a streaming client will be pushed messages indicating Tweets and other events have occurred. 
-Connecting to the streaming API requires keeping a persistent HTTP connection open. In many cases this involves thinking about your application differently than if you were interacting with the REST API. Visit the [Streaming API](https://dev.twitter.com/streaming/overview) for more details about the differences between Streaming and REST. The Streaming API is one of the favorite ways of getting a massive amount of data without exceeding the rate limits. If your intention is to conduct singular searches, read user profile information, or post Tweets, consider using the REST APIs instead.
+#  Tasks of Lab 3
+<a name="Tasks31"/>
 
-We need to extend the `StreamListener()` class to customise the way we process the incoming data. We will base our explanation with a working example (from [Marco Bonzanini](https://marcobonzanini.com/2015/03/02/mining-twitter-data-with-python-part-1/)) that gathers all the new tweets with the "ArtificialIntelligence" content:
+## Task 3.1:  How to provide your services through an API?
+As we show, we can plots in Python using libraries like matplotlib.  However, how to provide our results through an API to consumers?
+If you want to use python to build a prototype server (of your service) and want to provide web-base API with minimal efforts, you can just use python `SimpleHTTPServer` and `SocketServer` packages. 
+
+Create the python file `OurService.py`:
+
+```python
+#!/usr/bin/env python
+import SimpleHTTPServer
+import SocketServer
+
+class MyRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
+    def do_GET(self):
+        if self.path == '/':
+            self.path = '/OurService.html'
+        return SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self)
+
+Handler = MyRequestHandler
+server = SocketServer.TCPServer(('0.0.0.0', 8954), Handler)
+
+print 'Started my REST API on port 8954' 
+server.serve_forever()
+
 ```
-import tweepy
-from tweepy import OAuthHandler
+and lauch it as:
 
-consumer_key = 'YOUR-CONSUMER-KEY'
-consumer_secret = 'YOUR-CONSUMER-SECRET'
-access_token = 'YOUR-ACCESS-TOKEN'
-access_secret = 'YOUR-ACCESS-SECRET'
+```
+torres@vm:~$  python OurService.py
+```
+Now you can open your browser at http://localhost:8954 and obtain acces to `OurService.html`.
 
-auth = OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_secret)
- 
-api = tweepy.API(auth)
+The question now is how we can generate our service `OurService.html` in order to be provided by the server. Imagine that we want to provide the plot obtained in the previous Lab. We have different options, however I suggest to use [D3.js](https://d3js.org). 
+
+Because D3 plays well with web standards like CSS and SVG, and allows to create some wonderful interactive visualisations in the web, many of my data science colleagues think that it is one of the coolest libraries for data visualisation.
+
+[D3.js](https://d3js.org) is, as the name suggests, based on Javascript. We will present a simple option to support data D3 visualisation with Python using the Python library [Vincent](https://github.com/wrobstory/vincent), that bridges the gap between a Python back-end and a front-end that supports D3.js visualisation. Vincent takes our data in Python format and translates them into [Vega](https://github.com/trifacta/vega), a JSON-based visualisation grammar that will be used on top of D3.
+
+Firstly, we need to install Vincent:
+
 ```
-```
-from tweepy import Stream
-from tweepy.streaming import StreamListener
- 
-class MyListener(StreamListener):
- 
-    def on_data(self, data):
-        try:
-            with open('ArtificialIntelligenceTweets.json', 'a') as f:
-                f.write(data)
-                return True
-        except BaseException as e:
-            print("Error on_data: %s" % str(e))
-        return True
- 
-    def on_error(self, status):
-        print(status)
-        return True
- 
-twitter_stream = Stream(auth, MyListener())
-twitter_stream.filter(track=['ArtificialIntelligence'])
+torres@vm:~$  sudo pip install vincent
 ```
 
-The core of the streaming logic is implemented in the `CustomListener` class, which extends `StreamListener` and overrides two methods: `on_data()` and `on_error()`. These are handlers that are triggered when data is coming through and an error is given by the API. if the error is that we have been rate limited by the Twitter API, we need to wait before we can use the service again. The `on_data()` method is called when data is coming through. This function simply stores the data as it is received in the  `ArtificialIntelligenceTweets.json` file. Each line of this file will then contain a single tweet, in the JSON format. You can use the command `wc -l ArtificialIntelligenceTweets.json` from a Unix shell to know how many tweets you’ve gathered.
+Using the list of most frequent hashtags from the case study data set we used in the previous Lab, we want to plot their frequencies:
 
-Before continuing the hands-on, be sure that you generated correctly the `.json` file. now try with another term of your interest.
+
+```
+import vincent
+ 
+word_freq = count_all.most_common(15)
+labels, freq = zip(*word_freq)
+data = {'data': freq, 'x': labels}
+bar = vincent.Bar(data, iter_idx='x')
+bar.to_json('term_freq.json')
+
+```
+At this point, the file `term_freq.json` will contain a description of the plot that can be handed over to D3.js and Vega. A simple template (taken from [Vincent resources](https://github.com/wrobstory/vincent)) to visualise the plot:
+
+```html
+<html>  
+<head>    
+    <title>Vega Scaffold</title>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="http://d3js.org/d3.geo.projection.v0.min.js" charset="utf-8"></script>
+    <script src="http://trifacta.github.com/vega/vega.js"></script>
+</head>
+<body>
+    <div id="vis"></div>
+</body>
+<script type="text/javascript">
+// parse a spec and create a visualization view
+function parse(spec) {
+  vg.parse.spec(spec, function(chart) { chart({el:"#vis"}).update(); });
+}
+parse("term_freq.json");
+</script>
+</html>
+```
+Save the above HTML page as `OurService.html`.
+Now you can open your browser at http://localhost:8954 and obtain acces to `OurService.html`.
+
+With this procedure, we can plot many different types of charts with `Vincent`. [Explore yourself](http://vincent.readthedocs.io/en/latest/). If you are interested in building a real server, there are many good Python frameworks for building a RESTful API as [Flask](http://flask.pocoo.org/), [Falcon](http://falconframework.org/) and [Bottle](http://bottlepy.org/docs/dev/index.html).
+
+However, if you need to deploy your service in the Cloud, [AWS Lambda](https://cloudacademy.com/amazon-web-services/understanding-aws-lambda-course/) allows you to not deal with over/under capacity, deployments, scaling and fault tolerance, OS or language updates, metrics, and logging. AWS Lambda introduced a new serverless world. AWS community started working on a complete solution to develop AWS-powered microservices or backends for web, mobile, and IoT applications. The migration required facilitation because of the building-block nature of AWS Lambda and its complex symbiosis with Amazon API Gateway. One example is [Serverless Framework](https://serverless.com) that allows to build auto-scaling, pay-per-execution, event-driven apps on AWS Lambda. **(optional project)**
+
+ 
+Before starting the next [task 3.2](#Tasks32), create a `.pynb` file that demonstrates that you followed this example.
 
 <a name="Tasks32"/>
 
-## Task 3.2:  Analizing tweets - Counting terms
-The first exploratory analysis that we can perform is a simple word count. In this way, we can observe what are the terms most commonly used in the data set.
+## Task 3.2: How to provide our service combined with third-party services?
 
-Let's go to read the file with all tweets in order to be sure that everything is fine:
+In order to augment the value of our service we can build our service upon other services. As a example of combining our service with third-party services I suggest to plotting tweets on a map. Twitter allows its users to provide their location when they publish a tweet, in the form of latitude and longitude coordinates. With this information, we are ready to create some nice visualisation for our data, in the form of interactive maps. 
+However the problem in our Twitter case is that we can find details about the geographic localization of the user's device in the form of geographic coordinates only in a small portion of tweets. Many users disable this functionality on their mobile, however there is still some tweets tagged with this information and allow us to show an example of using a third-party services that allows a nice way to provide an easy-to-digest of a particular feature of a dataset. 
+
+
+
+For this purpose we will use [GeoJSON](http://geojson.org), a format for encoding a variety of geographic data structures and [Leaflet.js](http://leafletjs.com), a Javascript library for interactive maps.
+
+GeoJSON supports a variety of geometric types of format that can be used to visualize the desired shapes onto a map. A GeoJSON object can represent a geometry, feature, or collection of features. Geometries only contain the information about the shape; its examples include Point, LineString, Polygon, and more complex shapes. Features extend this concept as they contain a geometry plus additional (custom) properties. Finally, a collection of features is simply a list of features. A GeoJSON data structure is always a JSON object. The following snippet shows an example (taken from https://github.com/bonzanini/Book-SocialMediaMiningPython) of GeoJSON that represents a collection with two different points, each point used to pin a particular city:
+```
+{
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-0.12
+					51.5
+				]
+			},
+			"properties": {
+				"name": "London"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-74,
+					40.71
+				]
+			},
+			"properties": {
+				"name": "New York City"
+			}
+		}
+	]
+}
 
 ```
-import json  
-with open('ArtificialIntelligenceTweets.json','r') as json_file:
-         for line in json_file:
-             tweet = json.loads(line)
-             print tweet["text"]
-```
-Now we are ready to start to tokenize all these tweets:
-         
+In this GeoJSON object, the first key is the `type` of object being represented. This field is
+mandatory and its value must be one of the following:
+* `Point`: This is used to represent a single position
+* `MultiPoint`: This represents multiple positions
+* `LineString`: This specifies a string of lines that go through two or more positions
+* `MultiLineString`: This is equivalent to multiple strings of lines
+* `Polygon`: This represents a closed string of lines, that is, the first and the last positions are the same
+* `GeometryCollection`: This is a list of different geometries
+* `Feature`: This is one of the preceding items (excluding GeometryCollection) with additional custom properties
+* `FeatureCollection`: This is used to represent a list of features
 
+Given that `type` in the preceding example has the `FeatureCollection` value, we will expect the `features` field to be a list of objects (each of which is a `Feature`).
+
+The two features shown in the example are simple points, so in both cases, the
+`coordinates` field is an array of two elements: longitude and latitude. This field also
+allows for a third element to be there, representing altitude (when omitted, the altitude is
+assumed to be zero).
+
+For our examples, we just need the simplest structure, a `Point` identified by its coordinates (latitude and longitude). In order to generate this GeoJSON data structure we simply need to iterate all the tweets looking for the coordinates field. A very important warning is that this field may not be present. As we mentioned before, many tweets not include their geographic location (many users prefer not indicate this information on their tweets).
+
+The following code will create the GeoJSON data structure (for tweets where the coordinates are explicitely given) and then the data are dumped into a file called geo_data.json:
 ```
 import json
- 
-with open('ArtificialIntelligenceTweets.json', 'r') as f:
-    line = f.readline() 
-    tweet = json.loads(line) 
-    print(json.dumps(tweet, indent=4)) 
-```
-Now, if we want to process all our tweets, previously saved on file:
 
-```
-with open('ArtificialIntelligenceTweets.json', 'r') as f:
-#import io
-#f=io.open('data/stream_barcelona.json', 'r', encoding='utf8' )
-     for line in f:
-        tweet = json.loads(line)
-        tokens = preprocess(tweet['text'])
-        print(tokens)
-```
-Remember that `preprocess` have been defined in the previous Lab in order to capture Twitter-specific aspects of the text, such as #hashtags, @-mentions and URLs.:
-
-```
-import re
- 
-emoticons_str = r"""
-    (?:
-        [:=;] # Eyes
-        [oO\-]? # Nose (optional)
-        [D\)\]\(\]/\\OpP] # Mouth
-    )"""
- 
-regex_str = [
-    emoticons_str,
-    r'<[^>]+>', # HTML tags
-    r'(?:@[\w_]+)', # @-mentions
-    r"(?:\#+[\w_]+[\w\'_\-]*[\w_]+)", # hash-tags
-    r'http[s]?://(?:[a-z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-f][0-9a-f]))+', # URLs
- 
-    r'(?:(?:\d+,?)+(?:\.?\d+)?)', # numbers
-    r"(?:[a-z][a-z'\-_]+[a-z])", # words with - and '
-    r'(?:[\w_]+)', # other words
-    r'(?:\S)' # anything else
-]
-    
-tokens_re = re.compile(r'('+'|'.join(regex_str)+')', re.VERBOSE | re.IGNORECASE)
-emoticon_re = re.compile(r'^'+emoticons_str+'$', re.VERBOSE | re.IGNORECASE)
- 
-def tokenize(s):
-    return tokens_re.findall(s)
- 
-def preprocess(s, lowercase=False):
-    tokens = tokenize(s)
-    if lowercase:
-        tokens = [token if emoticon_re.search(token) else token.lower() for token in tokens]
-    return tokens
- ```
-In order to keep track of the frequencies while we are processing the tweets, we can use `collections.Counter()` which internally is a dictionary (term: count) with some useful methods like `most_common()`:
- 
- ```
-import operator 
-import json
-from collections import Counter
- 
-fname = 'ArtificialIntelligenceTweets.json'
+fname = 'Lab3.CaseStudy.json'
 with open(fname, 'r') as f:
-    count_all = Counter()
+    geo_data = {
+        "type": "FeatureCollection",
+        "features": []
+    }
     for line in f:
         tweet = json.loads(line)
-        # Create a list with all the terms
-        terms_all = [term for term in preprocess(tweet['text'])]
-        # Update the counter
-        count_all.update(terms_all)
-    print(count_all.most_common(5))
-    
-```
-As you can see, the above code produces words (or tokens) that are stop words. Given the nature of our data and our tokenisation, we should also be careful with all the punctuation marks and with terms like `RT` (used for re-tweets) and `via` (used to mention the original author), which are not in the default stop-word list.
-
-```
-import nltk
-from nltk.corpus import stopwords
-nltk.download("stopwords") # download the stopword corpus on our computer
-import string
+        if tweet['coordinates']:
+            geo_json_feature = {
+                "type": "Feature",
+                "geometry": tweet['coordinates'],
+                "properties": {
+                    "text": tweet['text'],
+                    "created_at": tweet['created_at']
+                }
+            }
+            geo_data['features'].append(geo_json_feature)
  
-punctuation = list(string.punctuation)
-stop = stopwords.words('english') + punctuation + ['rt', 'via', 'RT']
-
+with open('geo_data.json', 'w') as fout:
+    fout.write(json.dumps(geo_data, indent=4))
 ```
 
-We can now substitute the variable `terms_all` in the first example with something like:
+Now, with the Leaflet.js Javascript library for interactive maps, we can create our `.html` file that will host the map.
+The following `.html`page provides the maps with our geolocated tweets:
 
-```
-import operator 
-import json
-from collections import Counter
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Quick Start - Leaflet</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+	<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+
+	<style>
+		#map {
+    	height: 600px;
+		}
+</style> 
+
+</head>
+<body>
+
+
+<!-- this goes in the <body> -->
+<div id="map"></div>
+<script>
+// Load the tile images from OpenStreetMap
+var mytiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+});
+
+// Initialise an empty map
+	var map = L.map('map');
+// Read the GeoJSON data with jQuery, and create a circleMarker element for each tweet
+$.getJSON("./geo_data.json", function(data) {
+    var myStyle = {
+        radius: 2,
+        fillColor: "red",
+        color: "red",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 1
+    };
  
-fname = 'ArtificialIntelligenceTweets.json'
-with open(fname, 'r') as f:
-    count_all = Counter()
-    for line in f:
-        tweet = json.loads(line)
-        # Create a list with all the terms
-        terms_stop = [term for term in preprocess(tweet['text']) if term not in stop]
-        count_all.update(terms_stop)
-    for word, index in count_all.most_common(5):
-        print '%s : %s' % (word, index)
-```
+    var geojson = L.geoJson(data, {
+        pointToLayer: function (feature, latlng) {
+            return L.circleMarker(latlng, myStyle);
+        }
+    });
+    geojson.addTo(map)
+});
+map.addLayer(mytiles).setView([40.5, 5.0], 5);
+</script>
+</body>
+</html>
 
-Besides stop-word removal, we can further customise the list of terms/tokens we are interested in. 
-For instance, if we want to count *hastags* only:
-```
-terms_hash = [term for term in preprocess(tweet['text']) 
-              if term.startswith('#')]
-```
-In the case we are interested to count terms only, no hashtags and no mentions:
-```
-terms_only = [term for term in preprocess(tweet['text']) 
-              if term not in stop and
-              not term.startswith(('#', '@'))] 
-```
-> Mind the double brackets (( )) `startswith()` takes a tuple (not a list) if  we pass a list of inputs. 
 
-Although we do not consider it in this Lab, there are other functions from NLTK very useful. For instance, to put things in context, some analysis considers sequences of two terms. In this case we can use `bigrams()` function that will take a list of tokens and produce a list of tuples using adjacent tokens.
+```
+A screenshot of the results:
 
-Do the same analysis with the `.json` file generated by you in the previous task.
+![Lab4map2](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab4map2.png "Lab4map2")
+![Lab4map1](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab4map1.png "Lab4map1")
 
+As you can look, in our example we have few geolocated tweets. However, the code is the same for any other example. 
 
 <a name="Tasks33"/>
 
-## Task 3.3:  Case study
+## Task 3.3: Student proposal
 
-At "[Racó (course intranet)](https://raco.fib.upc.edu/home/portada/jordi.torres)" you can find a small dataset as a example (please do not distribute due to Twitter licensing). This dataset contains 1060 tweets downloaded from around 18:05 to 18:15  on January 13. We used "Barcelona" as a `track` parameter at `twitter_stream.filter` function. 
+We are asking to the student to reproduce the steps described in the previous tasks in their dataset generated in Lab 3. Visit the [Leaflet Quick Start Guide](http://leafletjs.com/examples/quick-start/) for more details about the `html` file and  how `Leaflet.js` can be used. 
 
-We would like to get a rough idea of what was telling people about Barcelona. For example, we can count and sort the most commonly used hastags:
-```
-import operator 
-import json
-from collections import Counter
- 
-fname = 'Lab3.CaseStudy.json'
-with open(fname, 'r') as f:
-    count_all = Counter()
-    for line in f:
-        tweet = json.loads(line)
-        # Create a list with all the terms
-        terms_hash = [term for term in preprocess(tweet['text']) if term.startswith('#') and term not in stop]        
-        count_all.update(terms_hash)
-# Print the first 10 most frequent words
-print(count_all.most_common(15))
-
-```
-The output is:
-`[(u'#Barcelona', 68), (u'#Messi', 30), (u'#FCBLive', 17), (u'#UDLasPalmas', 13), (u'#VamosUD', 13), (u'#barcelona', 10), (u'#CopaDelRey', 8), (u'#empleo', 6), (u'#BCN', 6), (u'#riesgoimpago', 6), (u'#news', 5), (u'#LaLiga', 5), (u'#SportsCenter', 4), (u'#LionelMessi', 4), (u'#Informe', 4)]`
-
-In order to see a more visual description we can plot it. There are different options to create plots in Python using libraries like matplotlib, ggplot, etc. We decided to use matplotlib With the following code 
-
-```
-%matplotlib inline
-import matplotlib as mpl
-mpl.rcParams['figure.figsize'] = (15,10)
-import matplotlib.pyplot as plt
-
-sorted_x, sorted_y = zip(*count_all.most_common(15))
-#print(sorted_x, sorted_y)
-
-plt.bar(range(len(sorted_x)), sorted_y, width=0.75, align='center');
-plt.xticks(range(len(sorted_x)), sorted_x, rotation=80);
-plt.axis('tight'); 
-
-```
-that uses the function `zip()`. We obtain the following plot:
-
-![Lab3Plot](https://github.com/jorditorresBCN/Assignments-2017/blob/master/Lab3Plot.png "lab3Plot")
-
-We can see that people were talking about football, more than other things! And it seems that they were mostly talking about the football [league match that was played the next day](http://www.fcbarcelonanoticias.com/Calendario-y-resultados-liga.php?IDR=184).
-
-Create a "matplot" with your dataset generated by you in the previous task.
+Create a `.pynb` file with markdown cells describing the program steps and the characteristics of the dataset created (e.g. the time frame for the download, etc.).
 
 <a name="Tasks34"/>
 
-## Task 3.4:  Student proposal
+## Task 3.4: Advanced Analytics as a Service in the Cloud
 
-We are asking to the student to create an example that will allow us to find some interesting insight from Twitter, using some realistic data taken by the student. Using what we have learnt in the previous Labs and sections, you can download some data using the streaming API, pre-process the data in JSON format and extract some interesting terms and hashtags from the tweets. 
+During this hands on we are going to experiment the power of the Cloud Vision API from Google to detect text within images as an example of Advanced Analytics as a Service in the Cloud. 
+This hands-on follows the official introduction to image classification that is available [here]( https://cloud.google.com/vision/docs/detecting-labels).
 
-Create a `.pynb` file with markdown cells describing the program steps and the characteristics of the dataset created (e.g. the time frame for the download, etc.).
+
+This hands-on helps you to classify images using labels. [Cloud Vision API](https://cloud.google.com/vision/) enables developers to understand the content of an image by encapsulating powerful machine learning models in an easy to use REST API. It quickly classifies images into thousands of categories (e.g., "sailboat", "lion", "Eiffel Tower"), detects individual objects and faces within images and finds and reads printed words contained within images. You can build metadata on your image catalog, moderate offensive content, or enable new marketing scenarios through image sentiment analysis. Analyze images uploaded in the request or integrate with your image storage on Google Cloud Storage. Try the API [here (Drag image file here or Browse from your computer)](https://cloud.google.com/vision/).
+
+
+### 3.4.1 Cloud Platform sign up
+The first step is to [sign up]( https://cloud.google.com/vision/). It exists a free trial for this service, to fully enjoy the benefits of Google’s Cloud platform the best option is to get a business trial, with $300 worth of free credit for this year. That amount is far more than enough for the expected needs on this subject’s scope and will give you time enough to explore other features. Once the registration process is finished, we need to access the [management console]( https://console.cloud.google.com/home), where it is possible to create a new project, choosing a name and an ID for it. It is necessary to enable billing for this project to continue, but as long as we are spending from the free credit we have there is nothing to worry about.
+The project creation process takes a few seconds, after finishing it will appear in our list. It is time to select the new project and enable the Cloud Vision API that is the tool we will use during this hands-on. Finally, it is needed to set up some credentials that will be the way we authenticate to enable the communication: This can be done selecting “Credentials” in the left menu and simply clicking over the blue button saying “Create credentials” and choosing the “service account key” option.  Select JSON as your key type. Once completed, your service account key is downloaded to your browser's default location.
+
+### 3.4.2 Environment setup
+The base language is Python and those packages and almost every needed module will be already installed. The scripts and demo files needed can be downloaded from the official Google Cloud Platform GitHub repository, and only a few more changes will be needed to be ready.
+
+#### Download the Example Code
+
+Download the code from this repository.
+If you have [`git`](https://git-scm.com/) installed, you can do this by executing the following command:
+
+```$ git clone https://github.com/jorditorresBCN/google-cloud-vision-example.git```
+
+This will download the repository of samples into the directory
+`cloud-vision`.
+
+Otherwise, github offers an
+[auto-generated zip file](https://github.com/jorditorresBCN/google-cloud-vision-example/archive/master.zip) of the
+`master` branch, which you can download and extract.
+
+
+This example has been tested with Python 2.7 and 3.4.
+
+#### Set Up to Authenticate With Your Project's Credentials
+
+Next, set up to authenticate with the Cloud Vision API using your project's
+service account credentials. E.g., to authenticate locally, set
+the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to point to your
+downloaded service account credentials before running this example:
+
+```export GOOGLE_APPLICATION_CREDENTIALS=/path/to/your/credentials-key.json```
+
+If you do not do this, you will see an error that looks something like this when
+you run the script:
+`HttpError 403 when requesting
+https://vision.googleapis.com/v1/images:annotate?alt=json returned
+"Project has not activated the vision.googleapis.com API. Please enable the API
+for project ..."`
+
+
+### 3.4.2 Quick Start: Running the Example
+
+![Tweet](https://raw.githubusercontent.com/jorditorresBCN/Assignments-2017/master/tweetMN.png "Tweet")
+
+
+If you'd like to get the example up and running before we dive into the
+details, here are the steps to analyze the image of this [tweet](https://twitter.com/JordiTorresBCN/status/876706346229477376).
+
+1. Enable your virtualenv and go to the repository folder:
+```
+$ source <path-to-virtualenv>/bin/activate
+$ cd google-cloud-vision-example
+```
+
+2. Install the requirements:
+```
+$ pip install -r requirements.txt
+```
+
+2. Run the `label.py` passing the downloaded tweet image as argument:
+```
+$ python label.py <path-to-image>
+```
+
+3. Wait for the script to finish. It will show 5 possible classfications for your image:
+```
+Results for image Marenostrum.jpg:
+electricity - 0.770
+computer cluster - 0.745
+display device - 0.735
+electrical supply - 0.671
+electrical wiring - 0.667
+```
+
+
+
 
 
 # How to Submit this Assignment:  
 Be sure that you have updated your remote github repository with  the Lab `.ipynb` file generated along this Lab. Submit **before the deadline** to the *RACO Practicals section* a "Lab3.txt" file including: 
 
 1. Group number
-2. name and email of the members of this group
-3. github url that contains your lab answers (the same as Lab1 and Lab2)
-4. link to your dataset created in task 3.4.
-5. add any comment that you consider necessary.
+2. Name and email of the members of this group
+3. Include `.pynb`, `.py` and `.html` files created for this lab.
+4. Add screenshots of maps created in task 3.3.
+5. In case you finished optional task 3.4, include a report explaining it.
+6. Add any comment that you consider necessary.
